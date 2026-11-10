@@ -198,11 +198,6 @@ region = Rect2(176, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivevv"]
 animations = [{
-"frames": [],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ivevv")
@@ -388,11 +383,23 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8yo32"]
+radius = 5.3851647
+
 [node name="Player" type="CharacterBody2D" unique_id=1336257654]
 script = ExtResource("1_kelma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1696300319]
 sprite_frames = SubResource("SpriteFrames_ivevv")
-animation = &"idle_up"
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833429169]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_8yo32")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1704558047]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_8yo32")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1908930363]
+zoom = Vector2(6.95, 6.95)
