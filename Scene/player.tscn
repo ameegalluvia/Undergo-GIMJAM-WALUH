@@ -386,6 +386,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8yo32"]
 radius = 5.3851647
 
+[sub_resource type="Gradient" id="Gradient_8yo32"]
+offsets = PackedFloat32Array(0.0072115385, 0.56009614)
+colors = PackedColorArray(0.33511627, 0.33511627, 0.33511627, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xa75v"]
+gradient = SubResource("Gradient_8yo32")
+fill = 1
+fill_from = Vector2(0.4982639, 0.5295139)
+
 [node name="Player" type="CharacterBody2D" unique_id=1336257654]
 script = ExtResource("1_kelma")
 
@@ -403,3 +412,13 @@ shape = SubResource("CircleShape2D_8yo32")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908930363]
 zoom = Vector2(6.95, 6.95)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1456221449]
+position = Vector2(-2.2888184e-05, 6.535923)
+scale = Vector2(2.7467318, 2.7467318)
+color = Color(0.66162944, 0.6616294, 0.6616294, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 20.6
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_xa75v")
