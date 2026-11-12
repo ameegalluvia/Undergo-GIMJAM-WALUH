@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dp11wauxkk4t8"]
+
+[ext_resource type="Script" uid="uid://dukom6wbook4l" path="res://Script/cutscene.gd" id="1_ie6fp"]
+[ext_resource type="Texture2D" uid="uid://6b804jf85px3" path="res://assets/massagebox/10_basic_message_boxes_by_CharlesGabriel-removebg-preview.png" id="2_8dl2d"]
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/dialog_line.gd" id="2_kgfk3"]
+[ext_resource type="Texture2D" uid="uid://b08xr3qf032c7" path="res://assets/Gambar/gambar1.jpeg" id="3_5ajow"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="3_kgfk3"]
+[ext_resource type="Texture2D" uid="uid://bxxm32lo3b4ce" path="res://assets/Gambar/gambar2.jpg" id="4_5ajow"]
+
+[sub_resource type="Resource" id="Resource_ie6fp"]
+script = ExtResource("2_kgfk3")
+nama = "Rafif"
+teks = "Halo aku Rapip, aku merupakan mahasiswa ITB 2026 Fakultas FMIPA, aku bersasal dari Kalimantan Selatan. "
+gambar = ExtResource("3_5ajow")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_8dl2d"]
+script = ExtResource("2_kgfk3")
+nama = "Rafif"
+teks = "Aku masuk itb jalur ssu dengan jurusan peminatan Astronomi, aku dari kelas 05 "
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_rat6u"]
+script = ExtResource("2_kgfk3")
+nama = "Rafif"
+teks = "AKU SUKA HIKAM AKU SUKA MATTHEW AKU SUKA HIKAM AKU SUKA MATTHEW AKU SUKA HERRY AKU SUKA HERRY AKU SUKA SEMUANYAA"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_0f8do"]
+script = ExtResource("2_kgfk3")
+nama = "HuTao"
+teks = "Halooo rapippppp"
+gambar = ExtResource("4_5ajow")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_kgfk3"]
+script = ExtResource("2_kgfk3")
+nama = "HuTao"
+teks = "AIWDHCAUOIWBDUSHADUWBUAGUGFRAWUGEDUAWGRFUIAWHUAWHRUGAUGUDSHAIO"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[node name="Cutscene" type="Control" unique_id=587464573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ie6fp")
+dialog = Array[ExtResource("2_kgfk3")]([SubResource("Resource_ie6fp"), SubResource("Resource_8dl2d"), SubResource("Resource_rat6u"), SubResource("Resource_0f8do"), SubResource("Resource_kgfk3")])
+
+[node name="Gambar" type="TextureRect" parent="." unique_id=1778793955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MessageBox" type="NinePatchRect" parent="." unique_id=212530514]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -306.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_8dl2d")
+region_rect = Rect2(194.14584, 497.85907, 203.9526, 45.76068)
+patch_margin_left = 6
+patch_margin_right = 6
+
+[node name="Margin" type="MarginContainer" parent="MessageBox" unique_id=300140200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="MessageBox/Margin" unique_id=1355340151]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Nama" type="Label" parent="MessageBox/Margin/VBox" unique_id=326727941]
+layout_mode = 2
+
+[node name="Teks" type="Label" parent="MessageBox/Margin/VBox" unique_id=1819528421]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kgfk3")
