@@ -1,39 +1,66 @@
 extends Control
 
-@export var dialog: Array[DialogLine] = []
-@export_file("*.tscn") var scene_berikutnya: String = ""
-@export var kecepatan_teks: float = 30.0  
+@export var kecepatan_teks: float = 30.0
+@export var durasi_transisi: float = 0.6
 
 @onready var gambar: TextureRect = $Gambar
+@onready var gambar_baru: TextureRect = $GambarBaru
 @onready var nama: Label = $MessageBox/Margin/VBox/Nama
 @onready var teks: Label = $MessageBox/Margin/VBox/Teks
 
+var data: CutsceneData
+var dialog: Array[DialogLine] = []
 var index := 0
 var tween: Tween
+var tween_gambar: Tween
 
 
 func _ready() -> void:
-	if dialog.is_empty():
-		push_warning("Dialog kosong, isi di Inspector node Cutscene.")
+	gambar_baru.modulate.a = 0.0
+	data = CutsceneManager.data_aktif
+	if data == null or data.dialog.is_empty():
+		push_warning("Tidak ada data cutscene. Mulai lewat CutsceneManager.mainkan().")
 		return
+	dialog = data.dialog
 	tampilkan()
 
 
 func tampilkan() -> void:
-	var data: DialogLine = dialog[index]
+	var baris: DialogLine = dialog[index]
 
-	if data.gambar:
-		gambar.texture = data.gambar
+	if baris.gambar:
+		ganti_gambar(baris.gambar, baris.pakai_transisi)
 
-	nama.text = data.nama
-	nama.visible = not data.nama.is_empty()
+	nama.text = baris.nama
+	nama.visible = not baris.nama.is_empty()
 
-	teks.text = data.teks
+	teks.text = baris.teks
 	teks.visible_ratio = 0.0
 
-	var durasi := data.teks.length() / kecepatan_teks
+	var durasi := baris.teks.length() / kecepatan_teks
 	tween = create_tween()
 	tween.tween_property(teks, "visible_ratio", 1.0, durasi)
+
+
+func ganti_gambar(tekstur: Texture2D, transisi: bool) -> void:
+	if tween_gambar and tween_gambar.is_running():
+		tween_gambar.kill()
+		gambar.texture = gambar_baru.texture
+		gambar_baru.modulate.a = 0.0
+
+	if not transisi or gambar.texture == null:
+		gambar.texture = tekstur
+		gambar_baru.modulate.a = 0.0
+		return
+
+	gambar_baru.texture = tekstur
+	gambar_baru.modulate.a = 0.0
+	tween_gambar = create_tween()
+	tween_gambar.tween_property(gambar_baru, "modulate:a", 1.0, durasi_transisi)
+	tween_gambar.tween_callback(func():
+		gambar.texture = tekstur
+		gambar_baru.modulate.a = 0.0
+	)
 
 
 func sedang_mengetik() -> bool:
@@ -67,7 +94,7 @@ func lanjut() -> void:
 
 
 func selesai() -> void:
-	if scene_berikutnya.is_empty():
+	if data.scene_berikutnya.is_empty():
 		print("Cutscene selesai")
 	else:
-		get_tree().change_scene_to_file(scene_berikutnya)
+		get_tree().change_scene_to_file(data.scene_berikutnya)

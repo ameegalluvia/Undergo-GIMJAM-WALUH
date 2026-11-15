@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dp11wauxkk4t8"]
+
+[ext_resource type="Script" uid="uid://dukom6wbook4l" path="res://Script/cutscene.gd" id="1_ie6fp"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="3_kgfk3"]
+
+[node name="Cutscene" type="Control" unique_id=587464573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ie6fp")
+
+[node name="Gambar" type="TextureRect" parent="." unique_id=1778793955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GambarBaru" type="TextureRect" parent="." unique_id=950016731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MessageBox" type="NinePatchRect" parent="." unique_id=212530514]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -280.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+region_rect = Rect2(194.14584, 497.85907, 203.9526, 45.76068)
+patch_margin_left = 6
+patch_margin_right = 6
+
+[node name="ColorRect" type="ColorRect" parent="MessageBox" unique_id=54026671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="MessageBox" unique_id=300140200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="MessageBox/Margin" unique_id=1355340151]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Nama" type="Label" parent="MessageBox/Margin/VBox" unique_id=326727941]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Teks" type="Label" parent="MessageBox/Margin/VBox" unique_id=1819528421]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kgfk3")
+autowrap_mode = 3
