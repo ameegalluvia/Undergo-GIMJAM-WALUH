@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://n4m6b2xe66wn"]
 
-[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player.tscn" id="1_it5kt"]
-[ext_resource type="Texture2D" uid="uid://cjwcikgqahup1" path="res://assets/tilesets/rumah/Tileset_16x16_12.png" id="2_a5c3b"]
+[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_6ol20"]
+[ext_resource type="Texture2D" uid="uid://cjwcikgqahup1" path="res://assets/tilesets/rumah/Tileset_16x16_12.png" id="2_424vw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0prb"]
-texture = ExtResource("2_a5c3b")
+texture = ExtResource("2_424vw")
 1:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -138,7 +138,7 @@ tonemap_mode = 3
 
 [node name="KamarMandi" type="Node2D" unique_id=451579698]
 
-[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_it5kt")]
+[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_6ol20")]
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=717876067]
 

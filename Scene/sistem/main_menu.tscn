@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cjrep5abb3q7i"]
+
+[ext_resource type="Script" uid="uid://dw6keirsbvk70" path="res://Script/main_menu.gd" id="1_68h0t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jps1b"]
+font_size = 236
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68h0t"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkcgk"]
+bg_color = Color(0.22094142, 0.22094142, 0.22094133, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd8c4"]
+bg_color = Color(0.36207703, 0.36207706, 0.36207694, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Control" unique_id=454217947]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68h0t")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2090539303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="Main Menu" type="VBoxContainer" parent="MarginContainer" unique_id=509879824]
+layout_mode = 2
+
+[node name="Judul" type="Label" parent="MarginContainer/Main Menu" unique_id=1062440219]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "YUDHA"
+label_settings = SubResource("LabelSettings_jps1b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Main Menu" unique_id=214933999]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 111
+
+[node name="Start" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=713610872]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_68h0t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lkcgk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
+text = "Mulai"
+
+[node name="Settings" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=276570986]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_68h0t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lkcgk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
+text = "Pengaturan"
+
+[node name="Quit" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=661048168]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_68h0t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lkcgk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
+text = "Keluar
+"
+
+[connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
