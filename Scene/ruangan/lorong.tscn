@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://teltjyh7vli8"]
 
-[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player.tscn" id="1_52sey"]
-[ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="2_mxa50"]
+[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_otjb3"]
+[ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="2_hen1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfenq"]
-texture = ExtResource("2_mxa50")
+texture = ExtResource("2_hen1k")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
@@ -133,7 +133,7 @@ tonemap_mode = 3
 
 [node name="Lorong" type="Node2D" unique_id=1891611884]
 
-[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_52sey")]
+[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_otjb3")]
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=253482956]
 

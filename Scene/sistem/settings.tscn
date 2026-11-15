@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bup4av4udmyo7"]
+
+[ext_resource type="Script" uid="uid://be4dtua6oismq" path="res://Script/settings.gd" id="1_ewhy3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtqkj"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewhy3"]
+bg_color = Color(0.22094142, 0.22094142, 0.22094133, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdu77"]
+bg_color = Color(0.36207703, 0.36207706, 0.36207694, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Settings" type="Control" unique_id=872609686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewhy3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=56990469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1483439521]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=677493260]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=950813120]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=111162382]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 33
+text = "Master Volume:"
+
+[node name="Master Volume" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1684090232]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=622230308]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 33
+text = "Musik:"
+
+[node name="Musik" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1997401391]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1597404364]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 33
+text = "Efek Suara:"
+
+[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1188048299]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.05
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1326485102]
+custom_minimum_size = Vector2(0, 72.305)
+layout_mode = 2
+
+[node name="Kembali" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=913994413]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtqkj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ewhy3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jdu77")
+text = "Kembali
+
+"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Master Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Musik" to="." method="_on_musik_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Kembali" to="." method="_on_kembali_pressed"]

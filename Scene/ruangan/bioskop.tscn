@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://ymfj3qvfuvue"]
 
-[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player.tscn" id="1_8yo32"]
-[ext_resource type="Texture2D" uid="uid://tahwiea08ed8" path="res://assets/tilesets/rumah/Tileset_16x16_9.png" id="2_wdmy5"]
-[ext_resource type="Texture2D" uid="uid://c1esq868rn657" path="res://assets/Interiors/13_Conference_Hall_16x16.png" id="3_cywj6"]
-[ext_resource type="Texture2D" uid="uid://bv5bgr68l4gou" path="res://assets/tilesets/rumah/Tileset_16x16_14.png" id="4_1y3mw"]
-[ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="5_udwh1"]
-[ext_resource type="Texture2D" uid="uid://c7qbs7ln2j7o3" path="res://assets/Interiors/23_Television_and_Film_Studio.png" id="6_8rfxf"]
-[ext_resource type="Texture2D" uid="uid://d24n03goroyfg" path="res://assets/Interiors/19_Hospital_16x16.png" id="7_tisdk"]
-[ext_resource type="Script" uid="uid://cywclk1epsdyg" path="res://Scene/door.gd" id="8_wdmy5"]
+[ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_ik5in"]
+[ext_resource type="Texture2D" uid="uid://tahwiea08ed8" path="res://assets/tilesets/rumah/Tileset_16x16_9.png" id="2_1pbgu"]
+[ext_resource type="Texture2D" uid="uid://c1esq868rn657" path="res://assets/Interiors/13_Conference_Hall_16x16.png" id="3_0qfcr"]
+[ext_resource type="Texture2D" uid="uid://bv5bgr68l4gou" path="res://assets/tilesets/rumah/Tileset_16x16_14.png" id="4_h4u87"]
+[ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="5_ame5b"]
+[ext_resource type="Texture2D" uid="uid://c7qbs7ln2j7o3" path="res://assets/Interiors/23_Television_and_Film_Studio.png" id="6_vv1mh"]
+[ext_resource type="Texture2D" uid="uid://d24n03goroyfg" path="res://assets/Interiors/19_Hospital_16x16.png" id="7_ybuub"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yo32"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -16,7 +15,7 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -6, -2, -6, -2, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sxm5"]
-texture = ExtResource("2_wdmy5")
+texture = ExtResource("2_1pbgu")
 1:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -142,7 +141,7 @@ texture = ExtResource("2_wdmy5")
 8:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hspdg"]
-texture = ExtResource("3_cywj6")
+texture = ExtResource("3_0qfcr")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -303,7 +302,7 @@ polygon = PackedVector2Array(-8, -6, 8, -6, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -6, 8, -6, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j63at"]
-texture = ExtResource("4_1y3mw")
+texture = ExtResource("4_h4u87")
 1:0/0 = 0
 3:0/0 = 0
 3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_cug8n")
@@ -504,7 +503,7 @@ texture = ExtResource("4_1y3mw")
 3:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6njx3"]
-texture = ExtResource("5_udwh1")
+texture = ExtResource("5_ame5b")
 1:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -614,7 +613,7 @@ sources/4 = SubResource("TileSetAtlasSource_j63at")
 sources/5 = SubResource("TileSetAtlasSource_6njx3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y2cb"]
-texture = ExtResource("6_8rfxf")
+texture = ExtResource("6_vv1mh")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -783,7 +782,7 @@ texture = ExtResource("6_8rfxf")
 8:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ix4a"]
-texture = ExtResource("3_cywj6")
+texture = ExtResource("3_0qfcr")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -926,7 +925,7 @@ texture = ExtResource("3_cywj6")
 polygon = PackedVector2Array(-4, 2, -4, -1, -2, -2, 1, -2, 4, -1, 4, 2, 4, 8, -4, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2wc2"]
-texture = ExtResource("7_tisdk")
+texture = ExtResource("7_ybuub")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2488,7 +2487,7 @@ polygon = PackedVector2Array(-8, -8, -1, -8, -1, 8, -8, 8)
 polygon = PackedVector2Array(-8, -8, -1, -8, -1, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbas8"]
-texture = ExtResource("2_wdmy5")
+texture = ExtResource("2_1pbgu")
 1:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -2612,13 +2611,13 @@ size = Vector2(27, 23.749878)
 [node name="Node2D" type="Node2D" unique_id=283493292]
 y_sort_enabled = true
 
-[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_8yo32")]
+[node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_ik5in")]
 y_sort_enabled = true
 position = Vector2(564, 321)
 scale = Vector2(0.765, 0.765)
 speed = 40.0
 
-[node name="Camera2D" parent="Player" index="3" unique_id=1908930363]
+[node name="Camera2D" parent="Player" index="4" unique_id=1908930363]
 limit_left = 441
 limit_top = 160
 limit_right = 663
@@ -2649,7 +2648,6 @@ environment = SubResource("Environment_vhcay")
 color = Color(0.8461557, 0.8656783, 0.89739877, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1447917624]
-script = ExtResource("8_wdmy5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1705989264]
 position = Vector2(644, 387)
