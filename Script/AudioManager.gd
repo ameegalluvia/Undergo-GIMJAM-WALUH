@@ -16,7 +16,12 @@ var sfx_players: Array[AudioStreamPlayer] = []
 var max_sfx_players: int = 8
 var sfx_index: int = 0
 
+# Menyimpan path scene sebelumnya agar tombol Back tahu harus kemana
+var previous_scene_path: String = ""
+
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	# 1. Inisialisasi Audio Bus
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")

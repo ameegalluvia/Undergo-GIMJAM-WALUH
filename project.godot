@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://ewl2bf46ew67"
 [autoload]
 
 AudioManager="*uid://csjpygqp52dco"
+PauseMenu="*uid://cjoa35vmonoj1"
 
 [display]
 
