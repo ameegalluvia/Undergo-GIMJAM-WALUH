@@ -63,7 +63,7 @@ size_flags_vertical = 6
 theme_override_constants/separation = 111
 
 [node name="Start" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=713610872]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -74,7 +74,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
 text = "Mulai"
 
 [node name="Settings" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=276570986]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -85,7 +85,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
 text = "Pengaturan"
 
 [node name="Quit" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=661048168]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
