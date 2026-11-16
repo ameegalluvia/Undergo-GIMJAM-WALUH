@@ -10,7 +10,7 @@ func _ready() -> void:
 	AudioManager.play_music(MENU_BGM)
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scene/ruangan/bioskop.tscn")
+	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog.tres"))
 
 
 func _on_settings_pressed() -> void:

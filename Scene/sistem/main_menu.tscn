@@ -53,7 +53,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-text = "YUDHA"
+text = "WALUH"
 label_settings = SubResource("LabelSettings_jps1b")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Main Menu" unique_id=214933999]

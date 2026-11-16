@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://dgs1s1gcbq7kd"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/dialog_line.gd" id="1_i74w4"]
+[ext_resource type="Texture2D" uid="uid://1sxjgs6kubaw" path="res://assets/Gambar/black.png" id="2_3lbo8"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene_data.gd" id="2_c0k0h"]
+[ext_resource type="Texture2D" uid="uid://cghacibv4ygxu" path="res://assets/Gambar/Prototype Pr1.jpg" id="2_yqj4g"]
+[ext_resource type="Texture2D" uid="uid://dris8fdxulrgc" path="res://assets/Gambar/Prototype Pr2.jpg" id="3_3lbo8"]
+
+[sub_resource type="Resource" id="Resource_g0jcx"]
+script = ExtResource("1_i74w4")
+teks = "Jam 9 malam ??? terlelap ketika menonton sebuah film di sebuah bioskop di sebuah pinggiran kota. Dia terlelap karena “mental disorder”nya kambuh dan dia meminum obat penenang. Saat itu, hanya ada beberapa orang di dalam teater. Mereka menonton sebuah film horor dengan rating rendah. ?? mendengar rumor bahwa alasan dibalik kenapa film tersebut adalah karena film-nya sangat mengganggu (disturbing) dan ada rumor bahwa jika seseorang tertidur saat menonton film tersebut, ia akan dibawa ke suatu tempat dimana ada kemungkinan orang tersebut tidak akan kembali. Beberapa kasus orang hilang dikaitkan dengan film ini. Pengadilan dalam beberapa hari kedepan akan memutuskan apakah film tersebut akan ditarik peredarannya. "
+gambar = ExtResource("2_3lbo8")
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xbyje"]
+script = ExtResource("1_i74w4")
+teks = "Tanpa mempedulikan fakta-fakta tersebut, ?? tertarik untuk menonton film tersebut karena dia merasa relate dengan tema yang dibawakan oleh film tersebut (dan mumpung film-nya masih ada)."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_estju"]
+script = ExtResource("1_i74w4")
+nama = "??"
+teks = "Ahh Akhirnya film nya selesai"
+gambar = ExtResource("2_yqj4g")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xhdui"]
+script = ExtResource("1_i74w4")
+nama = "??"
+teks = "Film nya horror sihhh, cuma aku menikmatinyaaa"
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_plcb2"]
+script = ExtResource("1_i74w4")
+nama = "??"
+teks = "Eh udah jam segegini!! sebaiknya aku pulang"
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_vva28"]
+script = ExtResource("1_i74w4")
+teks = "?? berdiri lalu berjalan pergi "
+gambar = ExtResource("3_3lbo8")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_3r6s8"]
+script = ExtResource("1_i74w4")
+nama = "??"
+teks = "Baiklah semoga tidak ada hal aneh "
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_c0k0h")
+dialog = Array[ExtResource("1_i74w4")]([SubResource("Resource_g0jcx"), SubResource("Resource_xbyje"), SubResource("Resource_estju"), SubResource("Resource_xhdui"), SubResource("Resource_plcb2"), SubResource("Resource_vva28"), SubResource("Resource_3r6s8")])
+scene_berikutnya = "uid://ymfj3qvfuvue"
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

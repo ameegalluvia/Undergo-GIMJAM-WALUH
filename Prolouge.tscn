@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://vyyxq8kd4u54"]
+
+[ext_resource type="PackedScene" uid="uid://dp11wauxkk4t8" path="res://Scene/sistem/cutscene.tscn" id="1_kuevo"]
+
+[node name="Cutscene" unique_id=587464573 instance=ExtResource("1_kuevo")]
+
+[node name="MessageBox" parent="." index="1" unique_id=212530514]
+offset_left = 1.0
+offset_top = -280.0
+offset_right = 2.0
+offset_bottom = 6.0
+texture = null
+
+[node name="ColorRect" type="ColorRect" parent="MessageBox" index="0" unique_id=447381603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" parent="MessageBox" index="1" unique_id=300140200]
+offset_left = 4.0
+offset_top = -4.0
+offset_bottom = -4.0
+
+[node name="Teks" parent="MessageBox/Margin/VBox" parent_id_path=PackedInt32Array(1355340151) index="1" unique_id=1819528421]
+autowrap_mode = 3
