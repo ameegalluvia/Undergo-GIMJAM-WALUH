@@ -11,9 +11,6 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog.tres"))
-
-=======
-	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog.tres"))
 	SaveManager.game_baru()
 
 
