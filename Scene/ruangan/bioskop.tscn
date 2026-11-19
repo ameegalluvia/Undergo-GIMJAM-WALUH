@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="5_ame5b"]
 [ext_resource type="Texture2D" uid="uid://c7qbs7ln2j7o3" path="res://assets/Interiors/23_Television_and_Film_Studio.png" id="6_vv1mh"]
 [ext_resource type="Texture2D" uid="uid://d24n03goroyfg" path="res://assets/Interiors/19_Hospital_16x16.png" id="7_ybuub"]
+[ext_resource type="Script" uid="uid://qw5nt8kk52y1" path="res://Scene/ruangan/pintu1.gd" id="8_1pbgu"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="8_ik5in"]
+[ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/arc_setter.gd" id="10_0qfcr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yo32"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2647,11 +2650,20 @@ environment = SubResource("Environment_vhcay")
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting" unique_id=589741135]
 color = Color(0.8461557, 0.8656783, 0.89739877, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1447917624]
+[node name="Pintu" type="Area2D" parent="." unique_id=1447917624]
+script = ExtResource("8_1pbgu")
+target_scene = "uid://teltjyh7vli8"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1705989264]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu" unique_id=1705989264]
 position = Vector2(644, 387)
 scale = Vector2(1, 0.24000001)
 shape = SubResource("RectangleShape2D_jps1b")
+
+[node name="Node" type="Node" parent="." unique_id=2056623569]
+script = ExtResource("8_ik5in")
+
+[node name="arc_setter" type="Node" parent="." unique_id=606065945]
+script = ExtResource("10_0qfcr")
+sanity_aktif = true
 
 [editable path="Player"]
