@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://da45p0mwcbyws"]
+
+[ext_resource type="Script" uid="uid://vtwhvv2jwd63" path="res://Script/Sanity_Bar.gd" id="1_rewi0"]
+[ext_resource type="Script" uid="uid://bct4cdbs01sjg" path="res://Script/Sanity_ui.gd" id="1_yb80y"]
+[ext_resource type="Texture2D" uid="uid://hkgvrabt8h4w" path="res://assets/ui/icons8-32-bit-32.png" id="2_yb80y"]
+
+[node name="UI" type="CanvasLayer" unique_id=1444190182]
+script = ExtResource("1_yb80y")
+
+[node name="Barsanity" type="HBoxContainer" parent="." unique_id=1601222157]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_constants/separation = 4
+script = ExtResource("1_rewi0")
+tekstur_penuh = ExtResource("2_yb80y")
+
+[node name="Kotak1" type="TextureRect" parent="Barsanity" unique_id=827357849]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_yb80y")
+expand_mode = 3
+
+[node name="Kotak2" type="TextureRect" parent="Barsanity" unique_id=367631472]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_yb80y")
+expand_mode = 3
+
+[node name="Kotak3" type="TextureRect" parent="Barsanity" unique_id=1753665521]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_yb80y")
+expand_mode = 3
+
+[node name="Kotak4" type="TextureRect" parent="Barsanity" unique_id=263707271]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_yb80y")
+expand_mode = 3
+
+[node name="Kotak5" type="TextureRect" parent="Barsanity" unique_id=2103387213]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_yb80y")
+expand_mode = 3
