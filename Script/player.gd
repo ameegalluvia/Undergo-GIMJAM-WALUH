@@ -22,3 +22,8 @@ func _physics_process(delta: float) -> void:
 		last_dir = "down" if direction.y > 0 else "up"
 
 	anim.play("walk_" + last_dir)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_1: SanityManager.kurangi(20)
+		if event.keycode == KEY_2: SanityManager.tambah(20)
