@@ -25,10 +25,7 @@ AudioManager="*uid://csjpygqp52dco"
 CutsceneManager="*uid://dnfjgk01ta1m7"
 SaveManager="*uid://dferl5bpakx8i"
 SanityManager="*uid://cu6tgefolk14t"
-=======
 PauseMenu="*uid://cjoa35vmonoj1"
-CutsceneManager="*uid://dnfjgk01ta1m7"
-
 
 [display]
 
