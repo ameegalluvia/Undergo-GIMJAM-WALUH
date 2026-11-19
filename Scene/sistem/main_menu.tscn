@@ -73,6 +73,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lkcgk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
 text = "Mulai"
 
+[node name="Continue" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=2057952097]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_68h0t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lkcgk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wd8c4")
+text = "Continue"
+
 [node name="Settings" type="Button" parent="MarginContainer/Main Menu/HBoxContainer" unique_id=276570986]
 custom_minimum_size = Vector2(300, 85)
 layout_mode = 2
@@ -97,5 +108,6 @@ text = "Keluar
 "
 
 [connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/Main Menu/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://blto6msg6ixjt"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/dialog_line.gd" id="1_nbycl"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene_data.gd" id="2_u4wij"]
+
+[sub_resource type="Resource" id="Resource_1qsmp"]
+script = ExtResource("1_nbycl")
+teks = "Pukul 9 malam, dalam perjalanan pulang, sayup ia mendengar pembicaraan segerombolan remaja. mereka membicarakan film horror baru yang mendapatkan rating yang rendah karena \"disturbing\" bagi banyak orang, saking disturbingnya sampai tersebar rumor bahhwa konon katanya jika tertidur di tengah film maka akan dibawa ke tempat asing dan hilang selamanya. "
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_u4wij")
+dialog = Array[ExtResource("1_nbycl")]([SubResource("Resource_1qsmp")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

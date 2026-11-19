@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_otjb3"]
 [ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="2_hen1k"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="3_hen1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfenq"]
 texture = ExtResource("2_hen1k")
@@ -134,6 +135,7 @@ tonemap_mode = 3
 [node name="Lorong" type="Node2D" unique_id=1891611884]
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_otjb3")]
+position = Vector2(-178, 100)
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=253482956]
 
@@ -152,3 +154,6 @@ environment = SubResource("Environment_52sey")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting" unique_id=461021897]
 color = Color(0.8461557, 0.8656783, 0.89739877, 1)
+
+[node name="Node" type="Node" parent="." unique_id=1283118867]
+script = ExtResource("3_hen1k")
