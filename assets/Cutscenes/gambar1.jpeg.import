@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxxm32lo3b4ce"
-path="res://.godot/imported/gambar2.jpg-afe86af4c9402ac9c061af95e4ccfb8d.ctex"
+uid="uid://b08xr3qf032c7"
+path="res://.godot/imported/gambar1.jpeg-a49f984d14b4592fee4165dbab64d0aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gambar/gambar2.jpg"
-dest_files=["res://.godot/imported/gambar2.jpg-afe86af4c9402ac9c061af95e4ccfb8d.ctex"]
+source_file="res://assets/Cutscenes/gambar1.jpeg"
+dest_files=["res://.godot/imported/gambar1.jpeg-a49f984d14b4592fee4165dbab64d0aa.ctex"]
 
 [params]
 

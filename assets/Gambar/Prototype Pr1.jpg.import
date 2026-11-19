@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b08xr3qf032c7"
-path="res://.godot/imported/gambar1.jpeg-674cb5ec81fc1e3205256e18de10c500.ctex"
+uid="uid://cghacibv4ygxu"
+path="res://.godot/imported/Prototype Pr1.jpg-fa29349899f33ea5e1eb82e1a3bc5120.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gambar/gambar1.jpeg"
-dest_files=["res://.godot/imported/gambar1.jpeg-674cb5ec81fc1e3205256e18de10c500.ctex"]
+source_file="res://assets/Gambar/Prototype Pr1.jpg"
+dest_files=["res://.godot/imported/Prototype Pr1.jpg-fa29349899f33ea5e1eb82e1a3bc5120.ctex"]
 
 [params]
 
