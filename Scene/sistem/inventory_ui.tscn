@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bvu7c818td082"]
+
+[ext_resource type="Script" uid="uid://b58ia6mck05hj" path="res://Script/inventory_ui.gd" id="1_32inm"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="2_gwnre"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=1171523149]
+process_mode = 3
+layer = 50
+script = ExtResource("1_32inm")
+
+[node name="HeldIcon" type="TextureRect" parent="." unique_id=1656945236]
+custom_minimum_size = Vector2(96, 96)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = -149.0
+offset_right = -51.0
+offset_bottom = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PromptLabel" type="Label" parent="." unique_id=35060435]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -11.5
+offset_right = 79.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gwnre")
+theme_override_font_sizes/font_size = 35
+text = "Tekan E untuk ambil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintLabel" type="Label" parent="." unique_id=234448985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -11.5
+offset_right = 79.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.99771535, 1)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gwnre")
+theme_override_font_sizes/font_size = 35
+text = "Tekan TAB atau I membuka Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Overlay" type="Control" parent="." unique_id=360481854]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Overlay" unique_id=30351785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3764706)
+
+[node name="CenterContainer" type="CenterContainer" parent="Overlay" unique_id=1353879740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Overlay/CenterContainer" unique_id=590455956]
+custom_minimum_size = Vector2(640, 560)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Overlay/CenterContainer/Panel" unique_id=577342548]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/CenterContainer/Panel/MarginContainer" unique_id=2128152773]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=2091505874]
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HandLabel" type="Label" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=2009156050]
+layout_mode = 2
+text = "Di Tangan: -"
+
+[node name="Grid" type="GridContainer" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1785110229]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="ActionBar" type="HBoxContainer" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=351618188]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="UseButton" type="Button" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer/ActionBar" unique_id=217171849]
+layout_mode = 2
+text = "Gunakan"
+
+[node name="CancelButton" type="Button" parent="Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer/ActionBar" unique_id=1834361703]
+layout_mode = 2
+text = "Batal"

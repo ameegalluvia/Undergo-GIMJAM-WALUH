@@ -75,9 +75,11 @@ mouse_filter = 2
 
 [node name="Nama" type="Label" parent="MessageBox/Margin/VBox" unique_id=326727941]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_kgfk3")
+theme_override_font_sizes/font_size = 35
 
 [node name="Teks" type="Label" parent="MessageBox/Margin/VBox" unique_id=1819528421]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_kgfk3")
+theme_override_font_sizes/font_size = 35
 autowrap_mode = 3

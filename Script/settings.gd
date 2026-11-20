@@ -3,9 +3,9 @@ extends Control
 signal closed
 var as_overlay := false   # true kalau dibuka dari pause menu
 
-@onready var master_slider: HSlider = $"MarginContainer/VBoxContainer/VBoxContainer/Master Volume"
-@onready var music_slider: HSlider = $MarginContainer/VBoxContainer/VBoxContainer/Musik
-@onready var sfx_slider: HSlider = $MarginContainer/VBoxContainer/VBoxContainer/SFX
+@onready var master_slider: HSlider = $"MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Master Volume"
+@onready var music_slider: HSlider = $MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Musik
+@onready var sfx_slider: HSlider = $MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/SFX
 
 func _ready() -> void:
 	# Pasang nilai awal slider berdasarkan volume saat ini

@@ -20,6 +20,10 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
 		return
 
+	# Inventory menangani ESC-nya sendiri
+	if Inventory.ui_terbuka:
+		return
+
 	# 1. Konfirmasi terbuka: ESC = batal
 	if confirm_overlay.visible:
 		_close_confirm()
@@ -61,7 +65,6 @@ func _ask_confirm(message: String, action: Callable) -> void:
 	pending_action = action
 	message_label.text = message
 	confirm_overlay.show()
-	no_button.grab_focus()   # default ke Batal biar aman
 
 func _close_confirm() -> void:
 	confirm_overlay.hide()
@@ -79,16 +82,17 @@ func _on_resume_pressed() -> void:
 	resume_game()
 
 func _on_restart_pressed() -> void:
-	_ask_confirm("Yakin mau restart? Progres level ini akan hilang.", _do_restart)
+	_ask_confirm("Yakin mau restart? \n Progres level ini akan hilang", _do_restart)
 
 func _do_restart() -> void:
 	resume_game()
 	get_tree().reload_current_scene()
 
 func _on_main_menu_pressed() -> void:
-	_ask_confirm("Yakin kembali ke Main Menu? Progres akan hilang.", _do_main_menu)
+	_ask_confirm("Yakin kembali ke Main Menu? \n Progres akan hilang", _do_main_menu)
 
 func _do_main_menu() -> void:
+	Inventory.reset()
 	resume_game()
 	get_tree().change_scene_to_file("res://Scene/sistem/main_menu.tscn")
 

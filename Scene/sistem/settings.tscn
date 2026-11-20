@@ -1,26 +1,34 @@
 [gd_scene format=3 uid="uid://bup4av4udmyo7"]
 
 [ext_resource type="Script" uid="uid://be4dtua6oismq" path="res://Script/settings.gd" id="1_ewhy3"]
+[ext_resource type="Texture2D" uid="uid://ddb0uyqxh3w8e" path="res://assets/ui/AI_Settings Menu.jpg" id="2_he7h0"]
+[ext_resource type="Texture2D" uid="uid://clvoy425ct5w8" path="res://assets/ui/AI_Settings.png" id="3_cwbsc"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="4_k1hxn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtqkj"]
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jps1b"]
+texture = ExtResource("3_cwbsc")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewhy3"]
-bg_color = Color(0.22094142, 0.22094142, 0.22094133, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rwxtm"]
+color = Color(0.6509804, 0.15294118, 0.21568628, 1)
+thickness = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdu77"]
-bg_color = Color(0.36207703, 0.36207706, 0.36207694, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4016"]
+bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
+border_width_right = 13
+border_width_bottom = 13
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b0tk"]
+bg_color = Color(0.77111435, 0.35467032, 0.3157717, 1)
+border_width_right = 13
+border_width_bottom = 13
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
 
 [node name="Settings" type="Control" unique_id=872609686]
 process_mode = 3
@@ -32,14 +40,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ewhy3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1696210349]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1475801773]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+texture = ExtResource("2_he7h0")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=56990469]
 layout_mode = 1
@@ -53,72 +61,98 @@ theme_override_constants/margin_top = 150
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1483439521]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2108988930]
 layout_mode = 2
+theme_override_constants/separation = -46
+alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=677493260]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=197160644]
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_jps1b")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel" unique_id=605576998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 126
+theme_override_constants/margin_top = 209
+theme_override_constants/margin_right = 121
+theme_override_constants/margin_bottom = 225
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1483439521]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=677493260]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_k1hxn")
+theme_override_font_sizes/font_size = 35
 text = "Settings"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=950813120]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=950813120]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=111162382]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=111162382]
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("4_k1hxn")
 theme_override_font_sizes/font_size = 33
 text = "Master Volume:"
 
-[node name="Master Volume" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1684090232]
+[node name="Master Volume" type="HSlider" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1684090232]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_rwxtm")
 max_value = 1.0
 step = 0.05
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=622230308]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=622230308]
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("4_k1hxn")
 theme_override_font_sizes/font_size = 33
 text = "Musik:"
 
-[node name="Musik" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1997401391]
+[node name="Musik" type="HSlider" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1997401391]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_rwxtm")
 max_value = 1.0
 step = 0.05
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1597404364]
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1597404364]
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("4_k1hxn")
 theme_override_font_sizes/font_size = 33
 text = "Efek Suara:"
 
-[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1188048299]
+[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1188048299]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_rwxtm")
 max_value = 1.0
 step = 0.05
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1326485102]
-custom_minimum_size = Vector2(0, 72.305)
-layout_mode = 2
-
-[node name="Kembali" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=913994413]
-custom_minimum_size = Vector2(300, 0)
+[node name="Kembali" type="Button" parent="MarginContainer/VBoxContainer" unique_id=913994413]
+custom_minimum_size = Vector2(235, 65)
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_gtqkj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ewhy3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jdu77")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_k1hxn")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_d4016")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Kembali
 
 "
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Master Volume" to="." method="_on_master_volume_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Musik" to="." method="_on_musik_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Kembali" to="." method="_on_kembali_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Master Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Musik" to="." method="_on_musik_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Kembali" to="." method="_on_kembali_pressed"]
