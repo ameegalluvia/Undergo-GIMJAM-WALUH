@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://qw5nt8kk52y1" path="res://Scene/ruangan/pintu1.gd" id="8_1pbgu"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="8_ik5in"]
 [ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/arc_setter.gd" id="10_0qfcr"]
+[ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="11_ame5b"]
+[ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="12_vv1mh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yo32"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2665,5 +2667,10 @@ script = ExtResource("8_ik5in")
 [node name="arc_setter" type="Node" parent="." unique_id=606065945]
 script = ExtResource("10_0qfcr")
 sanity_aktif = true
+
+[node name="ItemPickup" parent="." unique_id=1304024789 instance=ExtResource("11_ame5b")]
+position = Vector2(577, 241)
+item = ExtResource("12_vv1mh")
+id_pickup = &"palu"
 
 [editable path="Player"]

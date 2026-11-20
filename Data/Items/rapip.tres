@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://tv02dxdcfjbc"]
+
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/data_item.gd" id="1_e5u5x"]
+
+[resource]
+script = ExtResource("1_e5u5x")
+id = &"rapip"
+nama_tampil = "rapip"
+metadata/_custom_type_script = "uid://ccg3nj837oud5"

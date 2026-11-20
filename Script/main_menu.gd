@@ -1,9 +1,5 @@
 extends Control
 
-@onready var start: Button = $"MarginContainer/Main Menu/HBoxContainer/Start"
-@onready var settings: Button = $"MarginContainer/Main Menu/HBoxContainer/Settings"
-@onready var quit: Button = $"MarginContainer/Main Menu/HBoxContainer/Quit"
-
 const MENU_BGM = preload("res://assets/audio/music/ubed ganteng.mp3")
 
 func _ready() -> void:
@@ -12,7 +8,6 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog.tres"))
 	SaveManager.game_baru()
-
 
 func _on_settings_pressed() -> void:
 	# Simpan bahwa kita berasal dari Main Menu
