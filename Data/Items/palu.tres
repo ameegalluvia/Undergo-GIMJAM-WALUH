@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://ck8ekyfxukstm"]
 
 [ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/data_item.gd" id="1_rwsa7"]
-[ext_resource type="Texture2D" uid="uid://4i72nx4ssoje" path="res://icon.svg" id="1_u5lq4"]
+[ext_resource type="Texture2D" uid="uid://cvab3ei1v53if" path="res://assets/ui/AI_Palu.png" id="1_u5lq4"]
 
 [resource]
 script = ExtResource("1_rwsa7")
 id = &"palu"
-nama_tampil = "palu"
+nama_tampil = "Palu"
 ikon = ExtResource("1_u5lq4")
 deskripsi = "Ini adalah palu untuk menghancurkan nigga"
 metadata/_custom_type_script = "uid://ccg3nj837oud5"
