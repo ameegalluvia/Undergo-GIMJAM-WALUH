@@ -85,6 +85,8 @@ func _on_restart_pressed() -> void:
 	_ask_confirm("Yakin mau restart? \n Progres level ini akan hilang", _do_restart)
 
 func _do_restart() -> void:
+	SaveManager.pulihkan_inventory()
+	InventoryUI.bersihkan_pesan()
 	resume_game()
 	get_tree().reload_current_scene()
 
@@ -93,6 +95,7 @@ func _on_main_menu_pressed() -> void:
 
 func _do_main_menu() -> void:
 	Inventory.reset()
+	InventoryUI.bersihkan_pesan()
 	resume_game()
 	get_tree().change_scene_to_file("res://Scene/sistem/main_menu.tscn")
 

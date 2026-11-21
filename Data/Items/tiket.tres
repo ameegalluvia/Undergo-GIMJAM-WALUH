@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://tv02dxdcfjbc"]
+
+[ext_resource type="Texture2D" uid="uid://bw5v77vs7a5y3" path="res://assets/ui/AI_Popcord Icon.png" id="1_wt6u6"]
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/data_item.gd" id="2_o81ul"]
+
+[resource]
+script = ExtResource("2_o81ul")
+id = &"tiket"
+nama_tampil = "Tiket Bioskop"
+ikon = ExtResource("1_wt6u6")
+metadata/_custom_type_script = "uid://ccg3nj837oud5"

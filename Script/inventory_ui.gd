@@ -13,7 +13,6 @@ const DASAR := "Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer/"
 @onready var label_prompt: Label = $PromptLabel
 @onready var label_petunjuk: Label = $HintLabel
 
-var pemilik_prompt: Node = null       # pickup mana yang sedang menampilkan prompt
 var petunjuk_inventory_sudah := false # petunjuk Inventory cukup muncul sekali
 
 var daftar_slot: Array[SlotInventory] = []
@@ -23,6 +22,8 @@ var antrean_pesan: Array = []
 var pesan_aktif := false
 var sisa_pesan := 0.0
 var tag_aktif: StringName = &""
+
+var prompt_aktif: Dictionary = {}   # pickup -> teks prompt-nya
 
 func _ready() -> void:
 	label_prompt.hide()
@@ -60,9 +61,17 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _process(delta: float) -> void:
-	label_prompt.visible = pemilik_prompt != null and not Inventory.ui_terbuka and not get_tree().paused
+	var sedang_pause := get_tree().paused
 
-	if pesan_aktif:
+	label_prompt.visible = not prompt_aktif.is_empty() \
+		and not Inventory.ui_terbuka \
+		and not sedang_pause \
+		and not pesan_aktif
+
+	# Pesan disembunyikan saat pause, dan hitung mundurnya ikut berhenti
+	label_petunjuk.visible = pesan_aktif and not sedang_pause
+
+	if pesan_aktif and not sedang_pause:
 		sisa_pesan -= delta
 		if sisa_pesan <= 0.0:
 			_pesan_berikutnya()
@@ -106,23 +115,12 @@ func _saat_slot_ditekan(indeks: int) -> void:
 func _saat_gunakan_ditekan() -> void:
 	if indeks_terpilih != -1:
 		Inventory.tukar_dengan_tangan(indeks_terpilih)
-		SaveManager.simpan_inventory()   # BARU
 	_hapus_pilihan()
 
 func _hapus_pilihan() -> void:
 	indeks_terpilih = -1
 	bar_aksi.hide()
 	_segarkan()
-
-# HINT FOR INVENTORY
-func tampilkan_prompt(pemilik: Node, teks: String) -> void:
-	pemilik_prompt = pemilik
-	label_prompt.text = teks
-
-func sembunyikan_prompt(pemilik: Node) -> void:
-	# hanya pemilik prompt yang boleh menyembunyikannya
-	if pemilik_prompt == pemilik:
-		pemilik_prompt = null
 		
 # Tambah pesan ke antrean. Pesan tampil satu per satu sesuai urutan masuk.
 func tampilkan_pesan(teks: String, durasi: float = 3.0, tag: StringName = &"") -> void:
@@ -155,3 +153,24 @@ func umumkan_item_diambil(item: DataItem) -> void:
 	if not petunjuk_inventory_sudah:
 		petunjuk_inventory_sudah = true
 		tampilkan_pesan("Tekan Tab atau I untuk membuka Inventory", 5.0, &"inventory")
+		
+func tampilkan_prompt(pemilik: Node, teks: String) -> void:
+	prompt_aktif[pemilik] = teks
+	_perbarui_teks_prompt()
+
+func sembunyikan_prompt(pemilik: Node) -> void:
+	prompt_aktif.erase(pemilik)
+	_perbarui_teks_prompt()
+
+func _perbarui_teks_prompt() -> void:
+	if prompt_aktif.is_empty():
+		return
+	# yang terakhir masuk area ambil yang ditampilkan
+	label_prompt.text = prompt_aktif.values().back()
+	
+#Buat hapus ui di pause menu nanti	
+func bersihkan_pesan() -> void:
+	antrean_pesan.clear()
+	pesan_aktif = false
+	tag_aktif = &""
+	label_petunjuk.hide()

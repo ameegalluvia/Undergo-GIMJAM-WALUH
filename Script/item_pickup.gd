@@ -45,7 +45,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if Inventory.tambah_item(item):
 		Inventory.id_terambil.append(id_pickup)
-		SaveManager.simpan_inventory()   # BARU
 		InventoryUI.sembunyikan_prompt(self)
 		InventoryUI.umumkan_item_diambil(item)
 		get_viewport().set_input_as_handled()

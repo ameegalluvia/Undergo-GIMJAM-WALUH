@@ -9,7 +9,8 @@ var _label: Label
 var _terpilih := false
 
 func _init() -> void:
-	custom_minimum_size = Vector2(280, 72)
+	custom_minimum_size = Vector2(200, 72)
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	focus_mode = Control.FOCUS_NONE
 
 	var margin := MarginContainer.new()
@@ -55,10 +56,11 @@ func atur_terpilih(nilai: bool) -> void:
 	_segarkan_gaya()
 
 func _segarkan_gaya() -> void:
-	add_theme_stylebox_override("normal", _buat_kotak(BORDER_AKTIF if _terpilih else BORDER_BIASA))
-	add_theme_stylebox_override("hover", _buat_kotak(BORDER_AKTIF))
-	add_theme_stylebox_override("pressed", _buat_kotak(BORDER_AKTIF))
-	add_theme_stylebox_override("disabled", _buat_kotak(Color(0.15, 0.15, 0.15)))
+	if _terpilih:
+		# slot terpilih memakai tampilan "pressed" dari Theme
+		add_theme_stylebox_override("normal", get_theme_stylebox("pressed"))
+	else:
+		remove_theme_stylebox_override("normal")
 
 func _buat_kotak(warna_border: Color) -> StyleBoxFlat:
 	var gaya := StyleBoxFlat.new()

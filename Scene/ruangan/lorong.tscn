@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_otjb3"]
 [ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="2_hen1k"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="3_hen1k"]
+[ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="4_jbsgv"]
+[ext_resource type="Resource" uid="uid://cgulmjxoojsc7" path="res://Data/Items/boneka.tres" id="5_e48xx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfenq"]
 texture = ExtResource("2_hen1k")
@@ -157,3 +159,8 @@ color = Color(0.8461557, 0.8656783, 0.89739877, 1)
 
 [node name="Node" type="Node" parent="." unique_id=1283118867]
 script = ExtResource("3_hen1k")
+
+[node name="Boneka" parent="." unique_id=1304024789 instance=ExtResource("4_jbsgv")]
+position = Vector2(-30, 7)
+item = ExtResource("5_e48xx")
+id_pickup = &"boneka"
