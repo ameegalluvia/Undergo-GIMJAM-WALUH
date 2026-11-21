@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/arc_setter.gd" id="10_0qfcr"]
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="11_ame5b"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="12_vv1mh"]
+[ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket.tres" id="13_vv1mh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yo32"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2668,9 +2669,14 @@ script = ExtResource("8_ik5in")
 script = ExtResource("10_0qfcr")
 sanity_aktif = true
 
-[node name="ItemPickup" parent="." unique_id=1304024789 instance=ExtResource("11_ame5b")]
+[node name="Palu" parent="." unique_id=1304024789 instance=ExtResource("11_ame5b")]
 position = Vector2(577, 241)
 item = ExtResource("12_vv1mh")
 id_pickup = &"palu"
+
+[node name="TiketBioskop" parent="." unique_id=1687458025 instance=ExtResource("11_ame5b")]
+position = Vector2(520, 242)
+item = ExtResource("13_vv1mh")
+id_pickup = &"tiket"
 
 [editable path="Player"]

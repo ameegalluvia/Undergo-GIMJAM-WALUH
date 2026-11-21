@@ -14,6 +14,7 @@ func ada_save() -> bool:
 
 func simpan_scene(scene_path: String) -> void:
 	data["scene"] = scene_path
+	data["inventory"] = Inventory.ke_dictionary()   # snapshot Inventory di titik checkpoint
 	_tulis()
 
 
@@ -26,15 +27,15 @@ func ambil_flag(nama: String, default = false):
 	return data["flag"].get(nama, default)
 
 
-# Dipanggil setelah Inventory berubah (ambil item, swap) supaya langsung tersimpan
-func simpan_inventory() -> void:
-	_tulis()
-
-
 func _tulis() -> void:
-	data["inventory"] = Inventory.ke_dictionary()   # Inventory ikut tertulis
+	# JANGAN isi data["inventory"] di sini lagi. Kalau tidak, snapshot checkpoint
+	# tertimpa Inventory terbaru setiap kali ada set_flag.
 	var f := FileAccess.open(FILE_SAVE, FileAccess.WRITE)
 	f.store_string(JSON.stringify(data))
+	
+# Kembalikan Inventory ke kondisi saat checkpoint (dipakai Restart)
+func pulihkan_inventory() -> void:
+	Inventory.dari_dictionary(data.get("inventory", {}))
 
 
 func muat() -> bool:

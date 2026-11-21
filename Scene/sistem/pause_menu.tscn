@@ -5,8 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://btjq6isbvskwf" path="res://assets/ui/AI_Pause Menu.jpg" id="2_d4016"]
 [ext_resource type="Texture2D" uid="uid://d12yiiir225rx" path="res://assets/ui/AI_Confirm.png" id="4_814o7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4016"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o87p8"]
 bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
+border_width_right = 13
+border_width_bottom = 13
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usb6v"]
+bg_color = Color(0.24894533, 0.07645597, 0.05904405, 1)
 border_width_right = 13
 border_width_bottom = 13
 border_color = Color(0, 0, 0, 1)
@@ -36,7 +45,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ef70"]
-bg_color = Color(0.77254903, 0.3529412, 0.31764707, 1)
+bg_color = Color(0.20799503, 0.2834062, 0.044125006, 1)
 border_width_right = 13
 border_width_bottom = 13
 border_color = Color(0, 0, 0, 1)
@@ -118,7 +127,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_d4016")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Lanjutkan"
 
@@ -128,7 +138,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_d4016")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Ulang"
 
@@ -138,7 +149,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_d4016")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Pengaturan"
 
@@ -148,7 +160,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_d4016")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Main Menu"
 
@@ -159,6 +172,7 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_4b0tk")
 
 [node name="ConfirmOverlay" type="Control" parent="." unique_id=488400402]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -223,8 +237,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_814o7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3ef70")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
 text = "Yes"
 
 [node name="NoButton" type="Button" parent="ConfirmOverlay/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1822685188]
@@ -234,6 +249,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_814o7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3ef70")
 theme_override_styles/hover = SubResource("StyleBoxFlat_raha8")
 text = "No"
 
