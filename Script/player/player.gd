@@ -7,7 +7,12 @@ extends CharacterBody2D
 
 var last_dir := "down"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if Inventory.ui_terbuka or Transisi.sedang_transisi:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	if Inventory.ui_terbuka:
 		velocity = Vector2.ZERO
 		move_and_slide()

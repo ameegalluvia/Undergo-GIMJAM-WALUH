@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _perbarui() -> void:
-	var terisi := SanityManager.jumlah_kotak()
+	var terisi: int = SanityManager.jumlah_kotak()
 	for i in get_child_count():
 		var kotak := get_child(i) as TextureRect
 		if i < terisi:

@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="5_ame5b"]
 [ext_resource type="Texture2D" uid="uid://c7qbs7ln2j7o3" path="res://assets/Interiors/23_Television_and_Film_Studio.png" id="6_vv1mh"]
 [ext_resource type="Texture2D" uid="uid://d24n03goroyfg" path="res://assets/Interiors/19_Hospital_16x16.png" id="7_ybuub"]
-[ext_resource type="Script" uid="uid://qw5nt8kk52y1" path="res://Scene/ruangan/pintu1.gd" id="8_1pbgu"]
-[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="8_ik5in"]
-[ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/arc_setter.gd" id="10_0qfcr"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="8_ik5in"]
+[ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/sanity/arc_setter.gd" id="10_0qfcr"]
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="11_ame5b"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="12_vv1mh"]
 [ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="13_vv1mh"]
+[ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="13_ybuub"]
+[ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="14_xux1v"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yo32"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2612,7 +2613,10 @@ background_mode = 3
 tonemap_mode = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jps1b"]
-size = Vector2(27, 23.749878)
+size = Vector2(26, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxtm"]
+size = Vector2(26, 6)
 
 [node name="Node2D" type="Node2D" unique_id=283493292]
 y_sort_enabled = true
@@ -2653,15 +2657,6 @@ environment = SubResource("Environment_vhcay")
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting" unique_id=589741135]
 color = Color(0.8461557, 0.8656783, 0.89739877, 1)
 
-[node name="Pintu" type="Area2D" parent="." unique_id=1447917624]
-script = ExtResource("8_1pbgu")
-target_scene = "uid://teltjyh7vli8"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu" unique_id=1705989264]
-position = Vector2(644, 387)
-scale = Vector2(1, 0.24000001)
-shape = SubResource("RectangleShape2D_jps1b")
-
 [node name="Node" type="Node" parent="." unique_id=2056623569]
 script = ExtResource("8_ik5in")
 
@@ -2678,5 +2673,26 @@ id_pickup = &"palu"
 position = Vector2(520, 242)
 item = ExtResource("13_vv1mh")
 id_pickup = &"tiket bioskop"
+
+[node name="PintuKeLorong" type="Area2D" parent="." unique_id=34808434]
+script = ExtResource("13_ybuub")
+scene_tujuan = "uid://teltjyh7vli8"
+id_titik_tujuan = &"dari_bioskop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong" unique_id=913463627]
+position = Vector2(644, 384.5)
+shape = SubResource("RectangleShape2D_jps1b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PintuKeLorong" unique_id=1515282405]
+position = Vector2(643, 386)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong/StaticBody2D" unique_id=830499563]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rwxtm")
+
+[node name="TitikDariLorong" type="Marker2D" parent="." unique_id=1240485650]
+position = Vector2(644, 367)
+script = ExtResource("14_xux1v")
+id_titik = &"dari_lorong"
 
 [editable path="Player"]

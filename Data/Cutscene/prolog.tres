@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://dgs1s1gcbq7kd"]
 
-[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/dialog_line.gd" id="1_i74w4"]
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_i74w4"]
 [ext_resource type="Texture2D" uid="uid://1sxjgs6kubaw" path="res://assets/Gambar/black.png" id="2_3lbo8"]
-[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene_data.gd" id="2_c0k0h"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_c0k0h"]
 [ext_resource type="Texture2D" uid="uid://cghacibv4ygxu" path="res://assets/Gambar/Prototype Pr1.jpg" id="2_yqj4g"]
 [ext_resource type="Texture2D" uid="uid://dris8fdxulrgc" path="res://assets/Gambar/Prototype Pr2.jpg" id="3_3lbo8"]
 

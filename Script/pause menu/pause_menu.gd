@@ -19,6 +19,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
 		return
+	if Transisi.sedang_transisi:
+		return
 
 	# Inventory menangani ESC-nya sendiri
 	if Inventory.ui_terbuka:

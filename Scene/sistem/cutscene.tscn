@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dp11wauxkk4t8"]
 
-[ext_resource type="Script" uid="uid://dukom6wbook4l" path="res://Script/cutscene.gd" id="1_ie6fp"]
+[ext_resource type="Script" uid="uid://dukom6wbook4l" path="res://Script/cutscene/cutscene.gd" id="1_ie6fp"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="3_kgfk3"]
 
 [node name="Cutscene" type="Control" unique_id=587464573]

@@ -79,6 +79,8 @@ func _process(delta: float) -> void:
 	ikon_tangan.visible = Inventory.item_dipegang != null and not get_tree().paused
 
 func _boleh_dibuka() -> bool:
+	if Transisi.sedang_transisi:
+		return false
 	if get_tree().paused:   # tidak bisa dibuka saat pause menu aktif
 		return false
 	var scene := get_tree().current_scene
@@ -98,7 +100,7 @@ func tutup() -> void:
 	overlay.hide()
 
 func _segarkan() -> void:
-	var dipegang := Inventory.item_dipegang
+	var dipegang: DataItem = Inventory.item_dipegang
 	ikon_tangan.texture = dipegang.ikon if dipegang else null
 	label_tangan.text = "Di tangan: " + (dipegang.nama_tampil if dipegang else "-")
 

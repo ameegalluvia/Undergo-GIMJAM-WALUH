@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://cgulmjxoojsc7"]
 
 [ext_resource type="Texture2D" uid="uid://bw5v77vs7a5y3" path="res://assets/ui/AI_Popcord Icon.png" id="1_f3dwc"]
-[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/data_item.gd" id="1_td6cw"]
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_td6cw"]
 
 [resource]
 script = ExtResource("1_td6cw")
