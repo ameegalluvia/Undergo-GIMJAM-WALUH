@@ -99,9 +99,19 @@ func play_sfx(stream: AudioStream) -> void:
 	# Ambil pemutar SFX berikutnya dalam antrean (pooling)
 	var sfx = sfx_players[sfx_index]
 	sfx.stream = stream
+	sfx.volume_db = 0.0
 	sfx.play()
 	
 	# Geser index ke pemutar berikutnya, putar kembali ke 0 jika habis
+	sfx_index = (sfx_index + 1) % max_sfx_players
+
+func play_sfx_volume(stream: AudioStream, volume_db: float = 0.0) -> void:
+	if not stream:
+		return
+	var sfx = sfx_players[sfx_index]
+	sfx.stream = stream
+	sfx.volume_db = volume_db
+	sfx.play()
 	sfx_index = (sfx_index + 1) % max_sfx_players
 
 
@@ -120,3 +130,4 @@ func get_volume_linear(bus_name: String) -> float:
 	if bus_idx != -1:
 		return db_to_linear(AudioServer.get_bus_volume_db(bus_idx))
 	return 1.0
+	

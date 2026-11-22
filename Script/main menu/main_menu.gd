@@ -6,7 +6,7 @@ func _ready() -> void:
 	AudioManager.play_music(MENU_BGM)
 
 func _on_start_pressed() -> void:
-	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog.tres"))
+	CutsceneManager.mainkan(preload("res://Data/Cutscene/prolog_Lobby1.tres"))
 	SaveManager.game_baru()
 
 func _on_settings_pressed() -> void:

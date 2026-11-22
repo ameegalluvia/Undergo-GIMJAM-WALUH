@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bn4cni4s41tmq"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_3507w"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_80wn6"]
+
+[sub_resource type="Resource" id="Resource_2vffs"]
+script = ExtResource("1_3507w")
+nama = "Johan"
+teks = "Mbak beli… uhh… 1 tiket buat film [censored]"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_5ex10"]
+script = ExtResource("1_3507w")
+nama = "NPC 3"
+teks = "Baik, ini tiketnya ya mas"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_pkg5e"]
+script = ExtResource("1_3507w")
+nama = "Johan"
+teks = "Baik"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_80wn6")
+dialog = Array[ExtResource("1_3507w")]([SubResource("Resource_2vffs"), SubResource("Resource_5ex10"), SubResource("Resource_pkg5e")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
