@@ -2678,6 +2678,9 @@ id_pickup = &"tiket bioskop"
 script = ExtResource("13_ybuub")
 scene_tujuan = "uid://teltjyh7vli8"
 id_titik_tujuan = &"dari_bioskop"
+terkunci = true
+item_dibutuhkan = ExtResource("13_vv1mh")
+pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong" unique_id=913463627]
 position = Vector2(644, 384.5)

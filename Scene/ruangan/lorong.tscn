@@ -7,6 +7,11 @@
 [ext_resource type="Resource" uid="uid://cgulmjxoojsc7" path="res://Data/Items/boneka.tres" id="5_e48xx"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="6_cr6s7"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_nkpds"]
+[ext_resource type="Texture2D" uid="uid://bay1m032qmvl0" path="res://assets/sprites/AI_Poster.jpg" id="8_nkpds"]
+[ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="9_3glre"]
+[ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="10_d6oso"]
+[ext_resource type="Texture2D" uid="uid://cdn7w1roj0u1e" path="res://assets/sprites/AI_SaklarMati.png" id="10_tq1cs"]
+[ext_resource type="Texture2D" uid="uid://1fm0cb52i3t4" path="res://assets/sprites/AI_SaklarNyala.png" id="11_jsmbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfenq"]
 texture = ExtResource("2_hen1k")
@@ -136,11 +141,26 @@ sources/1 = SubResource("TileSetAtlasSource_cfenq")
 background_mode = 3
 tonemap_mode = 3
 
+[sub_resource type="Gradient" id="Gradient_d6oso"]
+offsets = PackedFloat32Array(0, 0.67870724)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jps1b"]
+gradient = SubResource("Gradient_d6oso")
+fill = 1
+fill_from = Vector2(0.48634812, 0.49658704)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxtm"]
 size = Vector2(12, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cr6s7"]
 size = Vector2(7, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3glre"]
+size = Vector2(20, 23.47138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jps1b"]
+size = Vector2(20, 23.291172)
 
 [node name="Lorong" type="Node2D" unique_id=1891611884]
 
@@ -164,6 +184,11 @@ environment = SubResource("Environment_52sey")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting" unique_id=461021897]
 color = Color(0.8461557, 0.8656783, 0.89739877, 1)
+
+[node name="LampuLorong" type="PointLight2D" parent="Lighting" unique_id=1380728147]
+position = Vector2(-792.1568, -422.22223)
+scale = Vector2(2.9898515, 2.9898515)
+texture = SubResource("GradientTexture2D_jps1b")
 
 [node name="Node" type="Node" parent="." unique_id=1283118867]
 script = ExtResource("3_hen1k")
@@ -194,3 +219,43 @@ shape = SubResource("RectangleShape2D_cr6s7")
 position = Vector2(-155, 113)
 script = ExtResource("7_nkpds")
 id_titik = &"dari_bioskop"
+
+[node name="PuzzlePoster" type="Node2D" parent="." unique_id=1652402261]
+position = Vector2(-44.999996, -30.000004)
+scale = Vector2(0.014250426, 0.014250427)
+
+[node name="Poster" type="Sprite2D" parent="PuzzlePoster" unique_id=1185936815]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("8_nkpds")
+
+[node name="SaklarRahasia" type="Area2D" parent="PuzzlePoster" unique_id=1995690341 node_paths=PackedStringArray("sembunyikan", "tampilkan")]
+script = ExtResource("9_3glre")
+teks_prompt = "Tekan E untuk menyalakan saklar"
+sembunyikan = [NodePath("SaklarMati")]
+tampilkan = [NodePath("../../Lighting/LampuLorong"), NodePath("SaklarNyala")]
+
+[node name="SaklarMati" type="Sprite2D" parent="PuzzlePoster/SaklarRahasia" unique_id=1576205908]
+scale = Vector2(1.931153, 1.931153)
+texture = ExtResource("10_tq1cs")
+
+[node name="SaklarNyala" type="Sprite2D" parent="PuzzlePoster/SaklarRahasia" unique_id=1996666771]
+scale = Vector2(2.1952822, 2.1952822)
+texture = ExtResource("11_jsmbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePoster/SaklarRahasia" unique_id=92722637]
+position = Vector2(-0.00024414063, 162.74414)
+scale = Vector2(93.76323, 93.76322)
+shape = SubResource("RectangleShape2D_3glre")
+
+[node name="PuzzlePoster" type="Area2D" parent="PuzzlePoster" unique_id=1519047144 node_paths=PackedStringArray("sembunyikan", "tampilkan")]
+script = ExtResource("9_3glre")
+item_dibutuhkan = ExtResource("10_d6oso")
+habiskan_item = false
+teks_prompt = "Tekan E untuk menghancurkan poster"
+sembunyikan = [NodePath("../Poster")]
+tampilkan = [NodePath("../SaklarRahasia")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePoster/PuzzlePoster" unique_id=1810144458]
+position = Vector2(0, 156.38745)
+scale = Vector2(95.034546, 95.03453)
+shape = SubResource("RectangleShape2D_jps1b")
