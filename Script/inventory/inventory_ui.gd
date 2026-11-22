@@ -126,6 +126,12 @@ func _hapus_pilihan() -> void:
 		
 # Tambah pesan ke antrean. Pesan tampil satu per satu sesuai urutan masuk.
 func tampilkan_pesan(teks: String, durasi: float = 3.0, tag: StringName = &"") -> void:
+	# Abaikan kalau pesan yang sama sedang tampil atau sudah mengantre
+	if pesan_aktif and label_petunjuk.text == teks:
+		return
+	for p in antrean_pesan:
+		if p["teks"] == teks:
+			return
 	antrean_pesan.append({"teks": teks, "durasi": durasi, "tag": tag})
 	if not pesan_aktif:
 		_pesan_berikutnya()

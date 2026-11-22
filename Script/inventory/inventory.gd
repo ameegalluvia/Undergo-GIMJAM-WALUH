@@ -7,6 +7,7 @@ const MAKS_SLOT := 8
 var item_dipegang: DataItem = null
 var daftar_item: Array[DataItem] = []
 var id_terambil: Array[StringName] = []   # supaya item tidak muncul lagi setelah diambil
+var id_terbuka: Array[StringName] = []   # pintu dan objek puzzle yang sudah dibuka
 var ui_terbuka := false
 
 func tambah_item(item: DataItem) -> bool:
@@ -44,6 +45,7 @@ func reset() -> void:
 	item_dipegang = null
 	daftar_item.clear()
 	id_terambil.clear()
+	id_terbuka.clear()
 	berubah.emit()
 
 func _urutkan_item() -> void:
@@ -58,6 +60,7 @@ func ke_dictionary() -> Dictionary:
 		"item_dipegang": item_dipegang.resource_path if item_dipegang else "",
 		"daftar_item": daftar_item.map(func(i: DataItem) -> String: return i.resource_path),
 		"id_terambil": id_terambil.map(func(s: StringName) -> String: return String(s)),
+		"id_terbuka": id_terbuka.map(func(s: StringName) -> String: return String(s)),   # BARU
 	}
 
 # Pulihkan isi Inventory dari data hasil load
@@ -65,6 +68,10 @@ func dari_dictionary(data: Dictionary) -> void:
 	item_dipegang = null
 	daftar_item.clear()
 	id_terambil.clear()
+	id_terbuka.clear()
+	
+	for id in data.get("id_terbuka", []):
+		id_terbuka.append(StringName(id))
 
 	var path_dipegang: String = data.get("item_dipegang", "")
 	if path_dipegang != "" and ResourceLoader.exists(path_dipegang):
@@ -86,3 +93,13 @@ func dari_dictionary(data: Dictionary) -> void:
 		InventoryUI.petunjuk_inventory_sudah = true
 
 	berubah.emit()
+
+#MEKANIK PALU DAN TIKET
+# True kalau item ada di tangan atau di tas
+func punya_item(id_item: StringName) -> bool:
+	if sedang_memegang(id_item):
+		return true
+	for item in daftar_item:
+		if item.id == id_item:
+			return true
+	return false
