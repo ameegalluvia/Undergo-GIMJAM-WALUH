@@ -1,8 +1,9 @@
 extends HBoxContainer
 
 @export var tekstur_penuh: Texture2D
-@export var tekstur_kosong: Texture2D   # boleh dikosongkan
-@export var warna_kosong := Color(0.2, 0.2, 0.2, 0.5)  # dipakai kalau tekstur_kosong kosong
+@export var tekstur_kosong: Texture2D   # boleh kosong
+@export var warna_kosong := Color(0.2, 0.2, 0.2, 0.5)
+
 
 
 func _ready() -> void:

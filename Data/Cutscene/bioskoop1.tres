@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://b61t64bjdqjuu"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_2e88j"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_st4x5"]
+
+[resource]
+script = ExtResource("2_st4x5")
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

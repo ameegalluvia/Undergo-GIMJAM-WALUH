@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://cj0y3k471anm8"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_usx58"]
+[ext_resource type="Texture2D" uid="uid://1sxjgs6kubaw" path="res://assets/Gambar/black.png" id="2_kk1d7"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_rmyqc"]
+
+[sub_resource type="Resource" id="Resource_kk1d7"]
+script = ExtResource("1_usx58")
+nama = "NPC 1"
+teks = "Kayaknya aku belum pernah dengar film ini deh. [Censored], menurut kamu gimana? 
+"
+gambar = ExtResource("2_kk1d7")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_vf638"]
+script = ExtResource("1_usx58")
+nama = "NPC 2"
+teks = "Eh, kamu gila ya!? Banyak orang hilang gara gara film ini tau. Lagian, film ini tuh gak worth it banget buat ditonton. Cuman anak edgy yang suka film ini.”
+*Johan mulai penasaran dan menguping, pura pura melihat-lihat poster di bioskop. Dia memberikan ‘side-eye’ kepada orang orang tersebut
+"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_mb2s7"]
+script = ExtResource("1_usx58")
+nama = "NPC 1 "
+teks = "Masa sih?"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_rghsj"]
+script = ExtResource("1_usx58")
+nama = "NPC 2"
+teks = "Sumpah! Suer deh! Liat aja tuh ratingnya"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_mx5e0"]
+script = ExtResource("1_usx58")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_vnuy7"]
+script = ExtResource("1_usx58")
+nama = "NPC 1"
+teks = "... Bener juga ya… Tapi aku nggak percaya soal banyak orang yang hilang gara gara nonton film ini. Jangan terlalu dimistis-mistiskan lah."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_g7i5e"]
+script = ExtResource("1_usx58")
+nama = "NPC 2"
+teks = "Padahal tadi banyak banget loh poster-poster orang hilang sebelum kita masuk bioskop"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_2bqkw"]
+script = ExtResource("1_usx58")
+nama = "NPC 1"
+teks = "Ih, jangan buat takut napa!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xhbhh"]
+script = ExtResource("1_usx58")
+nama = "NPC 2"
+teks = "Makanya, ayo kita keluar. Bioskop ini tuh cuman nayangin film-film gak bener”
+*Kedua orang tersebut pergi meninggalkan bioskop. MC mencuri kesempatan ini untuk melihat-lihat poster film tersebut"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ju6is"]
+script = ExtResource("1_usx58")
+nama = "Johan"
+teks = "Hmm… Rating jelek ya…"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_aefq5"]
+script = ExtResource("1_usx58")
+teks = "*Johan mengeluarkan handphonenya dan mencari tahu tentang film tersebut*
+"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_j316a"]
+script = ExtResource("1_usx58")
+nama = "Johan"
+teks = "Aneh banget, orang-orang bilang ini film yang mengganggu padahal premisnya menarik banget. Mereka nggak bisa mengerti seni"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_fmwa5"]
+script = ExtResource("1_usx58")
+teks = "*Johan diam sesaat*"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_kjmt6"]
+script = ExtResource("1_usx58")
+nama = "Johan"
+teks = "Lagian, siapa sih yang percaya sama hal-hal mistis di zaman sekarang"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_rmyqc")
+dialog = Array[ExtResource("1_usx58")]([SubResource("Resource_kk1d7"), SubResource("Resource_vf638"), SubResource("Resource_mb2s7"), SubResource("Resource_rghsj"), SubResource("Resource_mx5e0"), SubResource("Resource_vnuy7"), SubResource("Resource_g7i5e"), SubResource("Resource_2bqkw"), SubResource("Resource_xhbhh"), SubResource("Resource_ju6is"), SubResource("Resource_aefq5"), SubResource("Resource_j316a"), SubResource("Resource_fmwa5"), SubResource("Resource_kjmt6")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

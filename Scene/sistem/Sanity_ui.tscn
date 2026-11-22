@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://vtwhvv2jwd63" path="res://Script/sanity/Sanity_Bar.gd" id="1_rewi0"]
 [ext_resource type="Script" uid="uid://bct4cdbs01sjg" path="res://Script/sanity/Sanity_ui.gd" id="1_yb80y"]
 [ext_resource type="Texture2D" uid="uid://hkgvrabt8h4w" path="res://assets/ui/icons8-32-bit-32.png" id="2_yb80y"]
+[ext_resource type="Shader" uid="uid://c17cxm57vqvf7" path="res://shaders/glitch.gdshader" id="4_qtxxf"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="5_3wqp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa2nc"]
+shader = ExtResource("4_qtxxf")
+shader_parameter/intensitas = 0.0
+shader_parameter/benih = 0.0
 
 [node name="UI" type="CanvasLayer" unique_id=1444190182]
 script = ExtResource("1_yb80y")
@@ -45,3 +52,34 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("2_yb80y")
 expand_mode = 3
+
+[node name="Glitch" type="ColorRect" parent="." unique_id=1050990905]
+visible = false
+material = SubResource("ShaderMaterial_pa2nc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Subtitle" type="Label" parent="." unique_id=2098600940]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -144.0
+offset_right = 2.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_3wqp3")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

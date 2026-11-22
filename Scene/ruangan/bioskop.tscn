@@ -2627,7 +2627,7 @@ position = Vector2(564, 321)
 scale = Vector2(0.765, 0.765)
 speed = 40.0
 
-[node name="Camera2D" parent="Player" index="4" unique_id=1908930363]
+[node name="Camera2D" parent="Player" index="5" unique_id=1908930363]
 limit_left = 441
 limit_top = 160
 limit_right = 663
