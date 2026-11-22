@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctuvvdtvy71j4"]
 
-[ext_resource type="Script" uid="uid://dhtkmslofpn0l" path="res://Script/player.gd" id="1_wfpis"]
+[ext_resource type="Script" uid="uid://dhtkmslofpn0l" path="res://Script/player/player.gd" id="1_wfpis"]
 [ext_resource type="Texture2D" uid="uid://debhhtswwlqcm" path="res://assets/sprites/johan.png" id="2_hh5ll"]
 [ext_resource type="PackedScene" uid="uid://da45p0mwcbyws" path="res://Scene/sistem/Sanity_ui.tscn" id="3_wfpis"]
 

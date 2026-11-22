@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjoa35vmonoj1"]
 
-[ext_resource type="Script" uid="uid://b4a1wfbhethjv" path="res://Script/pause_menu.gd" id="1_wk7bi"]
+[ext_resource type="Script" uid="uid://b4a1wfbhethjv" path="res://Script/pause menu/pause_menu.gd" id="1_wk7bi"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="2_4b0tk"]
 [ext_resource type="Texture2D" uid="uid://btjq6isbvskwf" path="res://assets/ui/AI_Pause Menu.jpg" id="2_d4016"]
 [ext_resource type="Texture2D" uid="uid://d12yiiir225rx" path="res://assets/ui/AI_Confirm.png" id="4_814o7"]

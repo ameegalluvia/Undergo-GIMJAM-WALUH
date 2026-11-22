@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_otjb3"]
 [ext_resource type="Texture2D" uid="uid://rxwucvax3nf8" path="res://assets/tilesets/rumah/Tileset_16x16_19.png" id="2_hen1k"]
-[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Scene/ruangan/auto_checkpoint.gd" id="3_hen1k"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="3_hen1k"]
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="4_jbsgv"]
 [ext_resource type="Resource" uid="uid://cgulmjxoojsc7" path="res://Data/Items/boneka.tres" id="5_e48xx"]
+[ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="6_cr6s7"]
+[ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_nkpds"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfenq"]
 texture = ExtResource("2_hen1k")
@@ -134,10 +136,16 @@ sources/1 = SubResource("TileSetAtlasSource_cfenq")
 background_mode = 3
 tonemap_mode = 3
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxtm"]
+size = Vector2(12, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr6s7"]
+size = Vector2(7, 32)
+
 [node name="Lorong" type="Node2D" unique_id=1891611884]
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_otjb3")]
-position = Vector2(-178, 100)
+position = Vector2(-148, 81)
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=253482956]
 
@@ -164,3 +172,25 @@ script = ExtResource("3_hen1k")
 position = Vector2(-30, 7)
 item = ExtResource("5_e48xx")
 id_pickup = &"boneka"
+
+[node name="PintuKeLorong" type="Area2D" parent="." unique_id=978403013]
+position = Vector2(-176, 111)
+script = ExtResource("6_cr6s7")
+scene_tujuan = "uid://ymfj3qvfuvue"
+id_titik_tujuan = &"dari_lorong"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong" unique_id=1726008816]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_rwxtm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PintuKeLorong" unique_id=295143984]
+position = Vector2(-4, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong/StaticBody2D" unique_id=1418201247]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_cr6s7")
+
+[node name="TitikDariLorong" type="Marker2D" parent="." unique_id=313123350]
+position = Vector2(-155, 113)
+script = ExtResource("7_nkpds")
+id_titik = &"dari_bioskop"
