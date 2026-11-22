@@ -225,13 +225,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8yo32"]
-radius = 5.3851647
+radius = 8.246211
 
 [node name="Player" type="CharacterBody2D" unique_id=1336257654 groups=["player"]]
 script = ExtResource("1_wfpis")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1456221449]
-position = Vector2(-2.2888184e-05, 6.535923)
+position = Vector2(-0.104583755, -66.10458)
 scale = Vector2(2.7467318, 2.7467318)
 color = Color(0.66162944, 0.6616294, 0.6616294, 1)
 shadow_enabled = true
@@ -241,18 +241,16 @@ shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_xa75v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1696300319]
+position = Vector2(-0.10456085, -72.64047)
 sprite_frames = SubResource("SpriteFrames_ivevv")
 animation = &"idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833429169]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_8yo32")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1704558047]
-position = Vector2(0, 3)
+position = Vector2(-0.10456085, -66.64047)
 shape = SubResource("CircleShape2D_8yo32")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908930363]
+position = Vector2(-0.10456085, -72.64047)
 zoom = Vector2(6.95, 6.95)
 
 [node name="UI" parent="." unique_id=1444190182 instance=ExtResource("3_wfpis")]
