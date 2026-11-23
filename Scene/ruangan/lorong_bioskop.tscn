@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="5_j7duh"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
+[ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/sanity/arc_setter.gd" id="8_fkfb6"]
+[ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="9_o6lwv"]
+[ext_resource type="Resource" uid="uid://de6u08jsdkqou" path="res://Data/Items/minuman.tres" id="10_vbob3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwib2"]
 texture = ExtResource("1_uwib2")
@@ -3008,5 +3011,14 @@ position = Vector2(0, 40)
 script = ExtResource("5_hhfid")
 id_titik = &"dari_lobby_bioskop"
 
+[node name="arcsetter" type="Node" parent="." unique_id=972132576]
+script = ExtResource("8_fkfb6")
+sanity_aktif = true
+
 [node name="AutoCheckpoint" type="Node" parent="." unique_id=162909382]
 script = ExtResource("7_j7duh")
+
+[node name="ItemPickup" parent="." unique_id=1304024789 instance=ExtResource("9_o6lwv")]
+position = Vector2(-17, -340)
+item = ExtResource("10_vbob3")
+id_pickup = &"obat"

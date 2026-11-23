@@ -37,3 +37,17 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_1: SanityManager.kurangi(20)
 		if event.keycode == KEY_2: SanityManager.tambah(20)
+	if event.is_action_pressed("pakai_item") and not Inventory.ui_terbuka:
+		Inventory.pakai_item_dipegang()
+
+# Dipanggil scene saat Johan digerakkan otomatis
+func main_jalan(arah: Vector2) -> void:
+	if abs(arah.x) > abs(arah.y):
+		last_dir = "right" if arah.x > 0 else "left"
+	else:
+		last_dir = "down" if arah.y > 0 else "up"
+	anim.play("walk_" + last_dir)
+
+
+func main_diam() -> void:
+	anim.play("idle_" + last_dir)
