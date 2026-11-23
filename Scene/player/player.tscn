@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhtkmslofpn0l" path="res://Script/player/player.gd" id="1_wfpis"]
 [ext_resource type="Texture2D" uid="uid://tcij73pp1jju" path="res://assets/sprites/Johan/johan_glitched_sprite.png" id="2_bu2mm"]
 [ext_resource type="Texture2D" uid="uid://drahalyxu8r52" path="res://assets/sprites/Johan/johan_sprite.png" id="2_hh5ll"]
+[ext_resource type="AudioStream" uid="uid://g1vn2o1ettva" path="res://assets/audio/sfx/footstep.wav" id="2_tclsa"]
 [ext_resource type="PackedScene" uid="uid://da45p0mwcbyws" path="res://Scene/sistem/Sanity_ui.tscn" id="3_wfpis"]
 [ext_resource type="Script" uid="uid://cwyiefranyuib" path="res://Script/sanity/sanity_effects.gd" id="4_hh5ll"]
 
@@ -475,9 +476,12 @@ radius = 8.246211
 
 [node name="Player" type="CharacterBody2D" unique_id=1336257654 groups=["player"]]
 script = ExtResource("1_wfpis")
+suara_langkah = Array[AudioStream]([ExtResource("2_tclsa")])
+interval_langkah = 0.36
+volume_langkah_db = -10.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1456221449]
-position = Vector2(-0.104583755, -66.10458)
+position = Vector2(-0.104583755, -65.10458)
 scale = Vector2(2.7467318, 2.7467318)
 color = Color(0.66162944, 0.6616294, 0.6616294, 1)
 shadow_enabled = true
@@ -487,7 +491,7 @@ shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_xa75v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1696300319]
-position = Vector2(-0.10456085, -72.64047)
+position = Vector2(-0.10456085, -71.64047)
 sprite_frames = SubResource("SpriteFrames_ivevv")
 animation = &"Jalan"
 
@@ -497,11 +501,11 @@ sprite_frames = SubResource("SpriteFrames_c508m")
 animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833429169]
-position = Vector2(-0.10456085, -66.64047)
+position = Vector2(-0.10456085, -65.64047)
 shape = SubResource("CircleShape2D_8yo32")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908930363]
-position = Vector2(-0.10456085, -72.64047)
+position = Vector2(-0.10456085, -71.64047)
 zoom = Vector2(6.95, 6.95)
 
 [node name="UI" parent="." unique_id=1444190182 instance=ExtResource("3_wfpis")]

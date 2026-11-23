@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://t1b062m451fp"
+uid="uid://g1vn2o1ettva"
 path="res://.godot/imported/footstep.wav-228616d123bbbc974b083556f8943754.sample"
 
 [deps]
@@ -13,11 +13,11 @@ dest_files=["res://.godot/imported/footstep.wav-228616d123bbbc974b083556f8943754
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
-edit/normalize=false
+edit/normalize=true
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
