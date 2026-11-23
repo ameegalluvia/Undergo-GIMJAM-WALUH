@@ -103,3 +103,14 @@ func punya_item(id_item: StringName) -> bool:
 		if item.id == id_item:
 			return true
 	return false
+
+# Pakai item yang sedang dipegang. Dipanggil dari tombol/input "pakai".
+func pakai_item_dipegang() -> void:
+	if item_dipegang == null:
+		return
+	if item_dipegang.heal_sanity > 0.0:
+		if SanityManager.pakai_obat(item_dipegang):
+			InventoryUI.tampilkan_pesan("Sanity pulih +%d" % int(item_dipegang.heal_sanity), 2.0)
+			habiskan_item_dipegang()
+		else:
+			InventoryUI.tampilkan_pesan("Tidak perlu sekarang.", 2.0)
