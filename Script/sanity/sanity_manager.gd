@@ -74,3 +74,11 @@ func _hitung_state() -> int:
 	if nilai <= 60.0:
 		return State.KUNING
 	return State.HIJAU
+
+func pakai_obat(item: DataItem) -> bool:
+	if item == null or item.heal_sanity <= 0.0:
+		return false
+	if not aktif or nilai >= MAKS:
+		return false
+	tambah(item.heal_sanity)
+	return true

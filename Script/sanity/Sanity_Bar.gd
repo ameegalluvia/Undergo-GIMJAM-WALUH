@@ -1,26 +1,29 @@
-extends HBoxContainer
+extends TextureRect
 
-@export var tekstur_penuh: Texture2D
-@export var tekstur_kosong: Texture2D   # boleh kosong
-@export var warna_kosong := Color(0.2, 0.2, 0.2, 0.5)
+@export var sheet: Texture2D   # seret Sanity_Bar_.png di Inspector
 
+# Region tiap kondisi, indeks = jumlah kotak (0 sampai 5)
+const REGION := [
+	Rect2(645, 803, 445, 115),  # 0 kotak
+	Rect2(645, 645, 445, 115),  # 1
+	Rect2(645, 475, 445, 115),  # 2
+	Rect2(645, 313, 445, 115),  # 3
+	Rect2(645, 152, 445, 115),  # 4
+	Rect2(645, 10, 445, 115),   # 5
+]
+
+var atlas: Array[AtlasTexture] = []
 
 
 func _ready() -> void:
+	for r in REGION:
+		var a := AtlasTexture.new()
+		a.atlas = sheet
+		a.region = r
+		atlas.append(a)
 	SanityManager.sanity_berubah.connect(func(_n): _perbarui())
 	_perbarui()
 
 
 func _perbarui() -> void:
-	var terisi: int = SanityManager.jumlah_kotak()
-	for i in get_child_count():
-		var kotak := get_child(i) as TextureRect
-		if i < terisi:
-			kotak.texture = tekstur_penuh
-			kotak.modulate = Color.WHITE
-		elif tekstur_kosong:
-			kotak.texture = tekstur_kosong
-			kotak.modulate = Color.WHITE
-		else:
-			kotak.texture = tekstur_penuh
-			kotak.modulate = warna_kosong
+	texture = atlas[clampi(SanityManager.jumlah_kotak(), 0, 5)]

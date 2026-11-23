@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://5n0lcd827cor"]
+
+[ext_resource type="Texture2D" uid="uid://ccqijw4m3hhga" path="res://assets/massagebox/Dialogue Box.png" id="1_t7ws5"]
+[ext_resource type="Script" uid="uid://dui0ye725gmgm" path="res://Script/cutscene/dialog_overlay.gd" id="1_xdl64"]
+
+[node name="DialogOverlay" type="CanvasLayer" unique_id=1344829994]
+script = ExtResource("1_xdl64")
+
+[node name="MessageBox" type="TextureRect" parent="." unique_id=839681051]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_t7ws5")
+
+[node name="Potret" type="TextureRect" parent="MessageBox" unique_id=1901837433]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 666.0
+offset_right = 424.0
+offset_bottom = 847.0
+
+[node name="Nama" type="Label" parent="MessageBox" unique_id=899853160]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 668.0
+offset_right = 681.0
+offset_bottom = 721.0
+
+[node name="Teks" type="Label" parent="MessageBox" unique_id=1379930178]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 746.0
+offset_right = 1116.0
+offset_bottom = 847.0
+autowrap_mode = 3

@@ -2,8 +2,6 @@ extends Node
 
 # --- Referensi ---
 @onready var glitch: ColorRect = $"../UI/Glitch"
-@onready var blackout: ColorRect = $"../UI/Blackout"
-
 # --- Pengaturan (Inspector) ---
 @export var kurangi_kedip := false   # mode aman: efek lebih lemah
 
@@ -178,8 +176,6 @@ func _on_mati() -> void:
 	_hentikan_glitch()
 	_set_johan_glitch(true)   
 	AudioManager.play_sfx(suara_mati)
-	if blackout:
-		create_tween().tween_property(blackout, "color:a", 1.0, 1.0)
 	await get_tree().create_timer(2.0).timeout
 	# TODO: game over / respawn, misalnya SaveManager.lanjutkan()
 

@@ -16,6 +16,22 @@ gradient = SubResource("Gradient_8yo32")
 fill = 1
 fill_from = Vector2(0.4982639, 0.5295139)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh5ll"]
+atlas = ExtResource("2_hh5ll")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u72gd"]
+atlas = ExtResource("2_hh5ll")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaymq"]
+atlas = ExtResource("2_hh5ll")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e5xn"]
+atlas = ExtResource("2_hh5ll")
+region = Rect2(0, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tclsa"]
 atlas = ExtResource("2_hh5ll")
 region = Rect2(32, 0, 32, 32)
@@ -114,6 +130,23 @@ region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivevv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh5ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u72gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaymq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e5xn")
+}],
+"loop": 1,
+"name": &"Jalan",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tclsa")
@@ -460,7 +493,7 @@ texture = SubResource("GradientTexture2D_xa75v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1696300319]
 position = Vector2(-0.10456085, -71.64047)
 sprite_frames = SubResource("SpriteFrames_ivevv")
-animation = &"walk_down"
+animation = &"Jalan"
 
 [node name="JohanGlitch" type="AnimatedSprite2D" parent="." unique_id=894572589]
 position = Vector2(0, -72)
