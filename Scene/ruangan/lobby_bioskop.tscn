@@ -3085,3 +3085,6 @@ id_titik = &"dari_lorong_bioskop"
 
 [node name="AutoCheckpoint" type="Node" parent="." unique_id=149926317]
 script = ExtResource("9_0e631")
+
+[node name="Shaders" type="CanvasModulate" parent="." unique_id=1677114788]
+color = Color(0.43137255, 0.43137255, 0.42352942, 1)

@@ -25,7 +25,10 @@ var tag_aktif: StringName = &""
 
 var prompt_aktif: Dictionary = {}   # pickup -> teks prompt-nya
 
+const KECEPATAN_FADE_PROMPT := 6.0
+
 func _ready() -> void:
+	label_prompt.modulate.a = 0.0
 	label_prompt.hide()
 	label_petunjuk.hide()
 	
@@ -63,12 +66,18 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	var sedang_pause := get_tree().paused
 
-	label_prompt.visible = not prompt_aktif.is_empty() \
+	var prompt_harus_tampil := not prompt_aktif.is_empty() \
 		and not Inventory.ui_terbuka \
 		and not sedang_pause \
 		and not pesan_aktif
 
-	# Pesan disembunyikan saat pause, dan hitung mundurnya ikut berhenti
+	if sedang_pause:
+		label_prompt.modulate.a = 0.0   # langsung hilang saat pause menu terbuka
+	else:
+		var target := 1.0 if prompt_harus_tampil else 0.0
+		label_prompt.modulate.a = move_toward(label_prompt.modulate.a, target, delta * KECEPATAN_FADE_PROMPT)
+	label_prompt.visible = label_prompt.modulate.a > 0.0
+
 	label_petunjuk.visible = pesan_aktif and not sedang_pause
 
 	if pesan_aktif and not sedang_pause:
