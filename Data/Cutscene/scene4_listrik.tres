@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://cms54ehydxslt"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_t8k05"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_qqbkm"]
+
+[sub_resource type="Resource" id="Resource_cmqqm"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Loh kok kekunci"
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_jvph1"]
+script = ExtResource("1_t8k05")
+teks = "Johan menggedor gedornya beberapa kali"
+aksi = "gedor"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_27pgr"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "SIAPAPUN TOLONG! BUKAAA!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_lcvsg"]
+script = ExtResource("1_t8k05")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_vw5hh"]
+script = ExtResource("1_t8k05")
+teks = "Johan berusaha memukul pintu."
+aksi = "gedor"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_qv6sk"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "AH! Keras sekali. Ini sih bukan kaca, tapi batu."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_nguet"]
+script = ExtResource("1_t8k05")
+teks = "Di saat itulah listrik bioskop mati."
+aksi = "listrik_mati"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_t0wx1"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Sial banget hari ini"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xgh5h"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Untung aku bawa handphone"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_fq7qp"]
+script = ExtResource("1_t8k05")
+teks = "Dia mengambil handphonenya dan menggunakannya sebagai senter."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_hwn1n"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Bagus... Aku sekarang jadi seorang protagonis film horor"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4xlnb"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Apa yang bakal protagonis horor lakukan di saat seperti ini?"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_qri40"]
+script = ExtResource("1_t8k05")
+nama = "Johan"
+teks = "Nyalain lampu sama muter nyari jalan lain kayaknya masuk akal…"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_qqbkm")
+dialog = Array[ExtResource("1_t8k05")]([SubResource("Resource_cmqqm"), SubResource("Resource_jvph1"), SubResource("Resource_27pgr"), SubResource("Resource_lcvsg"), SubResource("Resource_vw5hh"), SubResource("Resource_qv6sk"), SubResource("Resource_nguet"), SubResource("Resource_t0wx1"), SubResource("Resource_xgh5h"), SubResource("Resource_fq7qp"), SubResource("Resource_hwn1n"), SubResource("Resource_4xlnb"), SubResource("Resource_qri40")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
