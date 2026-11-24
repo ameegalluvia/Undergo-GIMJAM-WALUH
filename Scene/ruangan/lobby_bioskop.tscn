@@ -3199,10 +3199,10 @@ position = Vector2(-128, -130)
 script = ExtResource("4_abrsx")
 scene_tujuan = "uid://we4jxnq6woy0"
 id_titik_tujuan = &"dari_lobby_bioskop"
+suara_pintu = ExtResource("5_espj2")
 terkunci = true
-pesan_terkunci = "Beli Tiket dulu"
-item_dibutuhkan = ExtResource("6_u3dlb")
-habiskan_item = false
+item_dibutuhkan = ExtResource("6_bbnai")
+pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong" unique_id=1658340118]
 position = Vector2(0, 2)

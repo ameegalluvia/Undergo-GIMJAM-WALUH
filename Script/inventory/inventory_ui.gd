@@ -13,8 +13,6 @@ const DASAR := "Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer/"
 @onready var label_prompt: Label = $PromptLabel
 @onready var label_petunjuk: Label = $HintLabel
 
-var petunjuk_inventory_sudah := false # petunjuk Inventory cukup muncul sekali
-
 var daftar_slot: Array[SlotInventory] = []
 var indeks_terpilih := -1
 
@@ -26,10 +24,12 @@ var tag_aktif: StringName = &""
 var prompt_aktif: Dictionary = {}   # pickup -> teks prompt-nya
 
 const KECEPATAN_FADE_PROMPT := 6.0
+const KECEPATAN_FADE_PETUNJUK := 5.0
 
 func _ready() -> void:
 	label_prompt.modulate.a = 0.0
 	label_prompt.hide()
+	label_petunjuk.modulate.a = 0.0
 	label_petunjuk.hide()
 	
 	overlay.hide()
@@ -78,12 +78,23 @@ func _process(delta: float) -> void:
 		label_prompt.modulate.a = move_toward(label_prompt.modulate.a, target, delta * KECEPATAN_FADE_PROMPT)
 	label_prompt.visible = label_prompt.modulate.a > 0.0
 
-	label_petunjuk.visible = pesan_aktif and not sedang_pause
-
 	if pesan_aktif and not sedang_pause:
 		sisa_pesan -= delta
 		if sisa_pesan <= 0.0:
 			_pesan_berikutnya()
+
+	if sedang_pause:
+		label_petunjuk.modulate.a = 0.0
+		label_petunjuk.hide()
+	else:
+		var target_petunjuk := 1.0 if pesan_aktif else 0.0
+		label_petunjuk.modulate.a = move_toward(
+			label_petunjuk.modulate.a,
+			target_petunjuk,
+			delta * KECEPATAN_FADE_PETUNJUK
+		)
+		label_petunjuk.visible = label_petunjuk.modulate.a > 0.0
+
 	# Ikon di tangan hanya tampil kalau memegang item dan game tidak sedang di-pause
 	ikon_tangan.visible = Inventory.item_dipegang != null and not get_tree().paused
 
@@ -149,7 +160,6 @@ func _pesan_berikutnya() -> void:
 	if antrean_pesan.is_empty():
 		pesan_aktif = false
 		tag_aktif = &""
-		label_petunjuk.hide()
 		return
 	var pesan: Dictionary = antrean_pesan.pop_front()
 	pesan_aktif = true
@@ -167,9 +177,12 @@ func hapus_pesan_bertag(tag: StringName) -> void:
 # Dipanggil pickup setelah item berhasil diambil
 func umumkan_item_diambil(item: DataItem) -> void:
 	tampilkan_pesan(item.nama_tampil + " telah diambil", 2.5)
-	if not petunjuk_inventory_sudah:
-		petunjuk_inventory_sudah = true
-		tampilkan_pesan("Tekan Tab atau I untuk membuka Inventory", 5.0, &"inventory")
+
+func tampilkan_petunjuk_inventory_sekali(durasi: float = 2.5) -> void:
+	if Inventory.petunjuk_inventory_sudah:
+		return
+	Inventory.petunjuk_inventory_sudah = true
+	tampilkan_pesan("Tekan Tab atau I untuk membuka Inventory", durasi, &"inventory")
 		
 func tampilkan_prompt(pemilik: Node, teks: String) -> void:
 	prompt_aktif[pemilik] = teks
@@ -185,9 +198,10 @@ func _perbarui_teks_prompt() -> void:
 	# yang terakhir masuk area ambil yang ditampilkan
 	label_prompt.text = prompt_aktif.values().back()
 	
-#Buat hapus ui di pause menu nanti	
+# Buat hapus ui di pause menu nanti	
 func bersihkan_pesan() -> void:
 	antrean_pesan.clear()
 	pesan_aktif = false
 	tag_aktif = &""
+	label_petunjuk.modulate.a = 0.0
 	label_petunjuk.hide()
