@@ -14,6 +14,8 @@ func _ready() -> void:
 	overlay.aksi_dipicu.connect(_on_aksi)
 	overlay.selesai_dialog.connect(_on_selesai)
 	GameProgress.set_flag("titik_muncul", "")
+	if GameProgress.tahap < GameProgress.Tahap.ACT0_SELESAI:
+		SanityManager.nonaktifkan()
 
 
 func _buat_fade() -> void:

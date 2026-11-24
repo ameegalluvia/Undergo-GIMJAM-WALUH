@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="3_eh44b"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="4_beoke"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_mxgs4"]
-[ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_ae0pm"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_fvqqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghmx2"]
@@ -4533,8 +4532,6 @@ position = Vector2(-893, -1156)
 position = Vector2(897, 1336)
 script = ExtResource("5_mxgs4")
 scene_tujuan = "uid://we4jxnq6woy0"
-id_titik_tujuan = &"dari_kamarmandi2_cowo_bioskop"
-suara_pintu = ExtResource("6_ae0pm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLorongBioskop/PintuKeLorongBioskop" unique_id=160971205]
 position = Vector2(-5, -42)

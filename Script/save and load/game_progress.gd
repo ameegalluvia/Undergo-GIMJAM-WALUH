@@ -1,6 +1,6 @@
 extends Node
 
-enum Tahap { LOBBY, TEATER, CARI_OBAT, TERKUNCI, ACT0_SELESAI }
+enum Tahap { LOBBY, TEATER, CARI_OBAT, TERKUNCI, ACT0_SELESAI, ACT1_MULAI, ACT1_STUDIO, ACT1_MEMORI1 }
 
 var tahap: int = Tahap.LOBBY
 var flag := {}

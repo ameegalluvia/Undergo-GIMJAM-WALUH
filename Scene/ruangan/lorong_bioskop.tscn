@@ -6084,7 +6084,8 @@ script = ExtResource("7_j7duh")
 
 [node name="arc_setter" type="Node" parent="." unique_id=1956902333]
 script = ExtResource("8_fkfb6")
-sanity_aktif = true
+
+[node name="Marker2D" type="Marker2D" parent="arc_setter" unique_id=1994636625]
 
 [node name="Shaders" type="CanvasModulate" parent="." unique_id=622352848]
 color = Color(0.43137255, 0.43137255, 0.42352942, 1)
@@ -6372,3 +6373,9 @@ position = Vector2(-99, -273)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBayangan" unique_id=279223661]
 position = Vector2(-2, -233)
 shape = SubResource("RectangleShape2D_c508m")
+
+[node name="BayanganMasuk1" type="Marker2D" parent="." unique_id=457454386]
+position = Vector2(-433, -259)
+
+[node name="BayanganMasuk2" type="Marker2D" parent="." unique_id=700040341]
+position = Vector2(-434, -369)

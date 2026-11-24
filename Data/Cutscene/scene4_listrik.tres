@@ -1,18 +1,23 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://cms54ehydxslt"]
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_t8k05"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_a8n5f"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_qqbkm"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="3_w5n8n"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="4_36y4d"]
 
 [sub_resource type="Resource" id="Resource_cmqqm"]
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Loh kok kekunci"
+potret = ExtResource("2_a8n5f")
 pakai_transisi = false
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_jvph1"]
 script = ExtResource("1_t8k05")
 teks = "Johan menggedor gedornya beberapa kali"
+potret = ExtResource("2_a8n5f")
 aksi = "gedor"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -20,15 +25,13 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "SIAPAPUN TOLONG! BUKAAA!"
-metadata/_custom_type_script = "uid://co8fvnpi56sa1"
-
-[sub_resource type="Resource" id="Resource_lcvsg"]
-script = ExtResource("1_t8k05")
+potret = ExtResource("3_w5n8n")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_vw5hh"]
 script = ExtResource("1_t8k05")
 teks = "Johan berusaha memukul pintu."
+potret = ExtResource("2_a8n5f")
 aksi = "gedor"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -36,11 +39,13 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "AH! Keras sekali. Ini sih bukan kaca, tapi batu."
+potret = ExtResource("2_a8n5f")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_nguet"]
 script = ExtResource("1_t8k05")
 teks = "Di saat itulah listrik bioskop mati."
+potret = ExtResource("4_36y4d")
 aksi = "listrik_mati"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -48,38 +53,44 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Sial banget hari ini"
+potret = ExtResource("2_a8n5f")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_xgh5h"]
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Untung aku bawa handphone"
+potret = ExtResource("4_36y4d")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_fq7qp"]
 script = ExtResource("1_t8k05")
 teks = "Dia mengambil handphonenya dan menggunakannya sebagai senter."
+potret = ExtResource("4_36y4d")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_hwn1n"]
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Bagus... Aku sekarang jadi seorang protagonis film horor"
+potret = ExtResource("2_a8n5f")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_4xlnb"]
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Apa yang bakal protagonis horor lakukan di saat seperti ini?"
+potret = ExtResource("4_36y4d")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_qri40"]
 script = ExtResource("1_t8k05")
 nama = "Johan"
 teks = "Nyalain lampu sama muter nyari jalan lain kayaknya masuk akal…"
+potret = ExtResource("4_36y4d")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_qqbkm")
-dialog = Array[ExtResource("1_t8k05")]([SubResource("Resource_cmqqm"), SubResource("Resource_jvph1"), SubResource("Resource_27pgr"), SubResource("Resource_lcvsg"), SubResource("Resource_vw5hh"), SubResource("Resource_qv6sk"), SubResource("Resource_nguet"), SubResource("Resource_t0wx1"), SubResource("Resource_xgh5h"), SubResource("Resource_fq7qp"), SubResource("Resource_hwn1n"), SubResource("Resource_4xlnb"), SubResource("Resource_qri40")])
+dialog = Array[ExtResource("1_t8k05")]([SubResource("Resource_cmqqm"), SubResource("Resource_jvph1"), SubResource("Resource_27pgr"), SubResource("Resource_vw5hh"), SubResource("Resource_qv6sk"), SubResource("Resource_nguet"), SubResource("Resource_t0wx1"), SubResource("Resource_xgh5h"), SubResource("Resource_fq7qp"), SubResource("Resource_hwn1n"), SubResource("Resource_4xlnb"), SubResource("Resource_qri40")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"
