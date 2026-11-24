@@ -5,13 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="2_wtvit"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="3_wtvit"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="4_abrsx"]
-[ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="5_espj2"]
-[ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="6_bbnai"]
+[ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="6_u3dlb"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_0e631"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="9_0e631"]
 [ext_resource type="Texture2D" uid="uid://rmmtfl730twb" path="res://assets/sprites/NPC1.png" id="10_0e631"]
 [ext_resource type="Texture2D" uid="uid://dc8j2ht5ddcvv" path="res://assets/sprites/NPC2.png" id="11_jc486"]
-[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://dialog_overlay.tscn" id="12_k71r7"]
+[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="12_k71r7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37nlw"]
 texture = ExtResource("1_37nlw")
@@ -3200,9 +3199,10 @@ position = Vector2(-128, -130)
 script = ExtResource("4_abrsx")
 scene_tujuan = "uid://we4jxnq6woy0"
 id_titik_tujuan = &"dari_lobby_bioskop"
-suara_pintu = ExtResource("5_espj2")
-item_dibutuhkan = ExtResource("6_bbnai")
-pesan_dibuka = "Pintu terbuka"
+terkunci = true
+pesan_terkunci = "Beli Tiket dulu"
+item_dibutuhkan = ExtResource("6_u3dlb")
+habiskan_item = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuKeLorong" unique_id=1658340118]
 position = Vector2(0, 2)
@@ -3217,7 +3217,9 @@ id_titik = &"dari_lorong_bioskop"
 script = ExtResource("9_0e631")
 
 [node name="Shaders" type="CanvasModulate" parent="." unique_id=1677114788]
+visible = false
 color = Color(0.43137255, 0.43137255, 0.42352942, 1)
+
 [node name="Npc1" type="AnimatedSprite2D" parent="." unique_id=1103176074]
 position = Vector2(44, -30)
 sprite_frames = SubResource("SpriteFrames_c508m")

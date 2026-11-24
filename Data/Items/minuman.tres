@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_2vu2e")
-id = &"obat"
+id = &"minuman"
 nama_tampil = "minuman"
 ikon = ExtResource("1_ontnh")
 deskripsi = "Memulihkan sanity sebanyak 20 persen"

@@ -1,17 +1,20 @@
 [gd_scene format=4 uid="uid://we4jxnq6woy0"]
 
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="1_uwib2"]
+[ext_resource type="Script" uid="uid://cxil74io2hnh8" path="res://Script/lorong_bioskop.gd" id="1_wbcv1"]
 [ext_resource type="Texture2D" uid="uid://bwnjx6tb5wykq" path="res://assets/tilesets/Tilesets BARU.png" id="2_mwv44"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="2_p05q1"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="3_p05q1"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="4_e4ew0"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
-[ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="5_j7duh"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
 [ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/sanity/arc_setter.gd" id="8_fkfb6"]
-[ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="10_o6lwv"]
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="9_o6lwv"]
+[ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="10_o6lwv"]
 [ext_resource type="Resource" uid="uid://de6u08jsdkqou" path="res://Data/Items/minuman.tres" id="10_vbob3"]
+[ext_resource type="PackedScene" uid="uid://csd2mhu8f77vh" path="res://Scene/sistem/fade.tscn" id="11_vbob3"]
+[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="13_gr35y"]
+[ext_resource type="Texture2D" uid="uid://54641pr22m4r" path="res://assets/sprites/Johan/Johan Hitam.png" id="15_qri40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6lwv"]
 texture = ExtResource("1_uwib2")
@@ -4068,13 +4071,231 @@ gradient = SubResource("Gradient_mwv44")
 fill_from = Vector2(0.5307167, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7duh"]
-size = Vector2(18, 10)
+size = Vector2(98, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfb6"]
-size = Vector2(61, 13)
+size = Vector2(105, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa2nc"]
+size = Vector2(97, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_numnl"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_octjp"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3h3r"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqhe1"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i0bq"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys0aj"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opwbi"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lkef"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivnqe"]
+atlas = ExtResource("15_qri40")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kxq4"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o665e"]
+atlas = ExtResource("15_qri40")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3pk3"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbxxs"]
+atlas = ExtResource("15_qri40")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik6i7"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77v0p"]
+atlas = ExtResource("15_qri40")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yql37"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c31g"]
+atlas = ExtResource("15_qri40")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35eqe"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30uhw"]
+atlas = ExtResource("15_qri40")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v8pb"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er7mt"]
+atlas = ExtResource("15_qri40")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujtl8"]
+atlas = ExtResource("15_qri40")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mk5f"]
+atlas = ExtResource("15_qri40")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcomm"]
+atlas = ExtResource("15_qri40")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c508m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_numnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_octjp")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3h3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqhe1")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i0bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys0aj")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opwbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lkef")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivnqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kxq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o665e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3pk3")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbxxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik6i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77v0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yql37")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c31g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35eqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30uhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v8pb")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er7mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujtl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mk5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcomm")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
+size = Vector2(97, 36)
 
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
+script = ExtResource("1_wbcv1")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=516834237]
 
@@ -4625,7 +4846,7 @@ energy = 5.7
 texture = SubResource("GradientTexture2D_o6lwv")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
-position = Vector2(0, 54)
+position = Vector2(1, 66)
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
@@ -4651,11 +4872,12 @@ position = Vector2(-898, -1325)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://fq8v5pdnsb02"
-id_titik_tujuan = &"dari_lorong_bioskop"
-suara_pintu = ExtResource("5_j7duh")
+id_titik_tujuan = &"PintuKeLorong"
+terkunci = true
+pesan_terkunci = "Johan : Aku Harus Menuju Studio 1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop" unique_id=1264889487]
-position = Vector2(1, 6)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_j7duh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop" unique_id=1789397192]
@@ -4666,7 +4888,7 @@ position = Vector2(1.5, -1.5)
 shape = SubResource("RectangleShape2D_fkfb6")
 
 [node name="TitikDariLobbyBioskop" type="Marker2D" parent="Pintu/PintuLobbyBioskop" unique_id=1648352320]
-position = Vector2(898, 1365)
+position = Vector2(897, 1333)
 script = ExtResource("5_hhfid")
 id_titik = &"dari_lobby_bioskop"
 
@@ -4676,20 +4898,22 @@ id_titik = &"dari_lobby_bioskop"
 position = Vector2(-770, -1707)
 
 [node name="PintuKeStudio1" type="Area2D" parent="Pintu/PintuStudio/PintuStudio1" unique_id=576811667]
+visible = false
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://cgo3jj8bum7yg"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Studio 1"
-suara_pintu = ExtResource("5_j7duh")
+id_titik_tujuan = &"PintuKeLorongBioskop"
+terkunci = true
+pesan_terkunci = "Perlu tiket"
 item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio1/PintuKeStudio1" unique_id=1831796779]
+visible = false
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j7duh")
 
 [node name="TitikDariStudio1Bioskop" type="Marker2D" parent="Pintu/PintuStudio/PintuStudio1" unique_id=451448591]
+visible = false
 position = Vector2(898, 1426)
 script = ExtResource("5_hhfid")
 id_titik = &"dari_studio1_bioskop"
@@ -4701,11 +4925,6 @@ position = Vector2(-1331, -1707)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://b5uy1057ya182"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Studio 2"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio2/PintuKeStudio2" unique_id=1663510535]
 position = Vector2(1, 1)
@@ -4723,11 +4942,6 @@ position = Vector2(-1331, -2172)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://cckcqjwxjuq72"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Studio 3"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio3/PintuKeStudio3" unique_id=26994108]
 position = Vector2(1, 1)
@@ -4745,11 +4959,6 @@ position = Vector2(-1331, -2670)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://7dht74vsh8ej"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Studio 4"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio4/PintuKeStudio4" unique_id=1103901844]
 position = Vector2(1, 1)
@@ -4767,11 +4976,6 @@ position = Vector2(-1331, -3151)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://ce13p0s7jdmu2"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Studio 5"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio5/PintuKeStudio5" unique_id=1113248692]
 position = Vector2(1, 1)
@@ -4793,11 +4997,6 @@ position = Vector2(-370, -2456)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://dxurgidlr17tw"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Kamar Mandi Laki-laki"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi1/PintuKamarmandi1Cowo/PintuKeKamamandi1Cowo" unique_id=1663505341]
 position = Vector2(1, 1)
@@ -4815,11 +5014,6 @@ position = Vector2(-337, -2456)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://5lxwtn4j3n2p"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Kamar Mandi Perempuan"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi1/PintuKamarmandi1Cewe/PintuKeKamarmandi1Cewe" unique_id=1622217702]
 position = Vector2(1, 1)
@@ -4839,11 +5033,6 @@ position = Vector2(-1714, -2650)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://crcmgghr7tyf3"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Kamar Mandi Laki-laki"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi2/PintuKamarmandi1Cowo/PintuKeKamamandi2Cowo" unique_id=1974987380]
 position = Vector2(1, 1)
@@ -4861,11 +5050,6 @@ position = Vector2(-1681, -2650)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://c0qvn0ara1nf7"
-id_titik_tujuan = &"dari_lorong_bioskop"
-teks_prompt = "Tekan E untuk membuka pintu Kamar Mandi Perempuan"
-suara_pintu = ExtResource("5_j7duh")
-item_dibutuhkan = ExtResource("10_o6lwv")
-pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi2/PintuKamarmandi2Cewe/PintuKeKamarmandi2Cewe" unique_id=980451022]
 position = Vector2(1, 1)
@@ -4876,15 +5060,53 @@ position = Vector2(898, 1426)
 script = ExtResource("5_hhfid")
 id_titik = &"dari_kamarmandi2_cewe_bioskop"
 
-[editable path="Player"]
 [node name="arcsetter" type="Node" parent="." unique_id=972132576]
 script = ExtResource("8_fkfb6")
 sanity_aktif = true
 
-[node name="AutoCheckpoint" type="Node" parent="." unique_id=162909382]
+[node name="AutoCheckpoint2" type="Node" parent="." unique_id=2040819160]
 script = ExtResource("7_j7duh")
 
 [node name="ItemPickup" parent="." unique_id=1304024789 instance=ExtResource("9_o6lwv")]
+visible = false
 position = Vector2(-17, -340)
 item = ExtResource("10_vbob3")
 id_pickup = &"obat"
+
+[node name="Fade" parent="." unique_id=2073385539 instance=ExtResource("11_vbob3")]
+
+[node name="PintuKmDalam" type="Marker2D" parent="." unique_id=1716493565]
+position = Vector2(528, -1103)
+
+[node name="SpawnKm" type="Marker2D" parent="." unique_id=561616548]
+position = Vector2(530, -1030)
+
+[node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("13_gr35y")]
+
+[node name="TitikSadar" type="Marker2D" parent="." unique_id=1106604326]
+position = Vector2(1, -239)
+
+[node name="AreaSadar" type="Area2D" parent="." unique_id=575216742]
+position = Vector2(0, -239)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSadar" unique_id=58333837]
+position = Vector2(-0.5, 12)
+shape = SubResource("RectangleShape2D_pa2nc")
+
+[node name="Bayangan" type="AnimatedSprite2D" parent="." unique_id=1390871432]
+modulate = Color(0, 0, 0, 0.624)
+position = Vector2(-92, -134)
+sprite_frames = SubResource("SpriteFrames_c508m")
+animation = &"idle_down"
+
+[node name="BayanganMulai" type="Marker2D" parent="." unique_id=1841086000]
+position = Vector2(87, -272)
+
+[node name="BayanganAkhir" type="Marker2D" parent="." unique_id=474664771]
+position = Vector2(-99, -273)
+
+[node name="AreaBayangan" type="Area2D" parent="." unique_id=1073037295]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBayangan" unique_id=279223661]
+position = Vector2(-2, -233)
+shape = SubResource("RectangleShape2D_c508m")
