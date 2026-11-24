@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cgo3jj8bum7yg"]
 
-[ext_resource type="Script" uid="uid://dsu1203ond4ee" path="res://script/teater.gd" id="1_i6ls5"]
+[ext_resource type="Script" uid="uid://dsu1203ond4ee" path="res://Script/teater.gd" id="1_i6ls5"]
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="1_n1uvf"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="2_ke8d0"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="3_82r60"]

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b5uy1057ya182"]
 
+[ext_resource type="Script" uid="uid://csu57l07lmgd2" path="res://Script/studio_2_bioskop.gd" id="1_mv1g8"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="1_wl48g"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="2_q0csw"]
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="3_htcvy"]
@@ -7,6 +8,8 @@
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_i6g1j"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_l4koj"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_vbdxa"]
+[ext_resource type="Script" uid="uid://bb5tm6cg757ng" path="res://Scene/ruangan/studio/kursi.gd" id="9_jqnfd"]
+[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="10_3bitd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogtug"]
 texture = ExtResource("3_htcvy")
@@ -5155,6 +5158,7 @@ size = Vector2(8, 121)
 size = Vector2(11, 121)
 
 [node name="Studio2Bioskop" type="Node2D" unique_id=117035991]
+script = ExtResource("1_mv1g8")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_wl48g")]
 position = Vector2(-114, 52)
@@ -5228,3 +5232,9 @@ id_titik = &"dari_lorong_bioskop"
 
 [node name="Shaders" type="CanvasModulate" parent="." unique_id=1952500986]
 color = Color(0.43137255, 0.43137255, 0.42352942, 1)
+
+[node name="kursi" type="Area2D" parent="." unique_id=708659271]
+position = Vector2(16, 44)
+script = ExtResource("9_jqnfd")
+
+[node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("10_3bitd")]

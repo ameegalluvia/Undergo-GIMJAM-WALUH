@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://ctw6enio4h1v2"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_7fy62"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="2_k1wq6"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_yhlqm"]
+
+[sub_resource type="Resource" id="Resource_1lhcd"]
+script = ExtResource("1_7fy62")
+nama = "Johan"
+teks = "Ini mengerikan, tapi entah kenapa aku memiliki perasaan aneh kalau aku mau menontonnya"
+potret = ExtResource("2_k1wq6")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_yhlqm")
+dialog = Array[ExtResource("1_7fy62")]([SubResource("Resource_1lhcd")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

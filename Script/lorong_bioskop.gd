@@ -4,6 +4,8 @@ extends AdeganBase
 @onready var spawn_km: Marker2D = $SpawnKm
 @onready var bayangan_mulai: Marker2D = $BayanganMulai
 @onready var bayangan_akhir: Marker2D = $BayanganAkhir
+@onready var bayangan_masuk1: Marker2D = $BayanganMasuk1
+@onready var bayangan_masuk2: Marker2D = $BayanganMasuk2
 
 @onready var area_sadar: Area2D = $AreaSadar
 @onready var area_pintu_keluar: Area2D = $Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop
@@ -97,6 +99,10 @@ func _mulai_adegan() -> void:
 	area_bayangan.monitoring = false
 	if t == T.TERKUNCI and GameProgress.ambil_flag("cs_listrik") and not GameProgress.ambil_flag("cs_bayangan"):
 		area_bayangan.monitoring = true
+		
+	if t == T.ACT1_MULAI and not GameProgress.ambil_flag("cs_act1_mulai"):
+		_kunci_pemain(true)
+		mainkan_sekali("cs_act1_mulai", preload("res://Data/Cutscene/act1_part1awal.tres"))
 
 
 
@@ -161,6 +167,12 @@ func selesai_cutscene() -> void:
 		_kunci_pemain(true)
 		await _fade(1.0, 1.5)
 		print("Act 0 Ends")
+		GameProgress.tahap = T.ACT1_MULAI
+		SanityManager.reset()
+		SanityManager.aktifkan()          # bar muncul, drain mulai
+		SaveManager.simpan_scene(scene_file_path)
+		_kunci_pemain(false)
+		await _fade(0.0, 1.0)
 
 
 # ---------- Aksi dari dialog ----------
@@ -189,6 +201,22 @@ func aksi_khusus(nama: String) -> void:
 		"bayangan_lewat":
 			var awal: Vector2 = bayangan_mulai.global_position
 			var tujuan: Vector2 = bayangan_akhir.global_position
+			bayangan.global_position = awal
+			bayangan.visible = true
+			var arah := tujuan - awal
+			var sisi := "right" if arah.x > 0 else "left"
+			if abs(arah.y) > abs(arah.x):
+				sisi = "down" if arah.y > 0 else "up"
+			if bayangan.sprite_frames.has_animation("walk_" + sisi):
+				bayangan.play("walk_" + sisi)
+			var tw := create_tween()
+			tw.tween_property(bayangan, "global_position", tujuan, arah.length() / 90.0)
+			await tw.finished
+			bayangan.visible = false
+			
+		"bayangan_masuk":
+			var awal: Vector2 = bayangan_masuk1.global_position
+			var tujuan: Vector2 = bayangan_masuk2.global_position
 			bayangan.global_position = awal
 			bayangan.visible = true
 			var arah := tujuan - awal

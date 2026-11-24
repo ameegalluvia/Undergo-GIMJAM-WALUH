@@ -1,7 +1,7 @@
 class_name player
 extends CharacterBody2D
 
-@export var speed: float = 40
+@export var speed: float = 100
 @export var suara_langkah: Array[AudioStream] = []
 @export var interval_langkah: float = 0.38
 @export var volume_langkah_db: float = -6.0

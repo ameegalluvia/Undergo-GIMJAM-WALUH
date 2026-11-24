@@ -30,6 +30,57 @@ func _ready() -> void:
 func selesai_cutscene() -> void:
 	pintu_teater.terkunci = false
 
+func _jalan(node: Node2D, titik: Vector2, kecepatan: float = KECEPATAN_JALAN) -> void:
+	var arah := titik - node.global_position
+	var durasi := arah.length() / kecepatan
+
+	if node.has_method("main_jalan"):
+		node.main_jalan(arah)   # Johan
+	else:
+		_animasi_npc(node, arah)
+
+	var tw := create_tween()
+	tw.tween_property(node, "global_position", titik, durasi)
+	await tw.finished
+
+	if node.has_method("main_diam"):
+		node.main_diam()
+	else:
+		_diam_npc(node)
+
+
+func _sprite_npc(node: Node) -> AnimatedSprite2D:
+	if node is AnimatedSprite2D:
+		return node
+	return node.get_node_or_null("AnimatedSprite2D")
+
+
+func _animasi_npc(node: Node2D, arah: Vector2) -> void:
+	var sprite := _sprite_npc(node)
+	if sprite == null:
+		return
+
+	var sisi := "right" if arah.x > 0 else "left"
+	if abs(arah.y) > abs(arah.x):
+		sisi = "down" if arah.y > 0 else "up"
+
+	# Coba beberapa nama, pakai yang pertama ada
+	for nama in ["walk_" + sisi, "walk", "jalan"]:
+		if sprite.sprite_frames.has_animation(nama):
+			sprite.play(nama)
+			return
+
+	push_warning("NPC %s tidak punya animasi jalan. Animasi yang ada: %s" % [node.name, sprite.sprite_frames.get_animation_names()])
+
+
+func _diam_npc(node: Node2D) -> void:
+	var sprite := _sprite_npc(node)
+	if sprite == null:
+		return
+	for nama in ["idle", "diam"]:
+		if sprite.sprite_frames.has_animation(nama):
+			sprite.play(nama)
+			return
 
 func aksi_khusus(nama: String) -> void:
 	match nama:
