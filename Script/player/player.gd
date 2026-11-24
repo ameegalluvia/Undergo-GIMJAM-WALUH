@@ -13,6 +13,7 @@ var last_dir := "down"
 var _timer_langkah: float = 0.0
 
 func _physics_process(delta: float) -> void:
+	print("pos=", global_position, " vel=", velocity, " trans=", Transisi.sedang_transisi, " ui=", Inventory.ui_terbuka)
 	if Inventory.ui_terbuka or Transisi.sedang_transisi:
 		velocity = Vector2.ZERO
 		_timer_langkah = 0.0

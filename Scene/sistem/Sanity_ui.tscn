@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vtwhvv2jwd63" path="res://Script/sanity/Sanity_Bar.gd" id="1_rewi0"]
 [ext_resource type="Script" uid="uid://bct4cdbs01sjg" path="res://Script/sanity/Sanity_ui.gd" id="1_yb80y"]
 [ext_resource type="Shader" uid="uid://scd7c2ou18yk" path="res://shaders/vignette.gdshader" id="2_mntha"]
-[ext_resource type="Script" uid="uid://m8u3hri10aos" path="res://Script/Sanity/vignette.gd" id="3_wwdqd"]
+[ext_resource type="Script" uid="uid://m8u3hri10aos" path="res://Script/sanity/vignette.gd" id="3_wwdqd"]
 [ext_resource type="Shader" uid="uid://c17cxm57vqvf7" path="res://shaders/glitch.gdshader" id="4_qtxxf"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="5_3wqp3"]
 [ext_resource type="Texture2D" uid="uid://dw2hnxnvmutdw" path="res://assets/ui/Sanity Bar .png" id="5_wwdqd"]
