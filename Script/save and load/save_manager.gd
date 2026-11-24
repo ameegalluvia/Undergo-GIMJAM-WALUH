@@ -2,63 +2,70 @@ extends Node
 
 const FILE_SAVE := "user://save.json"
 
-var data := {
-	"scene": "",
-	"flag": {},
-}
-
 
 func ada_save() -> bool:
 	return FileAccess.file_exists(FILE_SAVE)
 
 
-func simpan_scene(scene_path: String) -> void:
-	data["scene"] = scene_path
-	data["inventory"] = Inventory.ke_dictionary()   # snapshot Inventory di titik checkpoint
-	_tulis()
+# ---------- Simpan ----------
+func simpan_scene(scene_path: String = "") -> void:
+	if scene_path == "":
+		scene_path = get_tree().current_scene.scene_file_path
 
+	var data := {
+		"scene": scene_path,
+		"tahap": GameProgress.tahap,
+		"flag": GameProgress.flag,
+		"sanity": SanityManager.nilai,
+		"sanity_aktif": SanityManager.aktif,
+		"inventory": Inventory.ke_dictionary(),
+	}
 
-func set_flag(nama: String, nilai = true) -> void:
-	data["flag"][nama] = nilai
-	_tulis()
-
-
-func ambil_flag(nama: String, default = false):
-	return data["flag"].get(nama, default)
-
-
-func _tulis() -> void:
-	# JANGAN isi data["inventory"] di sini lagi. Kalau tidak, snapshot checkpoint
-	# tertimpa Inventory terbaru setiap kali ada set_flag.
 	var f := FileAccess.open(FILE_SAVE, FileAccess.WRITE)
+	if f == null:
+		push_warning("Gagal menyimpan: %s" % FileAccess.get_open_error())
+		return
 	f.store_string(JSON.stringify(data))
-	
-# Kembalikan Inventory ke kondisi saat checkpoint (dipakai Restart)
-func pulihkan_inventory() -> void:
-	Inventory.dari_dictionary(data.get("inventory", {}))
 
 
-func muat() -> bool:
+# ---------- Muat ----------
+func _baca() -> Dictionary:
 	if not ada_save():
-		return false
+		return {}
 	var f := FileAccess.open(FILE_SAVE, FileAccess.READ)
+	if f == null:
+		return {}
 	var hasil = JSON.parse_string(f.get_as_text())
-	if hasil is Dictionary:
-		data = hasil
-		return true
-	return false
+	return hasil if hasil is Dictionary else {}
 
 
 func lanjutkan() -> void:
-	if muat() and not data["scene"].is_empty():
-		# Pulihkan Inventory SEBELUM pindah scene, karena pickup
-		# mengecek id_terambil di _ready()
-		Inventory.dari_dictionary(data.get("inventory", {}))
-		get_tree().change_scene_to_file(data["scene"])
+	var data := _baca()
+	if data.is_empty() or String(data.get("scene", "")) == "":
+		return
+
+	GameProgress.tahap = int(data.get("tahap", 0))   # JSON menyimpan angka sebagai float
+	GameProgress.flag = data.get("flag", {})
+	Inventory.dari_dictionary(data.get("inventory", {}))
+
+	SanityManager.set_nilai(float(data.get("sanity", SanityManager.MAKS)))
+	if data.get("sanity_aktif", false):
+		SanityManager.aktifkan()
+	else:
+		SanityManager.nonaktifkan()
+
+	var path: String = data["scene"]
+	if not ResourceLoader.exists(path):
+		push_warning("Scene save tidak ditemukan: " + path)
+		return
+	Transisi.pindah_scene(path, &"")   # tanpa titik tujuan, Johan di posisi default scene
 
 
+# ---------- Game baru ----------
 func game_baru() -> void:
 	if ada_save():
-		DirAccess.remove_absolute(FILE_SAVE)
-	data = {"scene": "", "flag": {}}
-	Inventory.reset()   # kosongkan Inventory dari run sebelumnya
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(FILE_SAVE))
+	GameProgress.reset()
+	Inventory.reset()
+	SanityManager.reset()
+	SanityManager.nonaktifkan()
