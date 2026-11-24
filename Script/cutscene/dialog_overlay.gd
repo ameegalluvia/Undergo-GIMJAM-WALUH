@@ -16,9 +16,6 @@ var tween: Tween
 var aktif := false
 var menunggu_aksi := false
 
-func _ready() -> void:
-	kotak.visible = false
-	aktif = false
 
 func mulai(data: CutsceneData) -> void:
 	if data == null or data.dialog.is_empty():
@@ -84,4 +81,3 @@ func lanjut() -> void:
 		selesai_dialog.emit()
 	else:
 		tampilkan()
-		
