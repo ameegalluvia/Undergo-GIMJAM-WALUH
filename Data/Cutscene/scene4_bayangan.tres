@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://j7pt0sbj4top"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_d45o4"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_uj406"]
+
+[sub_resource type="Resource" id="Resource_numnl"]
+script = ExtResource("1_d45o4")
+nama = "Johan"
+teks = "Seinget aku.."
+aksi = "bayangan_lewat"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_octjp"]
+script = ExtResource("1_d45o4")
+nama = "Johan"
+teks = "HEYY!!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_n3h3r"]
+script = ExtResource("1_d45o4")
+nama = "Johan"
+teks = "...."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_pqhe1"]
+script = ExtResource("1_d45o4")
+nama = "Johan"
+teks = "Petunjuk Mungkin?"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_uj406")
+dialog = Array[ExtResource("1_d45o4")]([SubResource("Resource_numnl"), SubResource("Resource_octjp"), SubResource("Resource_n3h3r"), SubResource("Resource_pqhe1")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
