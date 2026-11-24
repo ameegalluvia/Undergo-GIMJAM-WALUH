@@ -1,5 +1,6 @@
 extends Node2D
 
+const GAMEPLAY_BGM = preload("res://assets/audio/music/gameplay_explore_horror.wav")
 const KECEPATAN_JALAN := 40.0   # samakan dengan speed Player
 
 @onready var overlay = $DialogOverlay
@@ -15,6 +16,7 @@ var cutscene_selesai := false
 
 
 func _ready() -> void:
+	AudioManager.play_music(GAMEPLAY_BGM)
 	overlay.aksi_dipicu.connect(_on_aksi)
 	overlay.selesai_dialog.connect(_on_selesai_dialog)
 	_kunci_pemain(true)
