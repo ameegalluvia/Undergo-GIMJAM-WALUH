@@ -81,6 +81,11 @@ func _selesaikan(dengan_efek: bool) -> void:
 
 # Menyalakan atau mematikan sebuah node beserta tabrakannya
 func _atur_aktif(node: Node, aktif: bool) -> void:
+	if node is TileMapLayer:
+		node.collision_enabled = aktif
+		node.occlusion_enabled = aktif
+		node.navigation_enabled = aktif
+	
 	if not is_instance_valid(node):
 		return
 	if node is CanvasItem:
