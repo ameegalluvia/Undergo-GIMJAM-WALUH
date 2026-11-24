@@ -7796,7 +7796,7 @@ position = Vector2(-893, -1156)
 position = Vector2(897, 1336)
 script = ExtResource("8_e32ls")
 scene_tujuan = "uid://we4jxnq6woy0"
-id_titik_tujuan = &"dari_ruangkebersihan_bioskop"
+id_titik_tujuan = &"dari_ruangkontrol_bioskop"
 suara_pintu = ExtResource("4_k73ss")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLorongBioskop/PintuKeLorongBioskop" unique_id=125302220]
@@ -7810,7 +7810,7 @@ position = Vector2(0, 12)
 position = Vector2(-5, -50)
 shape = SubResource("RectangleShape2D_grfeu")
 
-[node name="TitikDariLobbyBioskop" type="Marker2D" parent="PintuLorongBioskop" unique_id=110164387]
+[node name="TitikDariLorongBioskop" type="Marker2D" parent="PintuLorongBioskop" unique_id=110164387]
 position = Vector2(893, 1339)
 script = ExtResource("9_rvhup")
 id_titik = &"dari_lorong_bioskop"
