@@ -9,6 +9,7 @@ var daftar_item: Array[DataItem] = []
 var id_terambil: Array[StringName] = []   # supaya item tidak muncul lagi setelah diambil
 var id_terbuka: Array[StringName] = []   # pintu dan objek puzzle yang sudah dibuka
 var ui_terbuka := false
+var petunjuk_inventory_sudah := false
 
 func tambah_item(item: DataItem) -> bool:
 	if item_dipegang == null:
@@ -46,6 +47,7 @@ func reset() -> void:
 	daftar_item.clear()
 	id_terambil.clear()
 	id_terbuka.clear()
+	petunjuk_inventory_sudah = false
 	berubah.emit()
 
 func _urutkan_item() -> void:
@@ -60,15 +62,16 @@ func ke_dictionary() -> Dictionary:
 		"item_dipegang": item_dipegang.resource_path if item_dipegang else "",
 		"daftar_item": daftar_item.map(func(i: DataItem) -> String: return i.resource_path),
 		"id_terambil": id_terambil.map(func(s: StringName) -> String: return String(s)),
-		"id_terbuka": id_terbuka.map(func(s: StringName) -> String: return String(s)),   # BARU
+		"id_terbuka": id_terbuka.map(func(s: StringName) -> String: return String(s)),
+		"petunjuk_inventory_sudah": petunjuk_inventory_sudah,
 	}
 
-# Pulihkan isi Inventory dari data hasil load
 func dari_dictionary(data: Dictionary) -> void:
 	item_dipegang = null
 	daftar_item.clear()
 	id_terambil.clear()
 	id_terbuka.clear()
+	petunjuk_inventory_sudah = bool(data.get("petunjuk_inventory_sudah", false))
 	
 	for id in data.get("id_terbuka", []):
 		id_terbuka.append(StringName(id))
@@ -88,13 +91,12 @@ func dari_dictionary(data: Dictionary) -> void:
 
 	_urutkan_item()
 
-	# Pemain yang sudah punya item tidak perlu petunjuk "Tekan Tab atau I" lagi
 	if item_dipegang != null or not daftar_item.is_empty():
-		InventoryUI.petunjuk_inventory_sudah = true
+		petunjuk_inventory_sudah = true
 
 	berubah.emit()
 
-#MEKANIK PALU DAN TIKET
+# MEKANIK ITEM
 # True kalau item ada di tangan atau di tas
 func punya_item(id_item: StringName) -> bool:
 	if sedang_memegang(id_item):

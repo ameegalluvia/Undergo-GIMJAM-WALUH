@@ -3,6 +3,7 @@ extends Area2D
 @export var item: DataItem
 @export var id_pickup: StringName            # boleh kosong, nanti dibuat otomatis
 @export var ukuran_di_dunia := 16         # sisi terpanjang gambar di dunia, dalam piksel
+@export var durasi_petunjuk_inventory: float = 2.5
 
 var pemain_dekat := false
 
@@ -47,6 +48,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Inventory.id_terambil.append(id_pickup)
 		InventoryUI.sembunyikan_prompt(self)
 		InventoryUI.umumkan_item_diambil(item)
+		if is_instance_valid(InventoryUI):
+			InventoryUI.tampilkan_petunjuk_inventory_sekali(durasi_petunjuk_inventory)
 		get_viewport().set_input_as_handled()
 		queue_free()
 	else:

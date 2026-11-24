@@ -1,5 +1,10 @@
 extends AdeganBase
 
+const GAMEPLAY_BGM = preload("res://assets/audio/music/gameplay_explore_horror.wav")
+const KECEPATAN_JALAN := 40.0   # samakan dengan speed Player
+
+@onready var overlay = $DialogOverlay
+@onready var johan = $Player
 @onready var npc1 = $Npc1
 @onready var npc2 = $Npc2
 @onready var titik_masuk = $TitikMasuk
@@ -11,12 +16,10 @@ extends AdeganBase
 
 
 func _ready() -> void:
-	super()
-	pintu_teater.terkunci = not GameProgress.ambil_flag("cs_lobby")
-	if GameProgress.ambil_flag("cs_lobby"):
-		npc1.visible = false
-		npc2.visible = false
-		return
+	AudioManager.play_music(GAMEPLAY_BGM)
+	overlay.aksi_dipicu.connect(_on_aksi)
+	overlay.selesai_dialog.connect(_on_selesai_dialog)
+	_kunci_pemain(true)
 
 	_kunci_pemain(true)
 	johan.global_position = titik_masuk.global_position
