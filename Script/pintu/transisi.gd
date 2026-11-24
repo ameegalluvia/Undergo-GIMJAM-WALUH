@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const DURASI_FADE := 0.4
+const DURASI_FADE := 0.6
 
 var sedang_transisi := false
 var _layar: ColorRect
@@ -57,3 +57,20 @@ func _tempatkan_pemain(id_titik: StringName) -> void:
 				kamera.reset_smoothing()
 			return
 	push_warning("Transisi: titik spawn '%s' tidak ditemukan di scene tujuan" % id_titik)
+
+func fade_keluar_dan_jalankan(aksi: Callable, fade_kembali_otomatis := true) -> void:
+	if sedang_transisi:
+		return
+	sedang_transisi = true
+	_layar.mouse_filter = Control.MOUSE_FILTER_STOP
+
+	await _fade(1.0)
+	if aksi.is_valid():
+		aksi.call()
+
+	if fade_kembali_otomatis:
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await _fade(0.0)
+		_layar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		sedang_transisi = false

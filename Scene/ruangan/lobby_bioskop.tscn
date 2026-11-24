@@ -3201,6 +3201,7 @@ script = ExtResource("4_abrsx")
 scene_tujuan = "uid://we4jxnq6woy0"
 id_titik_tujuan = &"dari_lobby_bioskop"
 suara_pintu = ExtResource("5_espj2")
+terkunci = true
 item_dibutuhkan = ExtResource("6_bbnai")
 pesan_dibuka = "Pintu terbuka"
 
@@ -3217,7 +3218,9 @@ id_titik = &"dari_lorong_bioskop"
 script = ExtResource("9_0e631")
 
 [node name="Shaders" type="CanvasModulate" parent="." unique_id=1677114788]
+visible = false
 color = Color(0.43137255, 0.43137255, 0.42352942, 1)
+
 [node name="Npc1" type="AnimatedSprite2D" parent="." unique_id=1103176074]
 position = Vector2(44, -30)
 sprite_frames = SubResource("SpriteFrames_c508m")
