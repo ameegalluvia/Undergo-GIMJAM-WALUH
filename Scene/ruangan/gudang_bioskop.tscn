@@ -4651,10 +4651,6 @@ tile_set = SubResource("TileSet_2puoh")
 
 [node name="Loker" type="Node2D" parent="Tilemaps/Interior" unique_id=2134455463]
 
-[node name="Buka" type="Node2D" parent="Tilemaps/Interior/Loker" unique_id=2081960137]
-
-[node name="Tutup" type="Node2D" parent="Tilemaps/Interior/Loker" unique_id=1000090993]
-
 [node name="Loker1" type="Area2D" parent="Tilemaps/Interior/Loker" unique_id=1788257209 node_paths=PackedStringArray("node_tutup", "node_buka")]
 script = ExtResource("3_pbhxd")
 node_tutup = NodePath("Loker1Tutup")

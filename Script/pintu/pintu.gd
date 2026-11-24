@@ -7,6 +7,8 @@ extends Area2D
 
 @export_group("Kunci")
 @export var terkunci := false
+@export var suara_terkunci: AudioStream          # BARU: bunyi saat pintu terkunci dicoba dibuka
+@export var suara_kunci_dibuka: AudioStream      # BARU (opsional): bunyi saat kunci berhasil dibuka
 @export var pesan_terkunci := "Pintunya terkunci."
 @export var item_dibutuhkan: DataItem            # kosong = tidak bisa dibuka dengan item
 @export var habiskan_item := true
@@ -57,19 +59,30 @@ func _unhandled_input(event: InputEvent) -> void:
 	AudioManager.play_sfx(suara_pintu)   # aman kalau kosong
 	Transisi.pindah_scene(scene_tujuan, id_titik_tujuan)
 
+var _bunyi_berikut_ms := 0
+
 func _coba_buka_kunci() -> void:
 	if item_dibutuhkan == null:
-		InventoryUI.tampilkan_pesan(pesan_terkunci, 2.5)
+		_gagal(pesan_terkunci)
 	elif Inventory.sedang_memegang(item_dibutuhkan.id):
 		if habiskan_item:
 			Inventory.habiskan_item_dipegang()
+		AudioManager.play_sfx(suara_kunci_dibuka)   # aman kalau kosong
 		buka_kunci()
 		if pesan_dibuka != "":
 			InventoryUI.tampilkan_pesan(pesan_dibuka, 2.5)
 	elif Inventory.punya_item(item_dibutuhkan.id):
-		InventoryUI.tampilkan_pesan(pesan_item_di_tas, 3.0)
+		_gagal(pesan_item_di_tas, 3.0)
 	else:
-		InventoryUI.tampilkan_pesan(pesan_terkunci, 2.5)
+		_gagal(pesan_terkunci)
+
+# Bunyi terkunci + pesan. Ada jeda singkat supaya menekan E cepat-cepat tidak memicu bunyi bertumpuk.
+func _gagal(pesan: String, durasi: float = 2.5) -> void:
+	var sekarang := Time.get_ticks_msec()
+	if sekarang >= _bunyi_berikut_ms:
+		AudioManager.play_sfx(suara_terkunci)
+		_bunyi_berikut_ms = sekarang + 500
+	InventoryUI.tampilkan_pesan(pesan, durasi)
 
 # Dipanggil saat item yang tepat dipakai, atau dari puzzle lain lewat signal
 func buka_kunci(_dengan_efek: bool = false) -> void:
