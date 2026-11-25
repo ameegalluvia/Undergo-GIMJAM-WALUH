@@ -4,8 +4,22 @@ const MENU_BGM = preload("res://assets/audio/music/ubed ganteng.mp3")
 const SCENE_AWAL_PATH := "res://Scene/ruangan/lobby_bioskop.tscn"
 const SETTINGS_SCENE_PATH := "res://Scene/sistem/settings.tscn"
 
+# Ganti "Continue" dengan nama node tombol Continue di scene-mu
+@onready var tombol_continue: BaseButton = find_child("Continue", true, false)
+
 func _ready() -> void:
 	AudioManager.play_music(MENU_BGM)
+	_atur_tombol_continue()
+
+func _atur_tombol_continue() -> void:
+	if tombol_continue == null:
+		push_warning("Tombol Continue tidak ditemukan. Cek nama node di main_menu.tscn")
+		return
+	var ada_save := SaveManager.ada_save()
+	tombol_continue.disabled = not ada_save
+	tombol_continue.focus_mode = Control.FOCUS_ALL if ada_save else Control.FOCUS_NONE
+	tombol_continue.modulate.a = 1.0 if ada_save else 0.5   # tampak pudar saat nonaktif
+
 
 func _on_start_pressed() -> void:
 	if Transisi.sedang_transisi:
