@@ -14,10 +14,16 @@ const NILAI_PER_KOTAK := 20.0
 var nilai := MAKS
 var state := State.HIJAU
 var aktif := false   # false = Act 0, sistem mati total
+var dijeda := false
 
+func jeda_drain() -> void:
+	dijeda = true
+
+func lanjut_drain() -> void:
+	dijeda = false	
 
 func _process(delta: float) -> void:
-	if aktif and not get_tree().paused:
+	if aktif and not dijeda and not get_tree().paused:
 		ubah(-DRAIN_PER_MENIT / 60.0 * delta)
 
 

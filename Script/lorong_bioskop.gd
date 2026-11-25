@@ -5,16 +5,18 @@ extends AdeganBase
 @onready var bayangan_mulai: Marker2D = $BayanganMulai
 @onready var bayangan_akhir: Marker2D = $BayanganAkhir
 @onready var bayangan_masuk1: Marker2D = $BayanganMasuk1
-@onready var bayangan_masuk2: Marker2D = $BayanganMasuk2
+@onready var bayangan_studio: Marker2D = $BayanganMasuk2         # ACT 1: pintu studio baru
 
 @onready var area_sadar: Area2D = $AreaSadar
 @onready var area_pintu_keluar: Area2D = $Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop
 @onready var area_bayangan: Area2D = $AreaBayangan
+@onready var area_bayangan2: Area2D = $AreaBayangan2              # ACT 1: pemicu "Ah, itu dia!"
 
 @onready var pintu_lobby = $Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop
 @onready var pintu_studio5 = $Pintu/PintuStudio/PintuStudio1/PintuKeStudio1
 @onready var pintu_km = $Pintu/PintuKamarMandi/Kamarmandi1/PintuKamarmandi1Cowo/PintuKeKamamandi1Cowo
 @onready var pintu_keluar = $Pintu/PintuLobbyBioskop/PintuKeLobbyBioskop
+@onready var pintu_studio_baru = $Pintu/PintuStudio/PintuStudio2/PintuKeStudio2             # ACT 1
 
 @onready var gelap: CanvasModulate = $Shaders   # visible = gelap, hidden = terang
 @onready var senter: PointLight2D = $Player/Senter
@@ -23,6 +25,10 @@ extends AdeganBase
 
 func _ready() -> void:
 	super()
+	GameProgress.tahap = GameProgress.Tahap.ACT1_MULAI
+	for f in ["cs_lobby","cs_teater","cs_pulang","cs_obat_hilang","cs_ketemu","cs_listrik","cs_bayangan","listrik_mati"]:
+		GameProgress.set_flag(f)
+	SanityManager.aktifkan()
 	_atur_pintu()
 	_atur_cahaya()
 	_mulai_adegan()
@@ -41,7 +47,7 @@ func _atur_pintu() -> void:
 	var t: int = GameProgress.tahap
 	var T = GameProgress.Tahap
 
-	# Balik ke lobby: selalu terkunci di Act 0
+	# Balik ke lobby: selalu terkunci
 	pintu_lobby.terkunci = true
 	pintu_lobby.pesan_terkunci = "Johan: Aku harus menuju ke teater 1"
 
@@ -55,12 +61,16 @@ func _atur_pintu() -> void:
 	pintu_km.terkunci = t < T.TEATER
 	pintu_km.pesan_terkunci = "Bukan tujuanku sekarang."
 
-	# Pintu keluar: terkunci sepanjang Act 0
+	# Pintu keluar: terkunci sepanjang Act 0 dan Act 1 awal
 	pintu_keluar.terkunci = true
 	if t < T.TERKUNCI:
 		pintu_keluar.pesan_terkunci = "Aku harus menemukan obatku dulu."
 	else:
 		pintu_keluar.pesan_terkunci = "Kekunci..."
+
+	# ACT 1: studio baru terbuka setelah bayangan masuk ke sana
+	pintu_studio_baru.terkunci = t < T.ACT1_STUDIO
+	pintu_studio_baru.pesan_terkunci = "Bukan tujuanku sekarang."
 
 	# Pintu lain (studio 1-4, ruangan lain): masukkan ke grup lewat Inspector
 	for p in get_tree().get_nodes_in_group("pintu_terkunci_act0"):
@@ -77,6 +87,10 @@ func _mulai_adegan() -> void:
 	area_sadar.monitoring = false
 	area_pintu_keluar.body_entered.connect(_on_area_pintu_keluar)
 	area_pintu_keluar.monitoring = false
+	area_bayangan.body_entered.connect(_on_area_bayangan)
+	area_bayangan.monitoring = false
+	area_bayangan2.body_entered.connect(_on_area_bayangan2)
+	area_bayangan2.monitoring = false
 
 	# Scene 3: Johan di depan kamar mandi, bilang mau pulang
 	if t == T.TEATER and not GameProgress.ambil_flag("cs_obat_hilang"):
@@ -88,22 +102,22 @@ func _mulai_adegan() -> void:
 			johan.last_dir = "down"
 			johan.main_diam()
 			await get_tree().create_timer(0.5).timeout
-			mainkan_sekali("cs_pulang", preload("res://Data/Cutscene/Adegan3.tres"))
+			mainkan_sekali("cs_pulang", preload("res://Data/Cutscene/scene3_pulang.tres"))
 
 	# Scene 4: obat sudah ketemu, pemain menuju pintu keluar
-	elif t == T.TERKUNCI and not GameProgress.ambil_flag("cs_listrik"):
-		area_pintu_keluar.monitoring = true
+	elif t == T.TERKUNCI:
+		if not GameProgress.ambil_flag("cs_listrik"):
+			area_pintu_keluar.monitoring = true
+		elif not GameProgress.ambil_flag("cs_bayangan"):
+			area_bayangan.monitoring = true   # Continue setelah listrik mati
 
-	# Continue setelah listrik mati tapi sebelum bayangan
-	area_bayangan.body_entered.connect(_on_area_bayangan)
-	area_bayangan.monitoring = false
-	if t == T.TERKUNCI and GameProgress.ambil_flag("cs_listrik") and not GameProgress.ambil_flag("cs_bayangan"):
-		area_bayangan.monitoring = true
-		
-	if t == T.ACT1_MULAI and not GameProgress.ambil_flag("cs_act1_mulai"):
-		_kunci_pemain(true)
-		mainkan_sekali("cs_act1_mulai", preload("res://Data/Cutscene/act1_part1awal.tres"))
-
+	# ACT 1: Johan mencari orang tadi
+	elif t == T.ACT1_MULAI:
+		if not GameProgress.ambil_flag("cs_act1_mulai"):
+			_kunci_pemain(true)
+			mainkan_sekali("cs_act1_mulai", preload("res://Data/Cutscene/act1_part1awal.tres"))
+		elif not GameProgress.ambil_flag("cs_act1_bayangan"):
+			area_bayangan2.monitoring = true   # Continue
 
 
 # ---------- Pemicu ----------
@@ -114,7 +128,7 @@ func _on_area_sadar(body: Node) -> void:
 		return
 	area_sadar.set_deferred("monitoring", false)
 	_kunci_pemain(true)
-	mainkan_sekali("cs_obat_hilang", preload("res://Data/Cutscene/obathilang.tres"))
+	mainkan_sekali("cs_obat_hilang", preload("res://Data/Cutscene/Obathilang.tres"))
 
 
 func _on_area_pintu_keluar(body: Node) -> void:
@@ -126,6 +140,7 @@ func _on_area_pintu_keluar(body: Node) -> void:
 	_kunci_pemain(true)
 	mainkan_sekali("cs_listrik", preload("res://Data/Cutscene/scene4_listrik.tres"))
 
+
 func _on_area_bayangan(body: Node) -> void:
 	if not body.is_in_group("player"):
 		return
@@ -134,7 +149,18 @@ func _on_area_bayangan(body: Node) -> void:
 	area_bayangan.set_deferred("monitoring", false)
 	_kunci_pemain(true)
 	mainkan_sekali("cs_bayangan", preload("res://Data/Cutscene/scene4_bayangan.tres"))
-	
+
+
+func _on_area_bayangan2(body: Node) -> void:   # ACT 1
+	if not body.is_in_group("player"):
+		return
+	if GameProgress.ambil_flag("cs_act1_bayangan"):
+		return
+	area_bayangan2.set_deferred("monitoring", false)
+	_kunci_pemain(true)
+	mainkan_sekali("cs_act1_bayangan", preload("res://Data/Cutscene/act1_part1bayangan.tres"))
+
+
 # ---------- Setelah dialog selesai ----------
 func selesai_cutscene() -> void:
 	var T = GameProgress.Tahap
@@ -154,25 +180,33 @@ func selesai_cutscene() -> void:
 		SaveManager.simpan_scene(scene_file_path)
 		return
 
-	# Setelah Scene 4: Act 0 selesai
-		# Setelah bagian 1 Scene 4: pemain bebas, pemicu bayangan aktif
+	# Setelah bagian 1 Scene 4: pemain bebas, pemicu bayangan aktif
 	if GameProgress.ambil_flag("cs_listrik") and not GameProgress.ambil_flag("cs_bayangan"):
 		area_bayangan.set_deferred("monitoring", true)
 		return
 
-	# Setelah bagian 2: Act 0 selesai
+	# Setelah bagian 2 Scene 4: Act 0 selesai, Act 1 dimulai
 	if GameProgress.ambil_flag("cs_bayangan") and GameProgress.tahap == T.TERKUNCI:
-		GameProgress.tahap = T.ACT0_SELESAI
+		GameProgress.tahap = T.ACT1_MULAI                 # ACT 1
+		SanityManager.reset()
+		SanityManager.aktifkan()                          # bar muncul, drain mulai
 		SaveManager.simpan_scene(scene_file_path)
 		_kunci_pemain(true)
-		await _fade(1.0, 1.5)
-		print("Act 0 Ends")
-		GameProgress.tahap = T.ACT1_MULAI
-		SanityManager.reset()
-		SanityManager.aktifkan()          # bar muncul, drain mulai
-		SaveManager.simpan_scene(scene_file_path)
-		_kunci_pemain(false)
+		await _fade(1.0, 1.5)                             # "Act 0 Ends"
 		await _fade(0.0, 1.0)
+		mainkan_sekali("cs_act1_mulai", preload("res://Data/Cutscene/act1_part1awal.tres"))
+		return
+
+	# ACT 1: setelah "Kemana perginya orang itu?", pemain bebas mencari
+	if GameProgress.ambil_flag("cs_act1_mulai") and not GameProgress.ambil_flag("cs_act1_bayangan"):
+		area_bayangan2.set_deferred("monitoring", true)
+		return
+
+	# ACT 1: setelah bayangan masuk studio, buka pintu studio baru
+	if GameProgress.ambil_flag("cs_act1_bayangan") and GameProgress.tahap == T.ACT1_MULAI:
+		GameProgress.tahap = T.ACT1_STUDIO
+		pintu_studio_baru.terkunci = false
+		SaveManager.simpan_scene(scene_file_path)
 
 
 # ---------- Aksi dari dialog ----------
@@ -199,35 +233,25 @@ func aksi_khusus(nama: String) -> void:
 			senter.enabled = true
 
 		"bayangan_lewat":
-			var awal: Vector2 = bayangan_mulai.global_position
-			var tujuan: Vector2 = bayangan_akhir.global_position
-			bayangan.global_position = awal
-			bayangan.visible = true
-			var arah := tujuan - awal
-			var sisi := "right" if arah.x > 0 else "left"
-			if abs(arah.y) > abs(arah.x):
-				sisi = "down" if arah.y > 0 else "up"
-			if bayangan.sprite_frames.has_animation("walk_" + sisi):
-				bayangan.play("walk_" + sisi)
-			var tw := create_tween()
-			tw.tween_property(bayangan, "global_position", tujuan, arah.length() / 90.0)
-			await tw.finished
-			bayangan.visible = false
-			
-		"bayangan_masuk":
-			var awal: Vector2 = bayangan_masuk1.global_position
-			var tujuan: Vector2 = bayangan_masuk2.global_position
-			bayangan.global_position = awal
-			bayangan.visible = true
-			var arah := tujuan - awal
-			var sisi := "right" if arah.x > 0 else "left"
-			if abs(arah.y) > abs(arah.x):
-				sisi = "down" if arah.y > 0 else "up"
-			if bayangan.sprite_frames.has_animation("walk_" + sisi):
-				bayangan.play("walk_" + sisi)
-			var tw := create_tween()
-			tw.tween_property(bayangan, "global_position", tujuan, arah.length() / 90.0)
-			await tw.finished
-			bayangan.visible = false
+			await _gerak_bayangan(bayangan_mulai.global_position, bayangan_akhir.global_position)
+
+		"bayangan_masuk_studio":   # ACT 1
+			await _gerak_bayangan(bayangan_masuk1.global_position, bayangan_studio.global_position)
 
 	overlay.aksi_selesai()
+
+
+# ---------- Bantu: bayangan berjalan dari titik ke titik ----------
+func _gerak_bayangan(awal: Vector2, tujuan: Vector2) -> void:
+	bayangan.global_position = awal
+	bayangan.visible = true
+	var arah := tujuan - awal
+	var sisi := "right" if arah.x > 0 else "left"
+	if abs(arah.y) > abs(arah.x):
+		sisi = "down" if arah.y > 0 else "up"
+	if bayangan.sprite_frames.has_animation("walk_" + sisi):
+		bayangan.play("walk_" + sisi)
+	var tw := create_tween()
+	tw.tween_property(bayangan, "global_position", tujuan, arah.length() / 90.0)
+	await tw.finished
+	bayangan.visible = false

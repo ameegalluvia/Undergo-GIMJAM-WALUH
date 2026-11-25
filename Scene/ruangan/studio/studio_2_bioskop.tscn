@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_i6g1j"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_l4koj"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_vbdxa"]
-[ext_resource type="Script" uid="uid://bb5tm6cg757ng" path="res://Scene/ruangan/studio/kursi.gd" id="9_jqnfd"]
+[ext_resource type="Script" uid="uid://bb5tm6cg757ng" path="res://Script/kursi.gd" id="9_jqnfd"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="10_3bitd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogtug"]
@@ -5157,6 +5157,8 @@ size = Vector2(8, 121)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmien"]
 size = Vector2(11, 121)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
+
 [node name="Studio2Bioskop" type="Node2D" unique_id=117035991]
 script = ExtResource("1_mv1g8")
 
@@ -5226,7 +5228,7 @@ position = Vector2(-4.5, -27.5)
 shape = SubResource("RectangleShape2D_bmien")
 
 [node name="TitikDariLobbyBioskop" type="Marker2D" parent="PintuLorongBioskop" unique_id=1415063017]
-position = Vector2(918, 1417)
+position = Vector2(958, 1419)
 script = ExtResource("7_vbdxa")
 id_titik = &"dari_lorong_bioskop"
 
@@ -5236,5 +5238,8 @@ color = Color(0.43137255, 0.43137255, 0.42352942, 1)
 [node name="kursi" type="Area2D" parent="." unique_id=708659271]
 position = Vector2(16, 44)
 script = ExtResource("9_jqnfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kursi" unique_id=696099550]
+shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("10_3bitd")]
