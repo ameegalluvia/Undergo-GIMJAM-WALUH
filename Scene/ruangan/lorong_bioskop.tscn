@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://54641pr22m4r" path="res://assets/sprites/Johan/Johan Hitam.png" id="15_qri40"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="17_2i0bq"]
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="21_ys0aj"]
+[ext_resource type="Script" uid="uid://hkxv7q86trxs" path="res://Script/Kejar_Bayangan.gd" id="22_opwbi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbcv1"]
 texture = ExtResource("1_uwib2")
@@ -9211,6 +9212,27 @@ size = Vector2(97, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j1yf"]
 size = Vector2(106, 84)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbwqk"]
+size = Vector2(19, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwok3"]
+size = Vector2(99.5, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6uyq"]
+size = Vector2(20, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87wdc"]
+size = Vector2(40, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko5mp"]
+size = Vector2(41, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pdmu"]
+size = Vector2(48, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ciq3"]
+size = Vector2(68, 87.5)
+
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
 script = ExtResource("1_wbcv1")
@@ -9793,7 +9815,7 @@ energy = 5.7
 texture = SubResource("GradientTexture2D_o6lwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lighting/VendingMachine/Vending3" unique_id=656240372]
-position = Vector2(0, 22)
+position = Vector2(3, 21)
 shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Vending4" type="Area2D" parent="Lighting/VendingMachine" unique_id=851034254 node_paths=PackedStringArray("lampu_target")]
@@ -9872,7 +9894,7 @@ position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
-position = Vector2(-4, -218)
+position = Vector2(-524, -224)
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
@@ -9952,6 +9974,7 @@ position = Vector2(-1331, -1707)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://b5uy1057ya182"
+id_titik_tujuan = &"TitikDariLobbyBioskop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio2/PintuKeStudio2" unique_id=1663510535]
 position = Vector2(1, 1)
@@ -10226,3 +10249,58 @@ position = Vector2(528, -1030)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBayangan2" unique_id=1138967430]
 position = Vector2(-960, 731)
 shape = SubResource("RectangleShape2D_5j1yf")
+
+[node name="Kejar" type="Node" parent="." unique_id=1629278594]
+script = ExtResource("22_opwbi")
+
+[node name="Titik1" type="Marker2D" parent="Kejar" unique_id=1994579903]
+position = Vector2(-717, -305)
+
+[node name="Titik2" type="Marker2D" parent="Kejar" unique_id=329562496]
+position = Vector2(-722, -1265)
+
+[node name="Titik3" type="Marker2D" parent="Kejar" unique_id=1024294759]
+position = Vector2(-433, -1261)
+
+[node name="DekatTitik1" type="Area2D" parent="Kejar" unique_id=299434707]
+position = Vector2(-677, -305)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kejar/DekatTitik1" unique_id=1349558996]
+position = Vector2(-8.5, 0)
+shape = SubResource("RectangleShape2D_jbwqk")
+
+[node name="DekatTitik2" type="Area2D" parent="Kejar" unique_id=766003634]
+position = Vector2(-723, -1207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kejar/DekatTitik2" unique_id=1324211746]
+position = Vector2(2.75, -17)
+shape = SubResource("RectangleShape2D_vwok3")
+
+[node name="DekatTitik3" type="Area2D" parent="Kejar" unique_id=1655469239]
+position = Vector2(-491, -1256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kejar/DekatTitik3" unique_id=925430812]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_p6uyq")
+
+[node name="Pembatas" type="StaticBody2D" parent="Kejar" unique_id=1631677657]
+position = Vector2(-181, -303)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1681593039]
+position = Vector2(-25, 7)
+shape = SubResource("RectangleShape2D_87wdc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1477389460]
+position = Vector2(-467.5, -466)
+shape = SubResource("RectangleShape2D_ko5mp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1949391763]
+position = Vector2(-613, -961.5)
+shape = SubResource("RectangleShape2D_7pdmu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=889630757]
+position = Vector2(-167, -960)
+shape = SubResource("RectangleShape2D_2ciq3")
+
+[node name="Titikstudio3" type="Marker2D" parent="Kejar" unique_id=1195771058]
+position = Vector2(-434, -1334)

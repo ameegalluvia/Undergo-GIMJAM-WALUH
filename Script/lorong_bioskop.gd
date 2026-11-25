@@ -19,16 +19,14 @@ extends AdeganBase
 @onready var pintu_studio_baru = $Pintu/PintuStudio/PintuStudio2/PintuKeStudio2             # ACT 1
 
 @onready var gelap: CanvasModulate = $Shaders   # visible = gelap, hidden = terang
-@onready var senter: PointLight2D = $Player/Senter
+@onready var senter: PointLight2D = $Player/Senter/Cahaya
 @onready var bayangan: AnimatedSprite2D = $Bayangan
 
 
 func _ready() -> void:
+	# ===== TES SEMENTARA, HAPUS SETELAH SELESAI =====
+	# ================================================
 	super()
-	GameProgress.tahap = GameProgress.Tahap.ACT1_MULAI
-	for f in ["cs_lobby","cs_teater","cs_pulang","cs_obat_hilang","cs_ketemu","cs_listrik","cs_bayangan","listrik_mati"]:
-		GameProgress.set_flag(f)
-	SanityManager.aktifkan()
 	_atur_pintu()
 	_atur_cahaya()
 	_mulai_adegan()
@@ -39,7 +37,8 @@ func _atur_cahaya() -> void:
 	var mati: bool = GameProgress.ambil_flag("listrik_mati")
 	gelap.visible = mati
 	senter.enabled = mati
-	bayangan.visible = false
+	if GameProgress.tahap != GameProgress.Tahap.ACT1_KEJAR:
+		bayangan.visible = false
 
 
 # ---------- Kondisi pintu per tahap ----------
@@ -164,6 +163,11 @@ func _on_area_bayangan2(body: Node) -> void:   # ACT 1
 # ---------- Setelah dialog selesai ----------
 func selesai_cutscene() -> void:
 	var T = GameProgress.Tahap
+	
+	# ACT 1 Part 2: pengejaran
+	if GameProgress.tahap == T.ACT1_KEJAR:
+		$Kejar.lanjut_setelah_dialog()
+		return
 
 	# Setelah "ayo pulang": pemain bebas, pemicu aktif
 	if GameProgress.ambil_flag("cs_pulang") and not GameProgress.ambil_flag("cs_obat_hilang"):
@@ -207,6 +211,8 @@ func selesai_cutscene() -> void:
 		GameProgress.tahap = T.ACT1_STUDIO
 		pintu_studio_baru.terkunci = false
 		SaveManager.simpan_scene(scene_file_path)
+		
+
 
 
 # ---------- Aksi dari dialog ----------
@@ -237,6 +243,9 @@ func aksi_khusus(nama: String) -> void:
 
 		"bayangan_masuk_studio":   # ACT 1
 			await _gerak_bayangan(bayangan_masuk1.global_position, bayangan_studio.global_position)
+			
+		"bayangan_kabur":
+			await $Kejar.bayangan_kabur()
 
 	overlay.aksi_selesai()
 

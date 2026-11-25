@@ -5163,7 +5163,7 @@ size = Vector2(11, 121)
 script = ExtResource("1_mv1g8")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("1_wl48g")]
-position = Vector2(-114, 52)
+position = Vector2(-73, 46)
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=663647996 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
@@ -5243,3 +5243,6 @@ script = ExtResource("9_jqnfd")
 shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("10_3bitd")]
+
+[node name="SpawnKursi" type="Marker2D" parent="." unique_id=296771134]
+position = Vector2(16, 33)
