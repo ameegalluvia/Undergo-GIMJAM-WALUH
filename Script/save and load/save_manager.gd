@@ -7,6 +7,15 @@ func ada_save() -> bool:
 	return FileAccess.file_exists(FILE_SAVE)
 
 
+# True kalau ada save yang bisa dimuat (file ada, isinya benar, scene-nya ada)
+func save_valid() -> bool:
+	var data: Dictionary = _baca()
+	if data.is_empty():
+		return false
+	var path: String = String(data.get("scene", ""))
+	return path != "" and ResourceLoader.exists(path)
+
+
 # ---------- Simpan ----------
 func simpan_scene(scene_path: String = "") -> void:
 	if scene_path == "":
@@ -39,10 +48,10 @@ func _baca() -> Dictionary:
 	return hasil if hasil is Dictionary else {}
 
 
-func lanjutkan() -> void:
-	var data := _baca()
-	if data.is_empty() or String(data.get("scene", "")) == "":
-		return
+func lanjutkan() -> bool:
+	if not save_valid():
+		return false
+	var data: Dictionary = _baca()
 
 	GameProgress.tahap = int(data.get("tahap", 0))   # JSON menyimpan angka sebagai float
 	GameProgress.flag = data.get("flag", {})
@@ -54,11 +63,8 @@ func lanjutkan() -> void:
 	else:
 		SanityManager.nonaktifkan()
 
-	var path: String = data["scene"]
-	if not ResourceLoader.exists(path):
-		push_warning("Scene save tidak ditemukan: " + path)
-		return
-	Transisi.pindah_scene(path, &"")   # tanpa titik tujuan, Johan di posisi default scene
+	get_tree().change_scene_to_file(String(data["scene"]))
+	return true
 
 
 # ---------- Game baru ----------
