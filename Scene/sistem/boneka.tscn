@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cgvvmi836c2qi"]
+
+[ext_resource type="Script" uid="uid://7t0sji8dv4g8" path="res://Script/Boneka.gd" id="1_clrad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
+size = Vector2(90, 81)
+
+[node name="Boneka" type="Area2D" unique_id=1838572457]
+collision_layer = 0
+script = ExtResource("1_clrad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423287674]
+z_index = 1
+position = Vector2(17, 16.5)
+shape = SubResource("RectangleShape2D_c508m")

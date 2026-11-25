@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://c6w8o67oa28yw"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_5vbbo"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_1enjg"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_ag6ic"]
+
+[sub_resource type="Resource" id="Resource_opwbi"]
+script = ExtResource("1_5vbbo")
+nama = "Johan"
+teks = "Jangan sembunyi, keluarlah!"
+potret = ExtResource("2_1enjg")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_ag6ic")
+dialog = Array[ExtResource("1_5vbbo")]([SubResource("Resource_opwbi")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
