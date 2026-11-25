@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bgmnt1t6yrdos"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_ghh5u"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_3ggu5"]
+[ext_resource type="Texture2D" uid="uid://b3sc0rj6hb5xc" path="res://assets/Gambar/Memori2_1.png" id="2_csk4i"]
+[ext_resource type="Texture2D" uid="uid://dofiusui3jnoa" path="res://assets/Gambar/Memori2_2.png" id="3_aogvu"]
+[ext_resource type="Texture2D" uid="uid://behftbmlof0rs" path="res://assets/Gambar/Memori2_3.png" id="4_max75"]
+
+[sub_resource type="Resource" id="Resource_clrad"]
+script = ExtResource("1_ghh5u")
+teks = "Sebuah keluarga sedang berada di kapal pesiar"
+gambar = ExtResource("2_csk4i")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4bo5k"]
+script = ExtResource("1_ghh5u")
+teks = "*sang anak dan kakaknya sedang bermain petak umpet*
+"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_fsnnq"]
+script = ExtResource("1_ghh5u")
+teks = "*Ini adalah gilirannya untuk mencari*
+"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_uc441"]
+script = ExtResource("1_ghh5u")
+teks = "anak itu masuk ke kamar keluarga mereka, mencari kakaknya. Tidak sadar dengan percakapan berat antara ayah dan ibunya"
+gambar = ExtResource("3_aogvu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4krke"]
+script = ExtResource("1_ghh5u")
+nama = "Ayah"
+teks = "Kenapa kita perlu liburan sih bu? sudah tau ekonomi saat ini lagi ga baik-baik  aja, ah semua ini gara-gara orang itu"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ggmeb"]
+script = ExtResource("1_ghh5u")
+nama = "Ibu"
+teks = "Yah, kita liburan tuh biar ayah bisa lebih rileks. Untuk keuangan pasti ada jalan keluarnya–"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_1xjhv"]
+script = ExtResource("1_ghh5u")
+nama = "Ayah"
+teks = "Jalan keluarnya!? Ibu sadar kan yang ibu lakuin ini cuma buang-buang uang? Anak-anak masih bisa liburan walaupun di rumah!”"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ayxle"]
+script = ExtResource("1_ghh5u")
+nama = "Ibu"
+teks = "Kok ayah tiba-tiba marah sih? Ibu cuma mau bantu ayah…"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_us44c"]
+script = ExtResource("1_ghh5u")
+nama = "Ayah"
+teks = "Bantu? yang ibu lakuin cuma diam di rumah dan ngabisin uang ayah!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_1tho3"]
+script = ExtResource("1_ghh5u")
+nama = "Ibu"
+teks = "Ayah sadar ga sih, uang ayah ga akan habis kalau ayah GA PAKE BUAT MINUM-MINUM DAN KETEMU PEREMPUAN-PEREMPUAN BAJI–"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_rf536"]
+script = ExtResource("1_ghh5u")
+nama = "Anak"
+teks = "KAK! Keluar aja deh. Adek tau kakak ada disini…"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_43n5j"]
+script = ExtResource("1_ghh5u")
+nama = "Ibu"
+teks = "Ya Tuhan… Celaka"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_u76vh"]
+script = ExtResource("1_ghh5u")
+teks = "Ayah melihat ke arah sang anak dan kembali menatap ibunya, lalu dengan cepat keluar kamar dengan kesalnya"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_wbgkm"]
+script = ExtResource("1_ghh5u")
+teks = "Ibunya berlari ke arah anak itu dan memeluknya sambil berbisik"
+gambar = ExtResource("4_max75")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_h1mvk"]
+script = ExtResource("1_ghh5u")
+nama = "Ibu"
+teks = "Sayang, ibu mau kamu janji, kamu harus jadi anak yang baik. Kamu ga perlu jadi sempurna, cukup jadi baik…
+"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ql1cy"]
+script = ExtResource("1_ghh5u")
+teks = "Thirty Mile to Oblivion"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_3ggu5")
+dialog = Array[ExtResource("1_ghh5u")]([SubResource("Resource_clrad"), SubResource("Resource_4bo5k"), SubResource("Resource_fsnnq"), SubResource("Resource_uc441"), SubResource("Resource_4krke"), SubResource("Resource_ggmeb"), SubResource("Resource_1xjhv"), SubResource("Resource_ayxle"), SubResource("Resource_us44c"), SubResource("Resource_1tho3"), SubResource("Resource_rf536"), SubResource("Resource_43n5j"), SubResource("Resource_u76vh"), SubResource("Resource_wbgkm"), SubResource("Resource_h1mvk"), SubResource("Resource_ql1cy")])
+scene_berikutnya = "uid://7dht74vsh8ej"
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

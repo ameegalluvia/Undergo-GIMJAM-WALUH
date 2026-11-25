@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://b0l8k7wvvpchd"]
 
 [ext_resource type="Texture2D" uid="uid://blb326mtq036c" path="res://assets/ui/InteractiveItems/Tang.png" id="1_fogfd"]
@@ -8,4 +9,14 @@ script = ExtResource("1_oc33g")
 id = &"kayu"
 nama_tampil = "Kayu"
 ikon = ExtResource("1_fogfd")
+=======
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://b4h6gafkg7wox"]
+
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_a4ae8"]
+
+[resource]
+script = ExtResource("1_a4ae8")
+id = &"Kayu"
+nama_tampil = "Kayu"
+>>>>>>> Stashed changes
 metadata/_custom_type_script = "uid://ccg3nj837oud5"

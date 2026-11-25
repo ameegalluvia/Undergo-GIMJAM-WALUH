@@ -24,7 +24,15 @@ extends AdeganBase
 
 
 func _ready() -> void:
-	# ===== TES SEMENTARA, HAPUS SETELAH SELESAI =====
+	# ===== TES SEMENTARA, HAPUS SETELAH SELESAI ====='
+	for f in ["cs_lobby","cs_teater","cs_pulang","cs_obat_hilang","cs_ketemu",
+			"cs_listrik","cs_bayangan","listrik_mati","cs_act1_mulai",
+			"cs_act1_bayangan","cs_studio_masuk","cs_kursi",
+			"cs_setelah_memori1","memori1_selesai"]:
+		GameProgress.set_flag(f)
+	GameProgress.set_flag("kejar_tahap", 0)
+	GameProgress.tahap = GameProgress.Tahap.ACT1_KEJAR
+	SanityManager.aktifkan()
 	# ================================================
 	super()
 	_atur_pintu()

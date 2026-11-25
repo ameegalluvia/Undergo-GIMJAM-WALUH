@@ -4,16 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://ox0syjjbkxx1" path="res://assets/Gambar/Memori1_1.png" id="2_w8c4q"]
 [ext_resource type="Texture2D" uid="uid://64htg0bgrajw" path="res://assets/Gambar/Memori1_2.png" id="3_qbier"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="4_w1uux"]
+[ext_resource type="Texture2D" uid="uid://dd7gn32vjprrs" path="res://assets/Gambar/Memori1_3.png" id="4_w8c4q"]
 
 [sub_resource type="Resource" id="Resource_tyecp"]
 script = ExtResource("1_ecq1f")
+teks = "Seorang anak sedang menggambar di dapur. Ibunya datang. Kala itu sore hari menjelang petang"
 gambar = ExtResource("2_w8c4q")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_h1l00"]
 script = ExtResource("1_ecq1f")
 nama = "Ibu"
-teks = "Kamu sedang apa, nak?"
+teks = "Kamu sedang apa, Johan?"
 gambar = ExtResource("3_qbier")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -57,6 +59,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_ecq1f")
 nama = "Ibu"
 teks = "Oh..."
+potret = ExtResource("4_w8c4q")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_bmvf0"]

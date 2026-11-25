@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://6dc334c44yyc"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_c1rsw"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_ob0s7"]
+[ext_resource type="Texture2D" uid="uid://cx1vipvejlxmn" path="res://assets/sprites/Johan/Jotam___.png" id="3_nbjor"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="4_5gh34"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="5_134hu"]
+
+[sub_resource type="Resource" id="Resource_87wdc"]
+script = ExtResource("1_c1rsw")
+nama = "Johan"
+teks = "Kayu? Aku bisa pakai ini buat melawan siapapun itu yang mempermainkanku tadi."
+potret = ExtResource("2_ob0s7")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_5j1yf"]
+script = ExtResource("1_c1rsw")
+nama = "Kakak?"
+teks = "Maukah kamu aku beritahu sesuatu? Jiwaku terikat padanya... Ubed"
+potret = ExtResource("3_nbjor")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_jbwqk"]
+script = ExtResource("1_c1rsw")
+nama = "Johan"
+teks = "Apa yang kau bicarakan?"
+potret = ExtResource("4_5gh34")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_c508m"]
+script = ExtResource("1_c1rsw")
+nama = "Kakak?"
+teks = "Kau benar-benar payah, kau yakin kalau kau betul-betul adikku?
+"
+potret = ExtResource("3_nbjor")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_pa2nc"]
+script = ExtResource("1_c1rsw")
+nama = "Kakak"
+teks = "Heh, semoga beruntung, peniru"
+potret = ExtResource("3_nbjor")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("5_134hu")
+dialog = Array[ExtResource("1_c1rsw")]([SubResource("Resource_87wdc"), SubResource("Resource_5j1yf"), SubResource("Resource_jbwqk"), SubResource("Resource_c508m"), SubResource("Resource_pa2nc")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

@@ -10022,6 +10022,7 @@ position = Vector2(-1331, -2670)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://7dht74vsh8ej"
+id_titik_tujuan = &"TitikDariLobbyBioskop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio4/PintuKeStudio4" unique_id=1103901844]
 position = Vector2(1, 1)
