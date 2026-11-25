@@ -5,12 +5,18 @@
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_nr85v"]
 [ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="3_umd3w"]
 
+[sub_resource type="Resource" id="Resource_ys0aj"]
+script = ExtResource("1_2mka6")
+teks = "......."
+aksi = "bayangan_masuk_studio"
+tunggu_aksi = true
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
 [sub_resource type="Resource" id="Resource_j4hre"]
 script = ExtResource("1_2mka6")
 nama = "Johan"
 teks = "Ah, Itu dia! Hey! Mas! WOEY! "
 potret = ExtResource("2_j4hre")
-aksi = "bayangan_masuk"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_umd3w"]
@@ -22,5 +28,5 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_nr85v")
-dialog = Array[ExtResource("1_2mka6")]([SubResource("Resource_j4hre"), SubResource("Resource_umd3w")])
+dialog = Array[ExtResource("1_2mka6")]([SubResource("Resource_ys0aj"), SubResource("Resource_j4hre"), SubResource("Resource_umd3w")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

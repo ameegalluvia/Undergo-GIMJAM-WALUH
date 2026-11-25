@@ -53,7 +53,46 @@ nama = "Anak"
 teks = "Hehe, terimakasih bu"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
+[sub_resource type="Resource" id="Resource_uyg6l"]
+script = ExtResource("1_ecq1f")
+nama = "Ibu"
+teks = "Oh..."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_bmvf0"]
+script = ExtResource("1_ecq1f")
+nama = "Ibu"
+teks = "Sayang, kamu bisa lanjut gambarnya di kamar kamu, ngga?"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_1yek6"]
+script = ExtResource("1_ecq1f")
+nama = "Anak"
+teks = "Baik, ibu."
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_2hot5"]
+script = ExtResource("1_ecq1f")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_edbd2"]
+script = ExtResource("1_ecq1f")
+teks = "BRAK"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_jtqx6"]
+script = ExtResource("1_ecq1f")
+nama = "Ibu"
+teks = "JANGAN!! Biarkan dia sendirian!!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_234fc"]
+script = ExtResource("1_ecq1f")
+teks = "And now it's hard to be"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
 [resource]
 script = ExtResource("4_w1uux")
-dialog = Array[ExtResource("1_ecq1f")]([SubResource("Resource_tyecp"), SubResource("Resource_h1l00"), SubResource("Resource_00r1g"), SubResource("Resource_b5c0f"), SubResource("Resource_lwh0i"), SubResource("Resource_5tppg"), SubResource("Resource_18vob"), SubResource("Resource_la2g8"), null, null])
+dialog = Array[ExtResource("1_ecq1f")]([SubResource("Resource_tyecp"), SubResource("Resource_h1l00"), SubResource("Resource_00r1g"), SubResource("Resource_b5c0f"), SubResource("Resource_lwh0i"), SubResource("Resource_5tppg"), SubResource("Resource_18vob"), SubResource("Resource_la2g8"), SubResource("Resource_uyg6l"), SubResource("Resource_bmvf0"), SubResource("Resource_1yek6"), SubResource("Resource_2hot5"), SubResource("Resource_edbd2"), SubResource("Resource_jtqx6"), SubResource("Resource_234fc")])
+scene_berikutnya = "uid://b5uy1057ya182"
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

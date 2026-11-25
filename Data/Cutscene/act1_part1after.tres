@@ -1,8 +1,17 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://cwpqb7kvejct0"]
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_4do17"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="2_4c0r6"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_etvoj"]
+
+[sub_resource type="Resource" id="Resource_ks60e"]
+script = ExtResource("1_4do17")
+nama = "Johan"
+teks = "Film apa ini, kok singkat? tapi rasanya sangat nyata, seakan aku masuk ke filmnya, mengganggu banget. Membuatku teringat dulu aku pernah menggambar kakak, ibu, dan pak tua itu sebelum ibu menyuruh aku untuk kembali ke kamar"
+potret = ExtResource("2_4c0r6")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_etvoj")
+dialog = Array[ExtResource("1_4do17")]([SubResource("Resource_ks60e")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

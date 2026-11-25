@@ -4535,6 +4535,7 @@ position = Vector2(-893, -1156)
 position = Vector2(897, 1336)
 script = ExtResource("5_t2qb3")
 scene_tujuan = "uid://we4jxnq6woy0"
+id_titik_tujuan = &"dari_kamarmandi1_cowo_bioskop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLorongBioskop/PintuKeLorongBioskop" unique_id=160971205]
 position = Vector2(-5, -42)

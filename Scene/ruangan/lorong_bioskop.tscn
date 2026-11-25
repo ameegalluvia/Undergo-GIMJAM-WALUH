@@ -9208,6 +9208,9 @@ size = Vector2(97, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7x6t"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j1yf"]
+size = Vector2(106, 84)
+
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
 script = ExtResource("1_wbcv1")
@@ -9869,7 +9872,7 @@ position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
-position = Vector2(143, -1200)
+position = Vector2(-4, -218)
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
@@ -10210,8 +10213,16 @@ id_puzzle = &"PuzzlePoster"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle/PuzzlePoster" unique_id=900811744]
 position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_e7x6t")
+
 [node name="BayanganMasuk1" type="Marker2D" parent="." unique_id=457454386]
 position = Vector2(-433, -259)
 
 [node name="BayanganMasuk2" type="Marker2D" parent="." unique_id=700040341]
 position = Vector2(-434, -369)
+
+[node name="AreaBayangan2" type="Area2D" parent="." unique_id=1701423757]
+position = Vector2(528, -1030)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBayangan2" unique_id=1138967430]
+position = Vector2(-960, 731)
+shape = SubResource("RectangleShape2D_5j1yf")
