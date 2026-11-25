@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://8bno1134oje2"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_4ou2b"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_jsbb0"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="3_hduuc"]
+[ext_resource type="Texture2D" uid="uid://cx1vipvejlxmn" path="res://assets/sprites/Johan/Jotam___.png" id="3_jsbb0"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="4_punx8"]
+
+[sub_resource type="Resource" id="Resource_xi8yq"]
+script = ExtResource("1_4ou2b")
+teks = "bayangan itu kabur lagi..."
+aksi = "bayangan_kabur"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ujtl8"]
+script = ExtResource("1_4ou2b")
+nama = "Johan"
+teks = "Sial! Dia kabur lagi"
+potret = ExtResource("2_jsbb0")
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_1mk5f"]
+script = ExtResource("1_4ou2b")
+nama = "???"
+teks = "Kamu lebih payah dari yang aku terakhir ingat..."
+potret = ExtResource("3_jsbb0")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xcomm"]
+script = ExtResource("1_4ou2b")
+nama = "Johan"
+teks = "DIAM PENIRU!! AKAN AKU TANGKKAP KAMU!!"
+potret = ExtResource("3_hduuc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("4_punx8")
+dialog = Array[ExtResource("1_4ou2b")]([SubResource("Resource_xi8yq"), SubResource("Resource_ujtl8"), SubResource("Resource_1mk5f"), SubResource("Resource_xcomm")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

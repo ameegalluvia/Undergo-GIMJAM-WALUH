@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://30wx3aqwnj84"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_qo1pi"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_e1rx6"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="2_qvuc5"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="3_rbhdu"]
+[ext_resource type="Texture2D" uid="uid://cx1vipvejlxmn" path="res://assets/sprites/Johan/Jotam___.png" id="4_rbhdu"]
+
+[sub_resource type="Resource" id="Resource_4lkef"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Hah?"
+potret = ExtResource("2_qvuc5")
+pakai_transisi = false
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ivnqe"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Apa aku salah liat ya?"
+potret = ExtResource("3_rbhdu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4kxq4"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Tidak mungkin... tidak..."
+potret = ExtResource("2_qvuc5")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_o665e"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Itu pasti halusinasi. Ya, pasti halusinasi"
+potret = ExtResource("2_qvuc5")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_a3pk3"]
+script = ExtResource("1_qo1pi")
+nama = "???"
+teks = "Aku tidak pernah akan bisa membayangkan ini. Kamu udah gede ya Johan..."
+potret = ExtResource("4_rbhdu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_nbxxs"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Stop! Jangan berani-beraninya kamu!"
+potret = ExtResource("2_qvuc5")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_ik6i7"]
+script = ExtResource("1_qo1pi")
+nama = "???"
+teks = "Kamu ini Johan... Selalu saja menyangkal hal-hal sebenarnya udah jelas. Tidak pernah berubah"
+potret = ExtResource("4_rbhdu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_77v0p"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "Mustahil, tidak... jangan..."
+potret = ExtResource("2_qvuc5")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_yql37"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "STOP MENIRU KAKAKKU!"
+potret = ExtResource("3_rbhdu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_30uhw"]
+script = ExtResource("1_qo1pi")
+nama = "???"
+teks = "Ah, Johan... Sudah lama kita tidak bermain seperti ini"
+potret = ExtResource("4_rbhdu")
+aksi = "bayangan_kabur"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_2v8pb"]
+script = ExtResource("1_qo1pi")
+nama = "Johan"
+teks = "STOP!!!"
+potret = ExtResource("3_rbhdu")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_e1rx6")
+dialog = Array[ExtResource("1_qo1pi")]([SubResource("Resource_4lkef"), SubResource("Resource_ivnqe"), SubResource("Resource_4kxq4"), SubResource("Resource_o665e"), SubResource("Resource_a3pk3"), SubResource("Resource_nbxxs"), SubResource("Resource_ik6i7"), SubResource("Resource_77v0p"), SubResource("Resource_yql37"), SubResource("Resource_30uhw"), SubResource("Resource_2v8pb")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
