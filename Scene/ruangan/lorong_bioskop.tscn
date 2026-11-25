@@ -9,12 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://caqgnk45lntxl" path="res://assets/tilesets/Tilesets BARU 2.png" id="4_pqhe1"]
 [ext_resource type="Script" uid="uid://djby7tp50wcnv" path="res://Script/puzzle/tempat_item.gd" id="5_2i0bq"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
+[ext_resource type="Resource" uid="uid://b0l8k7wvvpchd" path="res://Data/Items/kayu.tres" id="6_4lkef"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="6_ys0aj"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
 [ext_resource type="AudioStream" uid="uid://x3v5req2kd1j" path="res://assets/audio/sfx/Ambil.wav" id="7_opwbi"]
 [ext_resource type="Script" uid="uid://bwtdvk2e853te" path="res://Script/sanity/arc_setter.gd" id="8_fkfb6"]
+[ext_resource type="Script" uid="uid://c1isqrn5ac16u" path="res://Script/puzzle/efek_hancur.gd" id="8_o665e"]
 [ext_resource type="Script" uid="uid://b5nycg014u502" path="res://Script/puzzle/vending_machine.gd" id="8_pqhe1"]
 [ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="10_o6lwv"]
+[ext_resource type="AudioStream" uid="uid://cw7b8lgfiv23d" path="res://assets/audio/sfx/KacaPecah.mp3" id="10_o665e"]
 [ext_resource type="Resource" uid="uid://de6u08jsdkqou" path="res://Data/Items/minuman.tres" id="10_vbob3"]
 [ext_resource type="PackedScene" uid="uid://csd2mhu8f77vh" path="res://Scene/sistem/fade.tscn" id="11_vbob3"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="13_gr35y"]
@@ -23,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://ca5pwp267xbm2" path="res://Data/Items/kunci.tres" id="18_opwbi"]
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="21_ys0aj"]
 [ext_resource type="Script" uid="uid://hkxv7q86trxs" path="res://Script/Kejar_Bayangan.gd" id="22_opwbi"]
+[ext_resource type="AudioStream" uid="uid://udkdcib5gv6m" path="res://assets/audio/sfx/TembokHancur.mp3" id="26_nbxxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbcv1"]
 texture = ExtResource("1_uwib2")
@@ -9357,7 +9361,10 @@ item = ExtResource("6_ys0aj")
 id_tempat = &"TempatPalu"
 node_ada_item = NodePath("PaluAda")
 node_kosong = NodePath("PaluKosong")
+teks_prompt = "Tekan E untuk memecahkan Kaca dan mengambil %s"
 teks_kosong = "Sudah kosong"
+item_syarat = ExtResource("6_4lkef")
+pesan_syarat_gagal = "Aduh, terkunci... mungkin aku membutuhkan sesuatu yang keras"
 suara_ambil = ExtResource("7_opwbi")
 
 [node name="PaluAda" type="TileMapLayer" parent="Tilemaps/Interior/TempatPalu" unique_id=181802516]
@@ -9373,6 +9380,11 @@ tile_set = SubResource("TileSet_mwv44")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tilemaps/Interior/TempatPalu" unique_id=2082116388]
 position = Vector2(-785, -1782)
 shape = SubResource("RectangleShape2D_jps1b")
+
+[node name="EfekHancur" type="Node2D" parent="Tilemaps/Interior/TempatPalu" unique_id=1605500990]
+position = Vector2(-784, -1823)
+script = ExtResource("8_o665e")
+suara = ExtResource("10_o665e")
 
 [node name="Lighting" type="Node2D" parent="." unique_id=1670699735]
 
@@ -9895,7 +9907,7 @@ position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
-position = Vector2(-524, -224)
+position = Vector2(-1, 45)
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
@@ -10240,6 +10252,12 @@ id_puzzle = &"PuzzlePoster"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle/PuzzlePoster" unique_id=900811744]
 position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_e7x6t")
+
+[node name="TembokHancur" type="Node2D" parent="Puzzle/PuzzlePoster" unique_id=1224551953]
+script = ExtResource("8_o665e")
+suara = ExtResource("26_nbxxs")
+warna = Color(0.99999994, 0.86035407, 0.54121035, 1)
+durasi = 2.0
 
 [node name="BayanganMasuk1" type="Marker2D" parent="." unique_id=457454386]
 position = Vector2(-433, -259)

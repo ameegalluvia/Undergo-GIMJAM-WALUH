@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://b0l8k7wvvpchd"]
+
+[ext_resource type="Texture2D" uid="uid://blb326mtq036c" path="res://assets/ui/InteractiveItems/Tang.png" id="1_fogfd"]
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_oc33g"]
+
+[resource]
+script = ExtResource("1_oc33g")
+id = &"kayu"
+nama_tampil = "Kayu"
+ikon = ExtResource("1_fogfd")
+metadata/_custom_type_script = "uid://ccg3nj837oud5"
