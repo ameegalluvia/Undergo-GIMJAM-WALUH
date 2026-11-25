@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="4_e7lw7"]
 [ext_resource type="AudioStream" uid="uid://bdd0oja6tba3a" path="res://assets/audio/sfx/door_closed.wav" id="5_bxdal"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_d8lm7"]
+[ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="6_anu8f"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_xyk3u"]
+[ext_resource type="Resource" uid="uid://ca5pwp267xbm2" path="res://Data/Items/kunci.tres" id="7_qf3dj"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_rnqci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enb7w"]
@@ -4601,6 +4603,9 @@ sources/1 = SubResource("TileSetAtlasSource_hscaw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwxtm"]
 size = Vector2(29, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hscaw"]
+size = Vector2(20, 37.449707)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gvsy"]
 size = Vector2(46, 20)
 
@@ -4679,10 +4684,11 @@ position = Vector2(-96, -95)
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_rwxtm")
 
-[node name="Loker2" type="Area2D" parent="Tilemaps/Interior/Loker" unique_id=942566448 node_paths=PackedStringArray("node_tutup", "node_buka")]
+[node name="Loker2" type="Area2D" parent="Tilemaps/Interior/Loker" unique_id=942566448 node_paths=PackedStringArray("node_tutup", "node_buka", "item_pickup")]
 script = ExtResource("3_pbhxd")
 node_tutup = NodePath("Loker2Tutup")
 node_buka = NodePath("Loker2Buka")
+item_pickup = NodePath("Kunci")
 suara_buka = ExtResource("6_xyk3u")
 suara_tutup = ExtResource("5_bxdal")
 
@@ -4706,6 +4712,15 @@ position = Vector2(-64, -95)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tilemaps/Interior/Loker/Loker2/StaticBody2D" unique_id=1302149521]
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_rwxtm")
+
+[node name="Kunci" parent="Tilemaps/Interior/Loker/Loker2" unique_id=1304024789 instance=ExtResource("6_anu8f")]
+position = Vector2(-63, -104)
+item = ExtResource("7_qf3dj")
+id_pickup = &"kunci"
+
+[node name="CollisionShape2D" parent="Tilemaps/Interior/Loker/Loker2/Kunci" index="1" unique_id=96864614]
+position = Vector2(0, 5.403427)
+shape = SubResource("RectangleShape2D_hscaw")
 
 [node name="Loker3" type="Area2D" parent="Tilemaps/Interior/Loker" unique_id=506573962 node_paths=PackedStringArray("node_tutup", "node_buka")]
 script = ExtResource("3_pbhxd")
@@ -4771,3 +4786,5 @@ shape = SubResource("RectangleShape2D_5466l")
 position = Vector2(893, 1339)
 script = ExtResource("7_rnqci")
 id_titik = &"dari_lorong_bioskop"
+
+[editable path="Tilemaps/Interior/Loker/Loker2/Kunci"]
