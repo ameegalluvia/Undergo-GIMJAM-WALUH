@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="13_gr35y"]
 [ext_resource type="Texture2D" uid="uid://54641pr22m4r" path="res://assets/sprites/Johan/Johan Hitam.png" id="15_qri40"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="17_2i0bq"]
+[ext_resource type="Resource" uid="uid://ca5pwp267xbm2" path="res://Data/Items/kunci.tres" id="18_opwbi"]
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="21_ys0aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbcv1"]
@@ -10139,9 +10140,12 @@ scene_tujuan = "uid://b52h8dg00ihtm"
 id_titik_tujuan = &"dari_lorong_bioskop"
 teks_prompt = "Tekan E untuk membuka pintu Ruang Kontrol Rahasia"
 suara_pintu = ExtResource("17_2i0bq")
+terkunci = true
 suara_terkunci = ExtResource("7_opwbi")
 suara_kunci_dibuka = ExtResource("17_2i0bq")
 pesan_terkunci = "Pintunya terkunci"
+item_dibutuhkan = ExtResource("18_opwbi")
+pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/RuangKontrol/PintuKeRuangKontrol" unique_id=227590367]
 position = Vector2(1, 1)

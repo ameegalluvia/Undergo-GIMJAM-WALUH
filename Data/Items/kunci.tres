@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://ca5pwp267xbm2"]
+
+[ext_resource type="Texture2D" uid="uid://cuw10d6b5unkv" path="res://assets/ui/InteractiveItems/Kunci1.png" id="1_t6d1m"]
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_y5lhp"]
+
+[resource]
+script = ExtResource("1_y5lhp")
+id = &"kunci"
+nama_tampil = "Kunci"
+ikon = ExtResource("1_t6d1m")
+metadata/_custom_type_script = "uid://ccg3nj837oud5"
