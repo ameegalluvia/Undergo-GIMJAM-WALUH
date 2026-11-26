@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_ghh5u"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_3ggu5"]
+[ext_resource type="AudioStream" uid="uid://bqpro144svrf2" path="res://assets/audio/tambahan/memo_12_sedih.wav" id="2_aogvu"]
 [ext_resource type="Texture2D" uid="uid://b3sc0rj6hb5xc" path="res://assets/Gambar/Memori2_1.png" id="2_csk4i"]
 [ext_resource type="Texture2D" uid="uid://dofiusui3jnoa" path="res://assets/Gambar/Memori2_2.png" id="3_aogvu"]
 [ext_resource type="Texture2D" uid="uid://behftbmlof0rs" path="res://assets/Gambar/Memori2_3.png" id="4_max75"]
@@ -10,6 +11,7 @@
 script = ExtResource("1_ghh5u")
 teks = "Sebuah keluarga sedang berada di kapal pesiar"
 gambar = ExtResource("2_csk4i")
+backsound = ExtResource("2_aogvu")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_4bo5k"]

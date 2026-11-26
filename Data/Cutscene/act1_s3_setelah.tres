@@ -6,11 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="3_s3tdf"]
 [ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="4_bxwyi"]
 
-[sub_resource type="Resource" id="Resource_u8vd4"]
-script = ExtResource("1_4gsjv")
-teks = "Johan selesai menonton film tersebut. Dia merasa capek"
-metadata/_custom_type_script = "uid://co8fvnpi56sa1"
-
 [sub_resource type="Resource" id="Resource_iei74"]
 script = ExtResource("1_4gsjv")
 nama = "Johan"
@@ -42,14 +37,14 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 [sub_resource type="Resource" id="Resource_y8ahq"]
 script = ExtResource("1_4gsjv")
 nama = "Johan"
-teks = "Oh iya lampunya juga mati yah…"
+teks = "AHH IYAA! Dari tadi lampunya mati"
 potret = ExtResource("2_na68o")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_5ojns"]
 script = ExtResource("1_4gsjv")
 nama = "Johan"
-teks = "Kira-kira yang dimaksud Ubed oleh bayangan tadi apa yah"
+teks = "Kira-kira yang dimaksud UBED dari bayangan tadi apa yah"
 potret = ExtResource("2_na68o")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -62,5 +57,5 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_jgofo")
-dialog = Array[ExtResource("1_4gsjv")]([SubResource("Resource_u8vd4"), SubResource("Resource_iei74"), SubResource("Resource_ctxcb"), SubResource("Resource_hubhq"), SubResource("Resource_1axa3"), SubResource("Resource_y8ahq"), SubResource("Resource_5ojns"), SubResource("Resource_yt3tt")])
+dialog = Array[ExtResource("1_4gsjv")]([SubResource("Resource_iei74"), SubResource("Resource_ctxcb"), SubResource("Resource_hubhq"), SubResource("Resource_1axa3"), SubResource("Resource_y8ahq"), SubResource("Resource_5ojns"), SubResource("Resource_yt3tt")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

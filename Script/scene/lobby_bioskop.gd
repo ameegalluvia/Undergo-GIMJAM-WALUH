@@ -10,6 +10,7 @@ extends AdeganBase
 
 
 func _ready() -> void:
+	AudioManager.stop_music()
 	super()
 	area_konter.body_entered.connect(_on_area_konter)
 	area_konter.monitoring = false

@@ -1,12 +1,16 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://dw6mi67prgr5p"]
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_iwufw"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_86afv"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_rjbb2"]
 [ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_y8dgl"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="4_86afv"]
 
 [sub_resource type="Resource" id="Resource_y8dgl"]
 script = ExtResource("1_iwufw")
-teks = "Johan masuk ke teater kemudian duduk di sebuah kursi. Hanya ada sedikit orang yang ada disini"
+nama = "Johan"
+teks = "What?! Beneran sepi?"
+potret = ExtResource("2_86afv")
 pakai_transisi = false
 aksi = "ke_kursi"
 tunggu_aksi = true
@@ -21,7 +25,8 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_uxox6"]
 script = ExtResource("1_iwufw")
-teks = "Beberapa menit kemudian, Johan mulai mengantuk."
+nama = "Johan"
+teks = "Hooaam... "
 potret = ExtResource("2_y8dgl")
 pakai_transisi = false
 tunggu_aksi = true
@@ -38,7 +43,8 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_smp4g"]
 script = ExtResource("1_iwufw")
-teks = "Johan tak lama kemudian tertidur."
+nama = "Johan"
+teks = "ZZZ"
 potret = ExtResource("2_y8dgl")
 pakai_transisi = false
 tunggu_aksi = true
@@ -51,7 +57,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_au4iv"]
 script = ExtResource("1_iwufw")
-teks = "Johan terbangun dan sadar bahwa dirinya tertidur. Ia mengecek jam di handphone-nya."
+teks = "Lhoo?! Aku ketiduran.. Jam berapa sekarang?"
 potret = ExtResource("2_y8dgl")
 pakai_transisi = false
 aksi = "fade_terang"
@@ -61,21 +67,24 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_iwufw")
 nama = "Johan"
 teks = "Aduh, kok nggak ada yang bangunin sih..."
-potret = ExtResource("2_y8dgl")
+potret = ExtResource("2_86afv")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_es720"]
 script = ExtResource("1_iwufw")
 nama = "Johan"
 teks = "Aku harus pulang sekarang"
-potret = ExtResource("2_y8dgl")
+potret = ExtResource("2_86afv")
 aksi = "tunggu"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_y1mgy"]
 script = ExtResource("1_iwufw")
-teks = "Johan kemudian tiba-tiba lari ke kamar mandi."
+nama = "Johan"
+teks = "Aduh.. Kebelet.. Ke kamar mandi dulu deh"
+potret = ExtResource("4_86afv")
 aksi = "keluar_studio"
+tunggu_aksi = true
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]

@@ -9937,6 +9937,7 @@ shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
 position = Vector2(-1, 45)
+speed = 300.0
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50
