@@ -27,6 +27,12 @@ func _ready() -> void:
 
 func tampilkan() -> void:
 	var baris: DialogLine = dialog[index]
+	
+	if baris.stop_backsound:
+		AudioManager.stop_backsound()
+	elif baris.backsound:
+		AudioManager.play_backsound(baris.backsound, baris.volume_backsound_db)
+	# kosong: backsound sebelumnya tetap lanjut
 
 	if baris.gambar:
 		ganti_gambar(baris.gambar, baris.pakai_transisi)
@@ -40,6 +46,10 @@ func tampilkan() -> void:
 	var durasi := baris.teks.length() / kecepatan_teks
 	tween = create_tween()
 	tween.tween_property(teks, "visible_ratio", 1.0, durasi)
+	tween.finished.connect(SuaraTeks.berhenti)
+	SuaraTeks.mulai(durasi, baris.suara_teks_khusus)
+	if baris.suara_tambahan:
+		AudioManager.play_sfx_volume(baris.suara_tambahan, baris.volume_tambahan_db)
 
 
 func ganti_gambar(tekstur: Texture2D, transisi: bool) -> void:
@@ -85,6 +95,7 @@ func lanjut() -> void:
 		tween.kill()
 		teks.visible_ratio = 1.0
 		return
+		
 
 	index += 1
 	if index >= dialog.size():
@@ -94,6 +105,7 @@ func lanjut() -> void:
 
 
 func selesai() -> void:
+	AudioManager.stop_backsound(0.8)
 	if data.scene_berikutnya.is_empty():
 		print("Cutscene selesai")
 	else:

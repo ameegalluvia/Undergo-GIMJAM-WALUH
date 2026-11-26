@@ -8,3 +8,10 @@ extends Resource
 @export var pakai_transisi: bool = true
 @export var aksi: String = ""
 @export var tunggu_aksi: bool = false
+@export_group("Audio")
+@export var suara_tambahan: AudioStream            # kosong = tidak ada
+@export var volume_tambahan_db: float = 0.0
+@export var suara_teks_khusus: AudioStream         # kosong = pakai blip bawaan
+@export var backsound: AudioStream        # kosong = lanjutkan yang sedang main
+@export var volume_backsound_db: float = 0.0
+@export var stop_backsound := false       # centang = hentikan backsound di baris ini

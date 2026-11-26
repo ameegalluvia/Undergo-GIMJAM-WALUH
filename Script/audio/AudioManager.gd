@@ -15,6 +15,7 @@ var is_playlist_active: bool = false
 var sfx_players: Array[AudioStreamPlayer] = []
 var max_sfx_players: int = 8
 var sfx_index: int = 0
+var backsound_player: AudioStreamPlayer
 
 # Menyimpan path scene sebelumnya agar tombol Back tahu harus kemana
 var previous_scene_path: String = ""
@@ -32,6 +33,11 @@ func _ready() -> void:
 	music_player.bus = "Music"
 	add_child(music_player)
 	music_player.finished.connect(_on_music_finished)
+
+# di _ready(), setelah music_player dibuat:
+	backsound_player = AudioStreamPlayer.new()
+	backsound_player.bus = "Music"
+	add_child(backsound_player)
 	
 	# 3. Buat beberapa AudioStreamPlayer untuk SFX (Audio Pooling)
 	for i in range(max_sfx_players):
@@ -131,6 +137,7 @@ func get_volume_linear(bus_name: String) -> float:
 		return db_to_linear(AudioServer.get_bus_volume_db(bus_idx))
 	return 1.0
 	
+<<<<<<< Updated upstream
 	
 #FADEOUT MUSIC
 func fade_out_music(duration: float = 1.0) -> void:
@@ -143,3 +150,27 @@ func fade_out_music(duration: float = 1.0) -> void:
 		music_player.stop()
 		music_player.volume_db = 0.0
 	)
+=======
+func play_backsound(stream: AudioStream, volume_db: float = 0.0, fade: float = 0.6) -> void:
+	if stream == null:
+		return
+	# Audio yang sama sedang main: biarkan lanjut
+	if backsound_player.stream == stream and backsound_player.playing:
+		return
+	var tw := create_tween()
+	if backsound_player.playing:
+		tw.tween_property(backsound_player, "volume_db", -40.0, fade * 0.5)
+	tw.tween_callback(func():
+		backsound_player.stream = stream
+		backsound_player.volume_db = -40.0
+		backsound_player.play())
+	tw.tween_property(backsound_player, "volume_db", volume_db, fade * 0.5)
+
+
+func stop_backsound(fade: float = 0.6) -> void:
+	if not backsound_player.playing:
+		return
+	var tw := create_tween()
+	tw.tween_property(backsound_player, "volume_db", -40.0, fade)
+	tw.tween_callback(backsound_player.stop)
+>>>>>>> Stashed changes
