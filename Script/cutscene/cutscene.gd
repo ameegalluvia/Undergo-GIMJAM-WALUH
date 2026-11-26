@@ -16,6 +16,7 @@ var tween_gambar: Tween
 
 
 func _ready() -> void:
+	GameProgress.sedang_cutscene = true
 	gambar_baru.modulate.a = 0.0
 	data = CutsceneManager.data_aktif
 	if data == null or data.dialog.is_empty():
@@ -47,7 +48,6 @@ func tampilkan() -> void:
 	tween = create_tween()
 	tween.tween_property(teks, "visible_ratio", 1.0, durasi)
 	tween.finished.connect(SuaraTeks.berhenti)
-	SuaraTeks.mulai(durasi, baris.suara_teks_khusus)
 	if baris.suara_tambahan:
 		AudioManager.play_sfx_volume(baris.suara_tambahan, baris.volume_tambahan_db)
 
@@ -105,6 +105,7 @@ func lanjut() -> void:
 
 
 func selesai() -> void:
+	GameProgress.sedang_cutscene = false
 	AudioManager.stop_backsound(0.8)
 	if data.scene_berikutnya.is_empty():
 		print("Cutscene selesai")

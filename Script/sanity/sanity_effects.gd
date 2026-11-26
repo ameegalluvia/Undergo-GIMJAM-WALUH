@@ -18,7 +18,7 @@ extends Node
 @onready var sprite_normal: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var sprite_glitch: AnimatedSprite2D = $"../JohanGlitch"
 
-var johan_glitched := false
+
 
 var tween_subtitle: Tween
 
@@ -39,6 +39,7 @@ func _ready() -> void:
 	SanityManager.state_berubah.connect(_on_state)
 	SanityManager.sanity_habis.connect(_on_mati)
 	_on_state(SanityManager.state, SanityManager.state)
+	_set_johan_glitch(SanityManager.johan_glitch and SanityManager.state >= SanityManager.State.MERAH)
 
 
 # ---------- Perubahan state ----------
@@ -48,6 +49,8 @@ func _on_state(baru: int, lama: int) -> void:
 	_hentikan_glitch()
 	_pulihkan_lampu()
 	if baru != SanityManager.State.MERAH:
+		_set_johan_glitch(false)
+	if baru < SanityManager.State.MERAH:
 		_set_johan_glitch(false)
 
 	match baru:
@@ -106,7 +109,7 @@ func _glitch() -> void:
 	var lama_nyala_max := 0.45 if _merah() else 0.16
 
 	if _merah():
-		_set_johan_glitch(not johan_glitched)
+		_set_johan_glitch(not SanityManager.johan_glitch)
 
 	glitch.visible = true
 	for i in jumlah:
@@ -173,11 +176,16 @@ func _pulihkan_lampu() -> void:
 func _on_mati() -> void:
 	timer_gangguan.stop()
 	timer_lampu.stop()
-	_hentikan_glitch()
-	_set_johan_glitch(true)   
+	_set_johan_glitch(true)
+	get_parent().set_physics_process(false)   # Johan berhenti
 	AudioManager.play_sfx(suara_mati)
-	await get_tree().create_timer(2.0).timeout
-	# TODO: game over / respawn, misalnya SaveManager.lanjutkan()
+
+	if glitch and glitch.material:
+		glitch.visible = true
+		(glitch.material as ShaderMaterial).set_shader_parameter("intensitas", 1.0)
+
+	await get_tree().create_timer(2.5).timeout
+	SaveManager.respawn()
 
 func _tampil_subtitle(isi: String) -> void:
 	if subtitle == null:
@@ -197,7 +205,7 @@ func _tampil_subtitle(isi: String) -> void:
 	
 
 func _set_johan_glitch(nyala: bool) -> void:
-	johan_glitched = nyala
+	SanityManager.johan_glitch = nyala
 	if sprite_normal:
 		sprite_normal.visible = not nyala
 	if sprite_glitch:
@@ -208,11 +216,11 @@ func _set_johan_glitch(nyala: bool) -> void:
 
 
 func _sinkron_sprite() -> void:
-	# Dipanggil tiap frame agar sprite glitch mengikuti animasi dan arah Johan
-	if johan_glitched and sprite_glitch and sprite_normal:
+	if SanityManager.johan_glitch and sprite_glitch and sprite_normal:
 		if sprite_glitch.animation != sprite_normal.animation:
 			sprite_glitch.play(sprite_normal.animation)
 		sprite_glitch.flip_h = sprite_normal.flip_h
+		sprite_glitch.frame = sprite_normal.frame
 
 
 func _process(_delta: float) -> void:

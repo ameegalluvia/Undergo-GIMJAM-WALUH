@@ -7872,3 +7872,8 @@ position = Vector2(-12.5, 3.5)
 shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("16_4hkb5")]
+
+[node name="ItemPickup2" parent="." unique_id=1415244863 instance=ExtResource("9_dgj1i")]
+visible = false
+position = Vector2(5, -65)
+item = ExtResource("11_4hkb5")

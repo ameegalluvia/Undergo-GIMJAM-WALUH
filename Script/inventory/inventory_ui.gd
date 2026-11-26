@@ -45,7 +45,12 @@ func _ready() -> void:
 	tombol_batal.pressed.connect(_hapus_pilihan)
 	Inventory.berubah.connect(_segarkan)
 	_segarkan()
+	GameProgress.cutscene_berubah.connect(_on_cutscene)
 
+func _on_cutscene(sedang: bool) -> void:
+	if sedang:
+		bersihkan_pesan()   # buang pesan "item diambil" yang sedang tampil atau mengantre	
+		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		if overlay.visible:
@@ -69,7 +74,8 @@ func _process(delta: float) -> void:
 	var prompt_harus_tampil := not prompt_aktif.is_empty() \
 		and not Inventory.ui_terbuka \
 		and not sedang_pause \
-		and not pesan_aktif
+		and not pesan_aktif \
+		and not GameProgress.sedang_cutscene
 
 	if sedang_pause:
 		label_prompt.modulate.a = 0.0   # langsung hilang saat pause menu terbuka
@@ -96,7 +102,9 @@ func _process(delta: float) -> void:
 		label_petunjuk.visible = label_petunjuk.modulate.a > 0.0
 
 	# Ikon di tangan hanya tampil kalau memegang item dan game tidak sedang di-pause
-	ikon_tangan.visible = Inventory.item_dipegang != null and not get_tree().paused
+		ikon_tangan.visible = Inventory.item_dipegang != null \
+		and not get_tree().paused \
+		and not GameProgress.sedang_cutscene
 
 func _boleh_dibuka() -> bool:
 	if Transisi.sedang_transisi:
@@ -146,6 +154,8 @@ func _hapus_pilihan() -> void:
 		
 # Tambah pesan ke antrean. Pesan tampil satu per satu sesuai urutan masuk.
 func tampilkan_pesan(teks: String, durasi: float = 3.0, tag: StringName = &"") -> void:
+	if GameProgress.sedang_cutscene:
+		return
 	# Abaikan kalau pesan yang sama sedang tampil atau sudah mengantre
 	if pesan_aktif and label_petunjuk.text == teks:
 		return

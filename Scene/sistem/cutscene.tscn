@@ -17,7 +17,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -279.0
+offset_top = 143.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -29,7 +30,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -279.0
+offset_left = 5.0
+offset_top = 143.0
+offset_right = 5.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -42,22 +46,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -280.0
-offset_bottom = 6.0
+offset_top = -260.0
+offset_bottom = -183.0
 grow_horizontal = 2
 grow_vertical = 0
 region_rect = Rect2(194.14584, 497.85907, 203.9526, 45.76068)
 patch_margin_left = 6
 patch_margin_right = 6
-
-[node name="ColorRect" type="ColorRect" parent="MessageBox" unique_id=54026671]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="Margin" type="MarginContainer" parent="MessageBox" unique_id=300140200]
 layout_mode = 1
@@ -77,11 +72,44 @@ mouse_filter = 2
 
 [node name="Nama" type="Label" parent="MessageBox/Margin/VBox" unique_id=326727941]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.324)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("3_kgfk3")
 theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
 
 [node name="Teks" type="Label" parent="MessageBox/Margin/VBox" unique_id=1819528421]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.324)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("3_kgfk3")
 theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=25669327]
+layout_mode = 0
+offset_right = 1438.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=240264889]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)

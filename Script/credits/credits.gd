@@ -19,11 +19,11 @@ const SCENE_MAIN_MENU := "res://Scene/sistem/main_menu.tscn"
 
 var _selesai := false
 
-
 func _ready() -> void:
 	SanityManager.nonaktifkan()
 	Inventory.reset()
 	InventoryUI.bersihkan_pesan()
+	AudioManager.play_music(preload("res://assets/audio/tambahan/ending.wav"))
 
 	judul.add_theme_font_size_override("font_size", ukuran_judul)
 	isi.add_theme_font_size_override("font_size", ukuran_isi)
