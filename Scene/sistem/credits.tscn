@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://cyeivebjvorr4"
 [sub_resource type="Resource" id="Resource_sv03f"]
 script = ExtResource("2_bo6qc")
 judul = "Mentor"
-isi = "Kak Gin 
+isi = "Ginda Reyna Hissa M 
 Jessica Audrey Tjahjadi"
 metadata/_custom_type_script = "uid://cyeivebjvorr4"
 
@@ -31,6 +31,12 @@ metadata/_custom_type_script = "uid://cyeivebjvorr4"
 script = ExtResource("2_bo6qc")
 judul = "Game Designer"
 isi = "Akhyar Lubis"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_0igm0"]
+script = ExtResource("2_bo6qc")
+judul = "Writer"
+isi = "Fahmi Hayat Abdullah"
 metadata/_custom_type_script = "uid://cyeivebjvorr4"
 
 [sub_resource type="Resource" id="Resource_dk4cp"]
@@ -51,7 +57,7 @@ metadata/_custom_type_script = "uid://cyeivebjvorr4"
 script = ExtResource("2_bo6qc")
 judul = "Programmer"
 isi = "Abdus Salam Faiz
-Sandhya Yudha"
+Muhammad Haikal Pratikta Sandhya Yudha"
 metadata/_custom_type_script = "uid://cyeivebjvorr4"
 
 [node name="Credits" type="Control" unique_id=1052681053]
@@ -62,7 +68,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_co1w1")
-halaman = Array[ExtResource("2_bo6qc")]([SubResource("Resource_rero3"), SubResource("Resource_28w75"), SubResource("Resource_sv03f"), SubResource("Resource_ehvqx"), SubResource("Resource_o4fio"), SubResource("Resource_dk4cp"), SubResource("Resource_i6q7u"), SubResource("Resource_4nfy1")])
+halaman = Array[ExtResource("2_bo6qc")]([SubResource("Resource_rero3"), SubResource("Resource_28w75"), SubResource("Resource_sv03f"), SubResource("Resource_ehvqx"), SubResource("Resource_o4fio"), SubResource("Resource_0igm0"), SubResource("Resource_dk4cp"), SubResource("Resource_i6q7u"), SubResource("Resource_4nfy1")])
 ukuran_judul = 50
 ukuran_isi = 40
 awal_hening = 3.0
