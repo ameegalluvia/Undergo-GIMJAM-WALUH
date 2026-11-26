@@ -131,3 +131,15 @@ func get_volume_linear(bus_name: String) -> float:
 		return db_to_linear(AudioServer.get_bus_volume_db(bus_idx))
 	return 1.0
 	
+	
+#FADEOUT MUSIC
+func fade_out_music(duration: float = 1.0) -> void:
+	is_playlist_active = false
+	if not music_player.playing:
+		return
+	var tween := create_tween()
+	tween.tween_property(music_player, "volume_db", -40.0, duration)
+	tween.tween_callback(func():
+		music_player.stop()
+		music_player.volume_db = 0.0
+	)

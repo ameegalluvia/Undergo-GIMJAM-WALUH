@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://5n0lcd827cor"]
 
-[ext_resource type="Texture2D" uid="uid://ccqijw4m3hhga" path="res://assets/massagebox/Dialogue Box.png" id="1_t7ws5"]
 [ext_resource type="Script" uid="uid://dui0ye725gmgm" path="res://Script/cutscene/dialog_overlay.gd" id="1_xdl64"]
+[ext_resource type="Texture2D" uid="uid://qw1clrcv1cd7" path="res://assets/ui/MessageBox.png" id="2_gvygi"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="3_jtt4g"]
 
 [node name="DialogOverlay" type="CanvasLayer" unique_id=1344829994]
 script = ExtResource("1_xdl64")
 
 [node name="MessageBox" type="TextureRect" parent="." unique_id=839681051]
-visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -16,27 +16,33 @@ offset_left = -3.0
 offset_top = -960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_t7ws5")
+texture = ExtResource("2_gvygi")
 
 [node name="Potret" type="TextureRect" parent="MessageBox" unique_id=1901837433]
 layout_mode = 0
-offset_left = 245.0
-offset_top = 671.0
-offset_right = 434.0
-offset_bottom = 851.0
+offset_left = 100.0
+offset_top = 700.0
+offset_right = 363.0
+offset_bottom = 964.0
 expand_mode = 1
 
 [node name="Nama" type="Label" parent="MessageBox" unique_id=899853160]
 layout_mode = 0
-offset_left = 539.0
-offset_top = 668.0
-offset_right = 681.0
-offset_bottom = 721.0
+offset_left = 439.0
+offset_top = 672.0
+offset_right = 581.0
+offset_bottom = 725.0
+theme_override_fonts/font = ExtResource("3_jtt4g")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Teks" type="Label" parent="MessageBox" unique_id=1379930178]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 746.0
-offset_right = 1116.0
-offset_bottom = 847.0
+offset_left = 437.0
+offset_top = 787.0
+offset_right = 1332.0
+offset_bottom = 943.0
+theme_override_fonts/font = ExtResource("3_jtt4g")
+theme_override_font_sizes/font_size = 30
 autowrap_mode = 3
