@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://54641pr22m4r" path="res://assets/sprites/Johan/Johan Hitam.png" id="15_qri40"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="17_2i0bq"]
 [ext_resource type="Resource" uid="uid://ca5pwp267xbm2" path="res://Data/Items/kunci.tres" id="18_opwbi"]
+[ext_resource type="AudioStream" uid="uid://2kcsi032fkgo" path="res://assets/audio/tambahan/dobrak_pintu_fast.wav" id="21_35eqe"]
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="21_ys0aj"]
+[ext_resource type="AudioStream" uid="uid://cnpfm5jkcpt7a" path="res://assets/audio/tambahan/dobrak_pintu_slow.wav" id="22_30uhw"]
 [ext_resource type="Script" uid="uid://hkxv7q86trxs" path="res://Script/Kejar_Bayangan.gd" id="22_opwbi"]
 [ext_resource type="AudioStream" uid="uid://udkdcib5gv6m" path="res://assets/audio/sfx/TembokHancur.mp3" id="26_nbxxs"]
 [ext_resource type="Script" uid="uid://cyn1jkvjpspw" path="res://Script/pemicu_dialog.gd" id="28_nbxxs"]
@@ -9995,7 +9997,10 @@ position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://cgo3jj8bum7yg"
 id_titik_tujuan = &"PintuKeLorongBioskop"
+suara_pintu = ExtResource("17_2i0bq")
 terkunci = true
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 pesan_terkunci = "Perlu tiket"
 item_dibutuhkan = ExtResource("10_o6lwv")
 
@@ -10018,6 +10023,9 @@ position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://b5uy1057ya182"
 id_titik_tujuan = &"TitikDariLobbyBioskop"
+suara_pintu = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio2/PintuKeStudio2" unique_id=1663510535]
 position = Vector2(1, 1)
@@ -10035,6 +10043,9 @@ position = Vector2(-1331, -2172)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://cckcqjwxjuq72"
+suara_pintu = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio3/PintuKeStudio3" unique_id=26994108]
 position = Vector2(1, 1)
@@ -10053,6 +10064,9 @@ position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://7dht74vsh8ej"
 id_titik_tujuan = &"TitikDariLobbyBioskop"
+suara_pintu = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio4/PintuKeStudio4" unique_id=1103901844]
 position = Vector2(1, 1)
@@ -10070,6 +10084,9 @@ position = Vector2(-1331, -3151)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://ce13p0s7jdmu2"
+suara_pintu = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio5/PintuKeStudio5" unique_id=1113248692]
 position = Vector2(1, 1)
@@ -10185,8 +10202,8 @@ scene_tujuan = "uid://b4m5vfg438mq2"
 id_titik_tujuan = &"dari_lorong_bioskop"
 teks_prompt = "Tekan E untuk membuka pintu Gudang"
 suara_pintu = ExtResource("17_2i0bq")
-suara_terkunci = ExtResource("7_opwbi")
-suara_kunci_dibuka = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 pesan_terkunci = "Pintunya terkunci"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/RuangGudang/PintuKeGudang" unique_id=1604560098]
@@ -10208,8 +10225,8 @@ scene_tujuan = "uid://b52h8dg00ihtm"
 id_titik_tujuan = &"dari_lorong_bioskop"
 teks_prompt = "Tekan E untuk membuka pintu Ruang Kontrol Rahasia"
 suara_pintu = ExtResource("17_2i0bq")
-suara_terkunci = ExtResource("7_opwbi")
-suara_kunci_dibuka = ExtResource("17_2i0bq")
+suara_terkunci = ExtResource("21_35eqe")
+suara_kunci_dibuka = ExtResource("22_30uhw")
 pesan_terkunci = ""
 habiskan_item = false
 pesan_item_di_tas = ""
