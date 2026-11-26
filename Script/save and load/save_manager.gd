@@ -25,9 +25,18 @@ func save_valid() -> bool:
 
 
 # ---------- Simpan ----------
+const SCENE_TERLARANG := [
+	"res://Scene/sistem/main_menu.tscn", # sesuaikan dengan path main menu kamu
+	"res://Scene/sistem/settings.tscn"
+]
+
 func simpan_scene(scene_path: String = "") -> void:
 	if scene_path == "":
 		scene_path = get_tree().current_scene.scene_file_path
+	
+	# Tolak penyimpanan jika sedang di Main Menu atau Settings
+	if scene_path == "" or scene_path in SCENE_TERLARANG:
+		return
 
 	var data := {
 		"scene": scene_path,
@@ -77,7 +86,7 @@ func lanjutkan(sanity_minimum: float = 0.0) -> void:
 	if not ResourceLoader.exists(path):
 		push_warning("Scene save tidak ditemukan: " + path)
 		return
-	Transisi.pindah_scene(path, &"")
+	get_tree().change_scene_to_file(path)
 
 
 # Dipanggil saat mati karena sanity habis

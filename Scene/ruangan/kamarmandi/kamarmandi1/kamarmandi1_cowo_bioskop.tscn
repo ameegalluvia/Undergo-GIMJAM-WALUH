@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_t2qb3"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_ik2g8"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="8_snidw"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="9_5h8vw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghmx2"]
 texture = ExtResource("1_75i2n")
@@ -4557,3 +4558,6 @@ id_titik = &"dari_lorong_bioskop"
 position = Vector2(-63, -15)
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("8_snidw")]
+
+[node name="Node" type="Node" parent="." unique_id=492255816]
+script = ExtResource("9_5h8vw")
