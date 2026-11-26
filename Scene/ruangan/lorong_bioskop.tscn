@@ -28,6 +28,10 @@
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="21_ys0aj"]
 [ext_resource type="Script" uid="uid://hkxv7q86trxs" path="res://Script/Kejar_Bayangan.gd" id="22_opwbi"]
 [ext_resource type="AudioStream" uid="uid://udkdcib5gv6m" path="res://assets/audio/sfx/TembokHancur.mp3" id="26_nbxxs"]
+[ext_resource type="Script" uid="uid://cyn1jkvjpspw" path="res://Script/pemicu_dialog.gd" id="28_nbxxs"]
+[ext_resource type="Resource" uid="uid://bqkhihmiiu1gf" path="res://Data/Cutscene/act1_kontrol.tres" id="29_yql37"]
+[ext_resource type="Resource" uid="uid://b4plk2e140tog" path="res://Data/Cutscene/act1_tembok_ketuk.tres" id="30_3c31g"]
+[ext_resource type="Resource" uid="uid://2y22ugnns8g8" path="res://Data/Cutscene/act1_palu_terkunci.tres" id="31_35eqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbcv1"]
 texture = ExtResource("1_uwib2")
@@ -9215,6 +9219,12 @@ size = Vector2(97, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7x6t"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3nh1"]
+size = Vector2(32, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tau32"]
+size = Vector2(24, 87)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j1yf"]
 size = Vector2(106, 84)
 
@@ -9238,6 +9248,14 @@ size = Vector2(48, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ciq3"]
 size = Vector2(68, 87.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf35v"]
+size = Vector2(27, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ock0p"]
+size = Vector2(33, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5axj"]
 
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
@@ -9365,8 +9383,8 @@ node_ada_item = NodePath("PaluAda")
 node_kosong = NodePath("PaluKosong")
 teks_prompt = "Tekan E untuk memecahkan Kaca dan mengambil %s"
 teks_kosong = "Sudah kosong"
-item_syarat = ExtResource("6_4lkef")
-pesan_syarat_gagal = "Aduh, terkunci... mungkin aku membutuhkan sesuatu yang keras"
+item_syarat = ExtResource("18_opwbi")
+pesan_syarat_gagal = "Aduh, terkunci... mungkin aku membutuhkan sebuah kunci"
 suara_ambil = ExtResource("7_opwbi")
 
 [node name="PaluAda" type="TileMapLayer" parent="Tilemaps/Interior/TempatPalu" unique_id=181802516]
@@ -9384,6 +9402,7 @@ position = Vector2(-785, -1782)
 shape = SubResource("RectangleShape2D_jps1b")
 
 [node name="EfekHancur" type="Node2D" parent="Tilemaps/Interior/TempatPalu" unique_id=1605500990]
+visible = false
 position = Vector2(-784, -1823)
 script = ExtResource("8_o665e")
 suara = ExtResource("10_o665e")
@@ -10178,11 +10197,11 @@ scene_tujuan = "uid://b52h8dg00ihtm"
 id_titik_tujuan = &"dari_lorong_bioskop"
 teks_prompt = "Tekan E untuk membuka pintu Ruang Kontrol Rahasia"
 suara_pintu = ExtResource("17_2i0bq")
-terkunci = true
 suara_terkunci = ExtResource("7_opwbi")
 suara_kunci_dibuka = ExtResource("17_2i0bq")
-pesan_terkunci = "Pintunya terkunci"
-item_dibutuhkan = ExtResource("18_opwbi")
+pesan_terkunci = ""
+habiskan_item = false
+pesan_item_di_tas = ""
 pesan_dibuka = "Pintu terbuka"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/RuangKontrol/PintuKeRuangKontrol" unique_id=227590367]
@@ -10249,7 +10268,7 @@ habiskan_item = false
 teks_prompt = "Tekan E untuk menghancurkan Poster dan Tembok"
 pesan_berhasil = "Tembok telah dihancurkan"
 sembunyikan = [NodePath("../../Tilemaps/Interior/PosterLampu"), NodePath("../../Tilemaps/Background/TembokHancur")]
-tampilkan = [NodePath("../../Tilemaps/Background/AreaRahasia")]
+tampilkan = [NodePath("../../Tilemaps/Background/AreaRahasia"), NodePath("StaticBody2D")]
 id_puzzle = &"PuzzlePoster"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle/PuzzlePoster" unique_id=900811744]
@@ -10261,6 +10280,16 @@ script = ExtResource("8_o665e")
 suara = ExtResource("26_nbxxs")
 warna = Color(0.99999994, 0.86035407, 0.54121035, 1)
 durasi = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puzzle/PuzzlePoster" unique_id=1907778938]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzle/PuzzlePoster/StaticBody2D" unique_id=504651466]
+position = Vector2(80, 86.5)
+shape = SubResource("RectangleShape2D_l3nh1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Puzzle/PuzzlePoster/StaticBody2D" unique_id=936600454]
+position = Vector2(-81, 90.5)
+shape = SubResource("RectangleShape2D_tau32")
 
 [node name="BayanganMasuk1" type="Marker2D" parent="." unique_id=457454386]
 position = Vector2(-433, -259)
@@ -10329,3 +10358,37 @@ shape = SubResource("RectangleShape2D_2ciq3")
 
 [node name="Titikstudio3" type="Marker2D" parent="Kejar" unique_id=1195771058]
 position = Vector2(-434, -1334)
+
+[node name="PemicuKontrol" type="Area2D" parent="." unique_id=29009162]
+position = Vector2(-929, -1810)
+script = ExtResource("28_nbxxs")
+id_dialog = "cs_kontrol_terkunci"
+data = ExtResource("29_yql37")
+tahap_minimal = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PemicuKontrol" unique_id=672294055]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bf35v")
+
+[node name="PemicuTembok" type="Area2D" parent="." unique_id=1699196894]
+position = Vector2(144, -1314)
+script = ExtResource("28_nbxxs")
+id_dialog = "cs_tembok_ketuk"
+data = ExtResource("30_3c31g")
+syarat_flag = "cs_kontrol_terkunci"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PemicuTembok" unique_id=2052514187]
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_ock0p")
+
+[node name="PemicuPalu" type="Area2D" parent="." unique_id=1113212916]
+position = Vector2(-785, -1781)
+script = ExtResource("28_nbxxs")
+id_dialog = "cs_palu_terkunci"
+data = ExtResource("31_35eqe")
+syarat_flag = "cs_tembok_ketuk"
+flag_dilarang = "punya_kunci_palu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PemicuPalu" unique_id=1390800714]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_l5axj")

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://2y22ugnns8g8"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_6rkn6"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_q2sb5"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_x73s8"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="3_xaxh8"]
+
+[sub_resource type="Resource" id="Resource_x73s8"]
+script = ExtResource("1_6rkn6")
+nama = "Johan"
+teks = "Sialan ini dikunci"
+potret = ExtResource("2_x73s8")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_xaxh8"]
+script = ExtResource("1_6rkn6")
+nama = "Johan"
+teks = "Kira kira kuncinya dimana yah"
+potret = ExtResource("3_xaxh8")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_jup5i"]
+script = ExtResource("1_6rkn6")
+nama = "Johan"
+teks = "Mungkin sebaiknya aku cari digudang"
+potret = ExtResource("3_xaxh8")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_q2sb5")
+dialog = Array[ExtResource("1_6rkn6")]([SubResource("Resource_x73s8"), SubResource("Resource_xaxh8"), SubResource("Resource_jup5i")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

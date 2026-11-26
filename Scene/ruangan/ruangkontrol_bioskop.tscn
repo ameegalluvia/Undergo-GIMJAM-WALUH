@@ -1,17 +1,22 @@
 [gd_scene format=4 uid="uid://b52h8dg00ihtm"]
 
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="1_pc1u4"]
+[ext_resource type="Script" uid="uid://dcdril22dqv26" path="res://Script/ruangkontrol_bioskop.gd" id="1_udj1v"]
 [ext_resource type="Texture2D" uid="uid://bwnjx6tb5wykq" path="res://assets/tilesets/Tilesets BARU.png" id="2_5qlaq"]
 [ext_resource type="Texture2D" uid="uid://caqgnk45lntxl" path="res://assets/tilesets/Tilesets BARU 2.png" id="3_k73ss"]
 [ext_resource type="Script" uid="uid://cl635fg6sfff6" path="res://Script/puzzle/objek_puzzle.gd" id="4_e32ls"]
 [ext_resource type="Script" uid="uid://bp4eddk38o1fv" path="res://Script/puzzle/loker.gd" id="4_efuq2"]
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="4_k73ss"]
-[ext_resource type="Resource" uid="uid://b0l8k7wvvpchd" path="res://Data/Items/kayu.tres" id="5_rvhup"]
+[ext_resource type="Resource" uid="uid://dtpqqksjpsiak" path="res://Data/Items/kayu.tres" id="5_rvhup"]
 [ext_resource type="AudioStream" uid="uid://bdd0oja6tba3a" path="res://assets/audio/sfx/door_closed.wav" id="6_e32ls"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="6_idyod"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="7_efuq2"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="8_e32ls"]
+[ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="9_dgj1i"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="9_rvhup"]
+[ext_resource type="Resource" uid="uid://dn8l3slbgb6t0" path="res://Data/Items/kaset.tres" id="11_4hkb5"]
+[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="16_4hkb5"]
+[ext_resource type="Script" uid="uid://cr6vr70r8570w" path="res://Scene/ruangan/komputer.gd" id="16_bv2jl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efuq2"]
 texture = ExtResource("1_pc1u4")
@@ -7677,7 +7682,11 @@ size = Vector2(46, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grfeu"]
 size = Vector2(46, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
+size = Vector2(79, 27)
+
 [node name="RuangkontrolBioskop" type="Node2D" unique_id=923680350]
+script = ExtResource("1_udj1v")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1891419674]
 
@@ -7784,10 +7793,11 @@ tile_set = SubResource("TileSet_8rar2")
 position = Vector2(-1, -120)
 shape = SubResource("RectangleShape2D_jps1b")
 
-[node name="Loker1" type="Area2D" parent="Tilemaps/Interior" unique_id=509831015 node_paths=PackedStringArray("node_tutup", "node_buka")]
+[node name="Loker1" type="Area2D" parent="Tilemaps/Interior" unique_id=509831015 node_paths=PackedStringArray("node_tutup", "node_buka", "item_pickup")]
 script = ExtResource("4_efuq2")
 node_tutup = NodePath("Loker1Tutup")
 node_buka = NodePath("Loker1Buka")
+item_pickup = NodePath("../ItemPickup")
 suara_buka = ExtResource("4_k73ss")
 suara_tutup = ExtResource("6_e32ls")
 
@@ -7811,6 +7821,10 @@ position = Vector2(-127, -95)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tilemaps/Interior/Loker1/StaticBody2D" unique_id=923042883]
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_8rar2")
+
+[node name="ItemPickup" parent="Tilemaps/Interior" unique_id=1304024789 instance=ExtResource("9_dgj1i")]
+position = Vector2(-127, -100)
+item = ExtResource("11_4hkb5")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("6_idyod")]
 position = Vector2(0, 176)
@@ -7848,3 +7862,13 @@ shape = SubResource("RectangleShape2D_grfeu")
 position = Vector2(893, 1339)
 script = ExtResource("9_rvhup")
 id_titik = &"dari_lorong_bioskop"
+
+[node name="Komputer" type="Area2D" parent="." unique_id=610291099]
+position = Vector2(-52, -114)
+script = ExtResource("16_bv2jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Komputer" unique_id=314633702]
+position = Vector2(-12.5, 3.5)
+shape = SubResource("RectangleShape2D_c508m")
+
+[node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("16_4hkb5")]

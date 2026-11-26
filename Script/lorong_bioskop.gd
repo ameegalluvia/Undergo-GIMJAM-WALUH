@@ -31,6 +31,10 @@ func _ready() -> void:
 	_atur_pintu()
 	_atur_cahaya()
 	_mulai_adegan()
+	$Puzzle/PuzzlePoster.terbuka.connect(func(dengan_efek: bool):
+		if dengan_efek:
+			_kunci_pemain(true)
+			mainkan_sekali("cs_tembok_hancur", preload("res://Data/Cutscene/act1_tembol_hancur.tres")))
 
 
 # ---------- Cahaya ----------
@@ -213,6 +217,13 @@ func selesai_cutscene() -> void:
 		pintu_studio_baru.terkunci = false
 		SaveManager.simpan_scene(scene_file_path)
 		
+		
+	if GameProgress.ambil_flag("cs_palu_terkunci") and GameProgress.tahap < GameProgress.Tahap.ACT1_GUDANG:
+		GameProgress.tahap = GameProgress.Tahap.ACT1_GUDANG
+		SaveManager.simpan_scene(scene_file_path)
+	if GameProgress.ambil_flag("cs_tembok_hancur"):
+		GameProgress.tahap = GameProgress.Tahap.ACT1_TEMBOK + 1
+		SaveManager.simpan_scene(scene_file_path)
 
 
 

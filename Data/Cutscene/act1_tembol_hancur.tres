@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://mv4mbkd4x6ck"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_1nnjy"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_gy8xy"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_hpuev"]
+
+[sub_resource type="Resource" id="Resource_hpuev"]
+script = ExtResource("1_1nnjy")
+nama = "Johan"
+teks = "Wooahh... ada jalan di balik poster ini. Meski aku perlu sedikit merangkak."
+potret = ExtResource("2_hpuev")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_t6t0n"]
+script = ExtResource("1_1nnjy")
+nama = "Johan"
+teks = "Maaf pemilik bioskop, tapi aku perlu keluar dari sini."
+potret = ExtResource("2_hpuev")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_gy8xy")
+dialog = Array[ExtResource("1_1nnjy")]([SubResource("Resource_hpuev"), SubResource("Resource_t6t0n")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

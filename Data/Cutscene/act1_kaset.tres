@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://2vi8p6c8ngbl"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_mdxoj"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="2_3halg"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_ssyhx"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="3_kxrdc"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="4_li0o6"]
+
+[sub_resource type="Resource" id="Resource_sr580"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "...."
+potret = ExtResource("2_3halg")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_o6kwc"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Aku bisa memutar kaset ini di komputer itu."
+potret = ExtResource("2_3halg")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_p5tvh"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Tapi"
+potret = ExtResource("3_kxrdc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_lafkv"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Aku nggak yakin... bisakah aku menonton sekali lagi?"
+potret = ExtResource("3_kxrdc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_768hl"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Bolehkah aku menonton sekali lagi?"
+potret = ExtResource("3_kxrdc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_qo3gx"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Bolehkah aku... bertemu kalian lagi?"
+potret = ExtResource("2_3halg")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_lvhci"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Aku merasa bila aku tidak memutarnya, tidak akan ada lagi kesempatan bagiku untuk..."
+potret = ExtResource("3_kxrdc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_34qrr"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Meminta maaf..."
+potret = ExtResource("2_3halg")
+aksi = "Jeda"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4w6c6"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Satu lagi film tidak akan menyakitiku."
+potret = ExtResource("3_kxrdc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_0xbb7"]
+script = ExtResource("1_mdxoj")
+nama = "Johan"
+teks = "Mungkin"
+potret = ExtResource("4_li0o6")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_ssyhx")
+dialog = Array[ExtResource("1_mdxoj")]([SubResource("Resource_sr580"), SubResource("Resource_o6kwc"), SubResource("Resource_p5tvh"), SubResource("Resource_lafkv"), SubResource("Resource_768hl"), SubResource("Resource_qo3gx"), SubResource("Resource_lvhci"), SubResource("Resource_34qrr"), SubResource("Resource_4w6c6"), SubResource("Resource_0xbb7")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"
