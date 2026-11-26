@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="1_uwib2"]
 [ext_resource type="Script" uid="uid://cxil74io2hnh8" path="res://Script/lorong_bioskop.gd" id="1_wbcv1"]
 [ext_resource type="Texture2D" uid="uid://bwnjx6tb5wykq" path="res://assets/tilesets/Tilesets BARU.png" id="2_mwv44"]
+[ext_resource type="AudioStream" uid="uid://s5ouyxn3hc4v" path="res://assets/audio/music/gameplay_explore_horror.wav" id="2_nbxxs"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="2_p05q1"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="3_p05q1"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="4_e4ew0"]
 [ext_resource type="Texture2D" uid="uid://caqgnk45lntxl" path="res://assets/tilesets/Tilesets BARU 2.png" id="4_pqhe1"]
 [ext_resource type="Script" uid="uid://djby7tp50wcnv" path="res://Script/puzzle/tempat_item.gd" id="5_2i0bq"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
+[ext_resource type="Resource" uid="uid://dtpqqksjpsiak" path="res://Data/Items/kayu.tres" id="6_4lkef"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="6_ys0aj"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
 [ext_resource type="AudioStream" uid="uid://x3v5req2kd1j" path="res://assets/audio/sfx/Ambil.wav" id="7_opwbi"]
@@ -9258,6 +9260,7 @@ size = Vector2(33, 20)
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
 script = ExtResource("1_wbcv1")
+musik_gedor = ExtResource("2_nbxxs")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=516834237]
 
