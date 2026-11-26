@@ -18,13 +18,16 @@ script = ExtResource("1_4gsjv")
 nama = "Johan"
 teks = "..."
 potret = ExtResource("3_s3tdf")
-gambar = ExtResource("3_s3tdf")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_hubhq"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_na68o"]
+load_path = "res://.godot/imported/Johan_Marah_Bingung.png-87dc312459b20f603f38957a9acf23fe.ctex"
+
+[sub_resource type="Resource" id="Resource_s3tdf"]
 script = ExtResource("1_4gsjv")
 nama = "Johan"
 teks = "Sebentar… Aku harusnya cari jalan keluar sejak tadi…"
+potret = SubResource("CompressedTexture2D_na68o")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_1axa3"]
@@ -57,5 +60,5 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_jgofo")
-dialog = Array[ExtResource("1_4gsjv")]([SubResource("Resource_iei74"), SubResource("Resource_ctxcb"), SubResource("Resource_hubhq"), SubResource("Resource_1axa3"), SubResource("Resource_y8ahq"), SubResource("Resource_5ojns"), SubResource("Resource_yt3tt")])
+dialog = Array[ExtResource("1_4gsjv")]([SubResource("Resource_iei74"), SubResource("Resource_ctxcb"), SubResource("Resource_s3tdf"), SubResource("Resource_1axa3"), SubResource("Resource_y8ahq"), SubResource("Resource_5ojns"), SubResource("Resource_yt3tt")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"
