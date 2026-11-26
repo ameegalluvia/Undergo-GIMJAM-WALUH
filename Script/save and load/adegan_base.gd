@@ -122,7 +122,7 @@ func aksi_khusus(_nama: String) -> void:   # di-override scene
 	overlay.aksi_selesai()
 	
 func _atur_collision_act0() -> void:
-	var act0: bool = GameProgress.tahap < GameProgress.Tahap.ACT1_MULAI
+	var act0: bool = GameProgress.tahap < GameProgress.Tahap.TERKUNCI
 	for n in get_tree().get_nodes_in_group("collision_act0"):
 		if n is TileMapLayer:
 			n.collision_enabled = act0

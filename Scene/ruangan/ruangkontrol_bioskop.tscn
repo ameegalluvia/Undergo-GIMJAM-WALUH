@@ -7674,9 +7674,6 @@ sources/1 = SubResource("TileSetAtlasSource_udj1v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rar2"]
 size = Vector2(29, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0m1x"]
-size = Vector2(20, 35.835022)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
 size = Vector2(79, 27)
 
@@ -7820,10 +7817,6 @@ shape = SubResource("RectangleShape2D_8rar2")
 [node name="ItemPickup" parent="Tilemaps/Interior" unique_id=1304024789 instance=ExtResource("9_dgj1i")]
 position = Vector2(-127, -104)
 item = ExtResource("11_4hkb5")
-
-[node name="CollisionShape2D" parent="Tilemaps/Interior/ItemPickup" index="1" unique_id=96864614]
-position = Vector2(0, 4.903427)
-shape = SubResource("RectangleShape2D_l0m1x")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("6_idyod")]
 position = Vector2(0, 176)

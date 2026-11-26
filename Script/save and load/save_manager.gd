@@ -86,6 +86,9 @@ func respawn() -> void:
 		get_tree().reload_current_scene()
 		return
 	lanjutkan(60.0)
+	if GameProgress.tahap >= GameProgress.Tahap.TERKUNCI:
+		SanityManager.aktifkan()
+		SanityManager.lanjut_drain()
 	GameProgress.set_flag("dari_respawn", true)   # setelah lanjutkan(), karena lanjutkan mengisi ulang flag  # kembali dengan sanity minimal 60 supaya tidak mati berulang
 
 
