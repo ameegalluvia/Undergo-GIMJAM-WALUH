@@ -3,13 +3,21 @@
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_ecq1f"]
 [ext_resource type="Texture2D" uid="uid://ox0syjjbkxx1" path="res://assets/Gambar/Memori1_1.png" id="2_w8c4q"]
 [ext_resource type="Texture2D" uid="uid://64htg0bgrajw" path="res://assets/Gambar/Memori1_2.png" id="3_qbier"]
+[ext_resource type="AudioStream" uid="uid://bqpro144svrf2" path="res://assets/audio/tambahan/memo_12_sedih.wav" id="3_w1uux"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="4_w1uux"]
 [ext_resource type="Texture2D" uid="uid://dd7gn32vjprrs" path="res://assets/Gambar/Memori1_3.png" id="4_w8c4q"]
+[ext_resource type="AudioStream" uid="uid://c4vun35etqbdv" path="res://assets/audio/tambahan/memo_12_tegang.wav" id="5_m4bip"]
+[ext_resource type="AudioStream" uid="uid://2kcsi032fkgo" path="res://assets/audio/tambahan/dobrak_pintu_fast.wav" id="7_t1kir"]
+[ext_resource type="Texture2D" uid="uid://b4cw0ddv2pmvr" path="res://assets/Gambar/Memori1_4.png" id="8_o25us"]
+[ext_resource type="Texture2D" uid="uid://dyljxkpuvro1m" path="res://assets/Gambar/Memori1_5.png" id="9_ojr46"]
+[ext_resource type="Texture2D" uid="uid://d3us5wno4n4hm" path="res://assets/Gambar/Memori1_6.png" id="10_ojr5v"]
+[ext_resource type="AudioStream" uid="uid://bdd0oja6tba3a" path="res://assets/audio/sfx/door_closed.wav" id="11_ugw30"]
 
 [sub_resource type="Resource" id="Resource_tyecp"]
 script = ExtResource("1_ecq1f")
 teks = "Seorang anak sedang menggambar di dapur. Ibunya datang. Kala itu sore hari menjelang petang"
 gambar = ExtResource("2_w8c4q")
+backsound = ExtResource("3_w1uux")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_h1l00"]
@@ -23,12 +31,6 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_ecq1f")
 nama = "Anak"
 teks = "Aku sedang menggambar bu"
-metadata/_custom_type_script = "uid://co8fvnpi56sa1"
-
-[sub_resource type="Resource" id="Resource_b5c0f"]
-script = ExtResource("1_ecq1f")
-nama = "Ibu"
-teks = "Coba ibu liat"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_lwh0i"]
@@ -55,47 +57,82 @@ nama = "Anak"
 teks = "Hehe, terimakasih bu"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_uyg6l"]
+[sub_resource type="Resource" id="Resource_u5x76"]
 script = ExtResource("1_ecq1f")
-nama = "Ibu"
-teks = "Oh..."
-potret = ExtResource("4_w8c4q")
+teks = "Dari luar, ayahnya yang sedang mabuk menggedor gedor pintu"
+gambar = ExtResource("4_w8c4q")
+suara_tambahan = ExtResource("7_t1kir")
+backsound = ExtResource("5_m4bip")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_bmvf0"]
+[sub_resource type="Resource" id="Resource_8drxw"]
 script = ExtResource("1_ecq1f")
-nama = "Ibu"
-teks = "Sayang, kamu bisa lanjut gambarnya di kamar kamu, ngga?"
+nama = "Ibu Johan"
+teks = "Sebentar!"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_1yek6"]
+[sub_resource type="Resource" id="Resource_n5u7c"]
 script = ExtResource("1_ecq1f")
-nama = "Anak"
-teks = "Baik, ibu."
+nama = "Ibu Johan"
+teks = "Johan.. Kamu cepat ambil gambarnya dan ke kamar!"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_2hot5"]
+[sub_resource type="Resource" id="Resource_hy8fo"]
 script = ExtResource("1_ecq1f")
+teks = "Johan mengambil gambarnya dan segera pergi ke kamarnya"
+gambar = ExtResource("8_o25us")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_edbd2"]
+[sub_resource type="Resource" id="Resource_7cg40"]
 script = ExtResource("1_ecq1f")
-teks = "BRAK"
+teks = "Dia tidak menutup rapat pintu kamarnya karena penasaran"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_jtqx6"]
+[sub_resource type="Resource" id="Resource_eccam"]
 script = ExtResource("1_ecq1f")
-nama = "Ibu"
-teks = "JANGAN!! Biarkan dia sendirian!!"
+teks = "Di sana dia mengintip pertengkaran ayah dan ibunya"
+gambar = ExtResource("9_ojr46")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_234fc"]
+[sub_resource type="Resource" id="Resource_beop0"]
 script = ExtResource("1_ecq1f")
-teks = "And now it's hard to be"
+teks = "Ketika ayahnya mulai bermain fisik.. Johan menutup pintunya"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_se83j"]
+script = ExtResource("1_ecq1f")
+gambar = ExtResource("10_ojr5v")
+suara_tambahan = ExtResource("11_ugw30")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_5hdsq"]
+script = ExtResource("1_ecq1f")
+teks = "Suara pintu terdengar oleh ayahnya.. Sehingga ayahnya mendatangi kamarnya dan menggedor gedor"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_m4bip"]
+script = ExtResource("1_ecq1f")
+suara_tambahan = ExtResource("7_t1kir")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_uqfyl"]
+script = ExtResource("1_ecq1f")
+nama = "Ibu Johan"
+teks = "JANGANNN!! Biarkan dia sendirii!"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_gl522"]
+script = ExtResource("1_ecq1f")
+teks = "Johan hanya bisa menangis di kamarnya"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_t1kir"]
+script = ExtResource("1_ecq1f")
+teks = "And now, it's hard to be..."
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("4_w1uux")
-dialog = Array[ExtResource("1_ecq1f")]([SubResource("Resource_tyecp"), SubResource("Resource_h1l00"), SubResource("Resource_00r1g"), SubResource("Resource_b5c0f"), SubResource("Resource_lwh0i"), SubResource("Resource_5tppg"), SubResource("Resource_18vob"), SubResource("Resource_la2g8"), SubResource("Resource_uyg6l"), SubResource("Resource_bmvf0"), SubResource("Resource_1yek6"), SubResource("Resource_2hot5"), SubResource("Resource_edbd2"), SubResource("Resource_jtqx6"), SubResource("Resource_234fc")])
+dialog = Array[ExtResource("1_ecq1f")]([SubResource("Resource_tyecp"), SubResource("Resource_h1l00"), SubResource("Resource_00r1g"), SubResource("Resource_lwh0i"), SubResource("Resource_5tppg"), SubResource("Resource_18vob"), SubResource("Resource_la2g8"), SubResource("Resource_u5x76"), SubResource("Resource_8drxw"), SubResource("Resource_n5u7c"), SubResource("Resource_hy8fo"), SubResource("Resource_7cg40"), SubResource("Resource_eccam"), SubResource("Resource_beop0"), SubResource("Resource_se83j"), SubResource("Resource_5hdsq"), SubResource("Resource_m4bip"), SubResource("Resource_uqfyl"), SubResource("Resource_gl522"), SubResource("Resource_t1kir")])
 scene_berikutnya = "uid://b5uy1057ya182"
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

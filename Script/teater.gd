@@ -15,11 +15,11 @@ func _ready() -> void:
 func aksi_khusus(nama: String) -> void:
 	match nama:
 		"ke_kursi":
-			await _jalan(johan, titik_kursi.global_position)
+			await _jalan(johan, titik_kursi.global_position, 40.0)
 			johan.last_dir = "up"
 			johan.main_diam()
 		"keluar_studio":
-			await _jalan(johan, titik_pintu_keluar.global_position, 110.0)
+			await _jalan(johan, titik_pintu_keluar.global_position, 40.0)
 			await _fade(1.0, 0.8)
 			pindah("res://Scene/ruangan/lorong_bioskop.tscn", "SpawnKM", GameProgress.Tahap.TEATER)
 			return

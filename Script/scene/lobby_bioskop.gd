@@ -11,6 +11,7 @@ extends AdeganBase
 
 
 func _ready() -> void:
+	AudioManager.stop_music()
 	super()
 	pintu_teater.terkunci = not GameProgress.ambil_flag("cs_lobby")
 	if GameProgress.ambil_flag("cs_lobby"):

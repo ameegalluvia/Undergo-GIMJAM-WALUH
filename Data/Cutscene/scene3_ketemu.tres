@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_61ie8"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_288qs"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_tt0c6"]
 
 [sub_resource type="Resource" id="Resource_c508m"]
 script = ExtResource("1_61ie8")
 nama = "Johan"
-teks = "Ketemu sekarang tinggal pulang."
+teks = "Ketemu sekarang tinggal pulang"
+potret = ExtResource("2_tt0c6")
 aksi = "ambil_obat"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 

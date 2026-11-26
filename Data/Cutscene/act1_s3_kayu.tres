@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 [sub_resource type="Resource" id="Resource_5j1yf"]
 script = ExtResource("1_c1rsw")
 nama = "Kakak?"
-teks = "Maukah kamu aku beritahu sesuatu? Jiwaku terikat padanya... Ubed"
+teks = "Maukah kamu aku beritahu sesuatu? Jiwaku terikat padanya... UBED"
 potret = ExtResource("3_nbjor")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_pa2nc"]
 script = ExtResource("1_c1rsw")
-nama = "Kakak"
+nama = "Kakak?"
 teks = "Heh, semoga beruntung, peniru"
 potret = ExtResource("3_nbjor")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"

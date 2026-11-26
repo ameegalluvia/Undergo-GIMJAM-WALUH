@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://caqgnk45lntxl" path="res://assets/tilesets/Tilesets BARU 2.png" id="4_pqhe1"]
 [ext_resource type="Script" uid="uid://djby7tp50wcnv" path="res://Script/puzzle/tempat_item.gd" id="5_2i0bq"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
-[ext_resource type="Resource" uid="uid://dtpqqksjpsiak" path="res://Data/Items/kayu.tres" id="6_4lkef"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="6_ys0aj"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
 [ext_resource type="AudioStream" uid="uid://x3v5req2kd1j" path="res://assets/audio/sfx/Ambil.wav" id="7_opwbi"]
@@ -9929,6 +9928,7 @@ shape = SubResource("RectangleShape2D_rwxtm")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("2_p05q1")]
 position = Vector2(-1, 45)
+speed = 300.0
 
 [node name="KabutRuangan" type="Sprite2D" parent="." unique_id=128383416 node_paths=PackedStringArray("layer_acuan")]
 z_index = 50

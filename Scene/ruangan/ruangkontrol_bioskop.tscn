@@ -11,9 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bdd0oja6tba3a" path="res://assets/audio/sfx/door_closed.wav" id="6_e32ls"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="6_idyod"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="7_efuq2"]
-[ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="8_e32ls"]
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="9_dgj1i"]
-[ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="9_rvhup"]
 [ext_resource type="Resource" uid="uid://dn8l3slbgb6t0" path="res://Data/Items/kaset.tres" id="11_4hkb5"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="16_4hkb5"]
 [ext_resource type="Script" uid="uid://cr6vr70r8570w" path="res://Scene/ruangan/komputer.gd" id="16_bv2jl"]
@@ -7676,11 +7674,8 @@ sources/1 = SubResource("TileSetAtlasSource_udj1v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rar2"]
 size = Vector2(29, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgj1i"]
-size = Vector2(46, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_grfeu"]
-size = Vector2(46, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0m1x"]
+size = Vector2(20, 35.835022)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
 size = Vector2(79, 27)
@@ -7823,8 +7818,12 @@ position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_8rar2")
 
 [node name="ItemPickup" parent="Tilemaps/Interior" unique_id=1304024789 instance=ExtResource("9_dgj1i")]
-position = Vector2(-127, -100)
+position = Vector2(-127, -104)
 item = ExtResource("11_4hkb5")
+
+[node name="CollisionShape2D" parent="Tilemaps/Interior/ItemPickup" index="1" unique_id=96864614]
+position = Vector2(0, 4.903427)
+shape = SubResource("RectangleShape2D_l0m1x")
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("6_idyod")]
 position = Vector2(0, 176)
@@ -7837,32 +7836,6 @@ layer_acuan = [NodePath("../Tilemaps/Background/Lantai"), NodePath("../Tilemaps/
 [node name="Shaders" type="CanvasModulate" parent="." unique_id=834647814]
 color = Color(0.43137255, 0.43137255, 0.42352942, 1)
 
-[node name="PintuLorongBioskop" type="Node2D" parent="." unique_id=1848182884]
-position = Vector2(-893, -1156)
-
-[node name="PintuKeLorongBioskop" type="Area2D" parent="PintuLorongBioskop" unique_id=1783051383]
-position = Vector2(897, 1336)
-script = ExtResource("8_e32ls")
-scene_tujuan = "uid://we4jxnq6woy0"
-id_titik_tujuan = &"dari_ruangkontrol_bioskop"
-suara_pintu = ExtResource("4_k73ss")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLorongBioskop/PintuKeLorongBioskop" unique_id=125302220]
-position = Vector2(-5, -42)
-shape = SubResource("RectangleShape2D_dgj1i")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PintuLorongBioskop/PintuKeLorongBioskop" unique_id=263373749]
-position = Vector2(0, 12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLorongBioskop/PintuKeLorongBioskop/StaticBody2D" unique_id=1306566703]
-position = Vector2(-5, -50)
-shape = SubResource("RectangleShape2D_grfeu")
-
-[node name="TitikDariLorongBioskop" type="Marker2D" parent="PintuLorongBioskop" unique_id=110164387]
-position = Vector2(893, 1339)
-script = ExtResource("9_rvhup")
-id_titik = &"dari_lorong_bioskop"
-
 [node name="Komputer" type="Area2D" parent="." unique_id=610291099]
 position = Vector2(-52, -114)
 script = ExtResource("16_bv2jl")
@@ -7872,3 +7845,14 @@ position = Vector2(-12.5, 3.5)
 shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("16_4hkb5")]
+
+[node name="ItemPickup2" parent="." unique_id=1239509433 instance=ExtResource("9_dgj1i")]
+position = Vector2(-42, -75)
+item = ExtResource("11_4hkb5")
+
+[node name="CollisionShape2D" parent="ItemPickup2" index="1" unique_id=96864614]
+position = Vector2(0, 4.903427)
+shape = SubResource("RectangleShape2D_l0m1x")
+
+[editable path="Tilemaps/Interior/ItemPickup"]
+[editable path="ItemPickup2"]

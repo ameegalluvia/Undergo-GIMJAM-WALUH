@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_ks60e"]
 script = ExtResource("1_4do17")
 nama = "Johan"
-teks = "Film apa ini, kok singkat? tapi rasanya sangat nyata, seakan aku masuk ke filmnya, mengganggu banget. Membuatku teringat dulu aku pernah menggambar kakak, ibu, dan pak tua itu sebelum ibu menyuruh aku untuk kembali ke kamar"
+teks = "Film apa ini, kok singkat? tapi rasanya sangat nyata, seakan aku masuk ke filmnya, mengganggu banget. Membuatku teringat dulu.."
 potret = ExtResource("2_4c0r6")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 

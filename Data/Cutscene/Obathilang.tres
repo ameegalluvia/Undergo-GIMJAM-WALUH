@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://dcg8h5k6jwa5w"]
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_mbhs3"]
-[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_87nxb"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_v4uo1"]
 [ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="3_87nxb"]
 
 [sub_resource type="Resource" id="Resource_u3dlb"]
 script = ExtResource("1_mbhs3")
-teks = "Johan berhenti mendadak"
-potret = ExtResource("2_87nxb")
+teks = "LHOO?!!"
+potret = ExtResource("3_87nxb")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_jc486"]
