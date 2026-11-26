@@ -1,43 +1,51 @@
 [gd_scene format=3 uid="uid://bup4av4udmyo7"]
 
 [ext_resource type="Script" uid="uid://be4dtua6oismq" path="res://Script/settings/settings.gd" id="1_ewhy3"]
-[ext_resource type="Texture2D" uid="uid://ddb0uyqxh3w8e" path="res://assets/ui/AI_Settings Menu.jpg" id="2_he7h0"]
-[ext_resource type="Texture2D" uid="uid://clvoy425ct5w8" path="res://assets/ui/AI_Settings.png" id="3_cwbsc"]
+[ext_resource type="Texture2D" uid="uid://cvwxe7efq84ht" path="res://assets/ui/Settings.png" id="2_u62nf"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="4_k1hxn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jps1b"]
-texture = ExtResource("3_cwbsc")
+texture = ExtResource("2_u62nf")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rwxtm"]
-color = Color(0.6509804, 0.15294118, 0.21568628, 1)
+color = Color(0.6622335, 0.70554346, 0.7038285, 1)
 thickness = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o87p8"]
-bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usb6v"]
-bg_color = Color(0.24894533, 0.07645597, 0.05904405, 1)
-border_width_right = 13
-border_width_bottom = 13
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u62nf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b0tk"]
-bg_color = Color(0.77111435, 0.35467032, 0.3157717, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he7h0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.15113845, 0.2863974, 4.813075e-08, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Settings" type="Control" unique_id=872609686]
 process_mode = 3
@@ -49,14 +57,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ewhy3")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1475801773]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=650670247]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_he7h0")
+color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=56990469]
 layout_mode = 1
@@ -76,6 +84,7 @@ theme_override_constants/separation = -46
 alignment = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=197160644]
+custom_minimum_size = Vector2(647.525, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_jps1b")
@@ -87,9 +96,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 126
+theme_override_constants/margin_left = 207
 theme_override_constants/margin_top = 209
-theme_override_constants/margin_right = 121
+theme_override_constants/margin_right = 204
 theme_override_constants/margin_bottom = 225
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1483439521]
@@ -156,8 +165,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_k1hxn")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u62nf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_he7h0")
 text = "Kembali
 
 "

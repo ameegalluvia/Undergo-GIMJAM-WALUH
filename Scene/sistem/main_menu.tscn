@@ -1,35 +1,56 @@
 [gd_scene format=3 uid="uid://cjrep5abb3q7i"]
 
 [ext_resource type="Script" uid="uid://dw6keirsbvk70" path="res://Script/main menu/main_menu.gd" id="1_68h0t"]
-[ext_resource type="Texture2D" uid="uid://bx5a8uerqwxcp" path="res://assets/ui/AI_Main Menu.jpg" id="2_o87p8"]
+[ext_resource type="Texture2D" uid="uid://whanyaktal5w" path="res://assets/ui/MainMenu/MainMenu.png" id="2_o87p8"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="2_wd8c4"]
+[ext_resource type="Texture2D" uid="uid://be4agh2nu7bdg" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Normal_NewGame.png" id="4_dtt4e"]
+[ext_resource type="Texture2D" uid="uid://bwo2wcikxeaqp" path="res://assets/ui/MainMenu/Button 2 (pressed)/Pressed_NewGame.png" id="5_glcwu"]
+[ext_resource type="Texture2D" uid="uid://dgimtk7qekbmq" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Normal_Continue.png" id="5_pidld"]
+[ext_resource type="Texture2D" uid="uid://l0uqxyvbnfag" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Normal_Option.png" id="6_b4wt0"]
+[ext_resource type="Texture2D" uid="uid://cgb4qrpwguho0" path="res://assets/ui/MainMenu/Button 3 (Hover)/Hover_NewGame.png" id="6_jcnmf"]
+[ext_resource type="Texture2D" uid="uid://c5pv1jh662x1x" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Hover_Continue.png" id="7_glcwu"]
+[ext_resource type="Texture2D" uid="uid://dodlxmeyb7qb1" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Normal_Exit.png" id="7_tmiw8"]
+[ext_resource type="Texture2D" uid="uid://ff22g7hpftvq" path="res://assets/ui/MainMenu/Button 2 (pressed)/Pressed_Continue.png" id="8_0c87j"]
+[ext_resource type="Texture2D" uid="uid://m3uuc5ca6scg" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Hover_Option.png" id="9_jcnmf"]
+[ext_resource type="Texture2D" uid="uid://b1se042bfqpxg" path="res://assets/ui/MainMenu/Button 2 (pressed)/Pressed_Option.png" id="11_2s4l4"]
+[ext_resource type="Texture2D" uid="uid://dfvh713pjvcev" path="res://assets/ui/MainMenu/Button Normal/Button 1 (normal)/Hover_Exit.png" id="11_4vmkp"]
+[ext_resource type="Texture2D" uid="uid://bwystfquy6nes" path="res://assets/ui/MainMenu/Button 2 (pressed)/Pressed_Exit.png" id="14_ixgjw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o87p8"]
-bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o87p8"]
+texture = ExtResource("4_dtt4e")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usb6v"]
-bg_color = Color(0.24894533, 0.07645597, 0.05904405, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0c87j"]
+texture = ExtResource("5_glcwu")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b0tk"]
-bg_color = Color(0.77111435, 0.35467032, 0.3157717, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtt4e"]
+texture = ExtResource("6_jcnmf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usb6v"]
+texture = ExtResource("5_pidld")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glcwu"]
+texture = ExtResource("8_0c87j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4wt0"]
+texture = ExtResource("7_glcwu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23qcl"]
+texture = ExtResource("6_b4wt0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jcnmf"]
+texture = ExtResource("11_2s4l4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmiw8"]
+texture = ExtResource("9_jcnmf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ocewr"]
+texture = ExtResource("7_tmiw8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4vmkp"]
+texture = ExtResource("14_ixgjw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfove"]
+texture = ExtResource("11_4vmkp")
 
 [node name="MainMenu" type="Control" unique_id=454217947]
 layout_mode = 3
@@ -71,6 +92,8 @@ size_flags_horizontal = 3
 [node name="Judul" type="Label" parent="MarginContainer/HBoxContainer/Main Menu" unique_id=1062440219]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.31764707)
+theme_override_constants/shadow_outline_size = 18
 theme_override_fonts/font = ExtResource("2_wd8c4")
 theme_override_font_sizes/font_size = 145
 text = "Undergo"
@@ -83,52 +106,49 @@ size_flags_vertical = 3
 theme_override_constants/separation = 27
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/Main Menu/VBoxContainer" unique_id=713610872]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(500, 95)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wd8c4")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Mulai"
+theme_override_styles/normal = SubResource("StyleBoxTexture_o87p8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0c87j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dtt4e")
 
 [node name="Continue" type="Button" parent="MarginContainer/HBoxContainer/Main Menu/VBoxContainer" unique_id=2057952097]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(500, 95)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wd8c4")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Continue"
+theme_override_styles/normal = SubResource("StyleBoxTexture_usb6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glcwu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b4wt0")
 
 [node name="Settings" type="Button" parent="MarginContainer/HBoxContainer/Main Menu/VBoxContainer" unique_id=276570986]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(500, 95)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wd8c4")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Pengaturan"
+theme_override_styles/normal = SubResource("StyleBoxTexture_23qcl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jcnmf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tmiw8")
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/Main Menu/VBoxContainer" unique_id=661048168]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(500, 95)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wd8c4")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Keluar
+theme_override_styles/normal = SubResource("StyleBoxTexture_ocewr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4vmkp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vfove")
+text = "
 "
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=610470048]
