@@ -43,6 +43,12 @@ func tampilkan() -> void:
 	teks.visible_ratio = 0.0
 	tween = create_tween()
 	tween.tween_property(teks, "visible_ratio", 1.0, baris.teks.length() / kecepatan_teks)
+	tween.finished.connect(SuaraTeks.berhenti)
+	
+	var durasi: float = baris.teks.length() / kecepatan_teks
+	SuaraTeks.mulai(durasi, baris.suara_teks_khusus)
+	if baris.suara_tambahan:
+		AudioManager.play_sfx_volume(baris.suara_tambahan, baris.volume_tambahan_db)
 
 	if not baris.aksi.is_empty():
 		menunggu_aksi = baris.tunggu_aksi
@@ -73,6 +79,7 @@ func lanjut() -> void:
 	if sedang_mengetik():
 		tween.kill()
 		teks.visible_ratio = 1.0
+		SuaraTeks.berhenti()
 		return
 	if menunggu_aksi:
 		return
