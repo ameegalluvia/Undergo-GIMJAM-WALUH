@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bpiekc8weapcg"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_momo0"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_ddtvx"]
+
+[sub_resource type="Resource" id="Resource_4hkb5"]
+script = ExtResource("1_momo0")
+nama = "Johan"
+teks = "Nah Nyala"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_bv2jl"]
+script = ExtResource("1_momo0")
+nama = "Johan"
+teks = "Aku sudah membuka akses ruang kontrol, aku seharusnya sudah bisa keluar sekarang..."
+aksi = "berbalik"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_8rar2"]
+script = ExtResource("1_momo0")
+nama = "Johan"
+teks = "Loker itu... apakah tadi memang seperti itu, ya?"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_ddtvx")
+dialog = Array[ExtResource("1_momo0")]([SubResource("Resource_4hkb5"), SubResource("Resource_bv2jl"), SubResource("Resource_8rar2")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

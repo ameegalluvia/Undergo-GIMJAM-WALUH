@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://dn8l3slbgb6t0"]
+
+[ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_fws84"]
+[ext_resource type="Texture2D" uid="uid://cd2m3n286xmc3" path="res://assets/ui/InteractiveItems/RolFilm.png" id="1_l0m1x"]
+
+[resource]
+script = ExtResource("1_fws84")
+id = &"kaset"
+nama_tampil = "Roll Film"
+ikon = ExtResource("1_l0m1x")
+metadata/_custom_type_script = "uid://ccg3nj837oud5"

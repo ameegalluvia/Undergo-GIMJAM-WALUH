@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b4m5vfg438mq2"]
 
 [ext_resource type="Texture2D" uid="uid://43xxfnp338d1" path="res://assets/tilesets/Tilesets.png" id="1_mrb5m"]
+[ext_resource type="Script" uid="uid://ctp3woyqfrw7v" path="res://Scene/ruangan/gudang_bioskop.gd" id="1_qf3dj"]
 [ext_resource type="Texture2D" uid="uid://bwnjx6tb5wykq" path="res://assets/tilesets/Tilesets BARU.png" id="2_pbhxd"]
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="3_bxdal"]
 [ext_resource type="Script" uid="uid://bp4eddk38o1fv" path="res://Script/puzzle/loker.gd" id="3_pbhxd"]
@@ -11,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_xyk3u"]
 [ext_resource type="Resource" uid="uid://ca5pwp267xbm2" path="res://Data/Items/kunci.tres" id="7_qf3dj"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_rnqci"]
+[ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="9_hscaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enb7w"]
 texture = ExtResource("1_mrb5m")
@@ -4613,6 +4615,7 @@ size = Vector2(46, 20)
 size = Vector2(46, 14)
 
 [node name="GudangBioskop" type="Node2D" unique_id=1236156271]
+script = ExtResource("1_qf3dj")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=470027865]
 
@@ -4749,6 +4752,8 @@ position = Vector2(-32, -95)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tilemaps/Interior/Loker/Loker3/StaticBody2D" unique_id=1117787584]
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_rwxtm")
+
+[node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("9_hscaw")]
 
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("3_bxdal")]
 position = Vector2(0, 183)

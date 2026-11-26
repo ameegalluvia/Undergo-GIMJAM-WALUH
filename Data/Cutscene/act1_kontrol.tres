@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bqkhihmiiu1gf"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_hgvf0"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_24gyh"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_k8rxr"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="3_1d8dc"]
+
+[sub_resource type="Resource" id="Resource_24gyh"]
+script = ExtResource("1_hgvf0")
+nama = "Johan"
+teks = "Sial, terkunci."
+potret = ExtResource("2_24gyh")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_1d8dc"]
+script = ExtResource("1_hgvf0")
+nama = "Johan"
+teks = "Aku harus cari jalan lain"
+potret = ExtResource("3_1d8dc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_k2xo6"]
+script = ExtResource("1_hgvf0")
+nama = "Johan"
+teks = "Ngomong-ngomong yang dimaksud oleh bayangan tadi apa ya?"
+potret = ExtResource("2_24gyh")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_507nd"]
+script = ExtResource("1_hgvf0")
+nama = "Johan"
+teks = "Maukah kamu aku beritahu sesuatu? Jiwaku terikat padanya... Ubed??"
+potret = ExtResource("2_24gyh")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_4w7n0"]
+script = ExtResource("1_hgvf0")
+nama = "Johan"
+teks = "Ubed? itukan film yang comingsoon, sepertinya ada posternya disini."
+potret = ExtResource("3_1d8dc")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_k8rxr")
+dialog = Array[ExtResource("1_hgvf0")]([SubResource("Resource_24gyh"), SubResource("Resource_1d8dc"), SubResource("Resource_k2xo6"), SubResource("Resource_507nd"), SubResource("Resource_4w7n0")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

@@ -1,5 +1,6 @@
 extends AdeganBase
 @onready var pintu_keluar = $PintuLorongBioskop/PintuKeLorongBioskop
+
 func _ready() -> void:
 	super()
 	if GameProgress.ambil_flag("memori1_selesai") and not GameProgress.ambil_flag("cs_setelah_memori1"):
@@ -31,4 +32,10 @@ func selesai_cutscene() -> void:
 		SaveManager.simpan_scene(scene_file_path)
 		SanityManager.jeda_drain()   # opsional, lihat catatan
 		CutsceneManager.mainkan(preload("res://Data/Cutscene/memori1.tres"))
+	if GameProgress.ambil_flag("cs_setelah_memori1") and GameProgress.tahap == GameProgress.Tahap.ACT1_MEMORI1:
+		GameProgress.tahap = GameProgress.Tahap.ACT1_KEJAR
+		GameProgress.set_flag("kejar_tahap", 0)
 		pintu_keluar.terkunci = false
+		SaveManager.simpan_scene(scene_file_path)
+		_kunci_pemain(false)
+		return

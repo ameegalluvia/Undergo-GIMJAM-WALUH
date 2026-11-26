@@ -5245,4 +5245,4 @@ shape = SubResource("RectangleShape2D_c508m")
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("10_3bitd")]
 
 [node name="SpawnKursi" type="Marker2D" parent="." unique_id=296771134]
-position = Vector2(16, 33)
+position = Vector2(18, 100)

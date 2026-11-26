@@ -1,6 +1,10 @@
 extends Area2D
 
+signal item_diambil(data_item: DataItem)
+
 @export var item: DataItem
+# ... sisanya tetap
+
 @export var id_pickup: StringName            # boleh kosong, nanti dibuat otomatis
 @export var ukuran_di_dunia := 16         # sisi terpanjang gambar di dunia, dalam piksel
 @export var durasi_petunjuk_inventory: float = 2.5
@@ -50,6 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		InventoryUI.umumkan_item_diambil(item)
 		if is_instance_valid(InventoryUI):
 			InventoryUI.tampilkan_petunjuk_inventory_sekali(durasi_petunjuk_inventory)
+		item_diambil.emit(item)          # <-- tambahan
 		get_viewport().set_input_as_handled()
 		queue_free()
 	else:
