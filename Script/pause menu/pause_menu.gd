@@ -40,7 +40,7 @@ func _input(event: InputEvent) -> void:
 
 	# 3. Abaikan ESC di scene non-gameplay
 	var path := get_tree().current_scene.scene_file_path
-	if path.contains("main_menu.tscn") or path.contains("settings.tscn"):
+	if path.contains("main_menu.tscn") or path.contains("settings.tscn") or path.contains("credits.tscn"):
 		return
 
 	toggle_pause()

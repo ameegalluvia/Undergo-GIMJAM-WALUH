@@ -1,14 +1,14 @@
 extends CanvasLayer
 
-const DASAR := "Overlay/CenterContainer/Panel/MarginContainer/VBoxContainer/"
+const DASAR := "Overlay/CenterContainer/Panel/MarginContainer/"
 
 @onready var ikon_tangan: TextureRect = $HeldIcon
 @onready var overlay: Control = $Overlay
-@onready var label_tangan: Label = get_node(DASAR + "HandLabel")
+@onready var label_tangan: Label = get_node("Overlay/HandLabel")
 @onready var grid: GridContainer = get_node(DASAR + "Grid")
-@onready var bar_aksi: HBoxContainer = get_node(DASAR + "ActionBar")
-@onready var tombol_gunakan: Button = get_node(DASAR + "ActionBar/UseButton")
-@onready var tombol_batal: Button = get_node(DASAR + "ActionBar/CancelButton")
+@onready var bar_aksi: HBoxContainer = get_node("Overlay/ActionBar")
+@onready var tombol_gunakan: Button = get_node("Overlay/ActionBar/UseButton")
+@onready var tombol_batal: Button = get_node("Overlay/ActionBar/CancelButton")
 
 @onready var label_prompt: Label = $PromptLabel
 @onready var label_petunjuk: Label = $HintLabel
@@ -107,7 +107,7 @@ func _boleh_dibuka() -> bool:
 	if scene == null:
 		return false
 	var path := scene.scene_file_path
-	return not (path.contains("main_menu.tscn") or path.contains("settings.tscn"))
+	return not (path.contains("main_menu.tscn") or path.contains("settings.tscn") or path.contains("credits.tscn"))
 
 func buka() -> void:
 	Inventory.ui_terbuka = true

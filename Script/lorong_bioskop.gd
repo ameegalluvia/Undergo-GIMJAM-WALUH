@@ -22,18 +22,11 @@ extends AdeganBase
 @onready var senter: PointLight2D = $Player/Senter/Cahaya
 @onready var bayangan: AnimatedSprite2D = $Bayangan
 
+@export var musik_gedor: AudioStream
+@export var durasi_fade_musik := 1.0
+
 
 func _ready() -> void:
-	# ===== TES SEMENTARA, HAPUS SETELAH SELESAI ====='
-	for f in ["cs_lobby","cs_teater","cs_pulang","cs_obat_hilang","cs_ketemu",
-			"cs_listrik","cs_bayangan","listrik_mati","cs_act1_mulai",
-			"cs_act1_bayangan","cs_studio_masuk","cs_kursi",
-			"cs_setelah_memori1","memori1_selesai"]:
-		GameProgress.set_flag(f)
-	GameProgress.set_flag("kejar_tahap", 0)
-	GameProgress.tahap = GameProgress.Tahap.ACT1_KEJAR
-	SanityManager.aktifkan()
-	# ================================================
 	super()
 	_atur_pintu()
 	_atur_cahaya()
@@ -227,11 +220,16 @@ func selesai_cutscene() -> void:
 func aksi_khusus(nama: String) -> void:
 	match nama:
 		"gedor":
+			if musik_gedor != null:
+				AudioManager.play_music(musik_gedor, durasi_fade_musik)
 			for i in 4:
 				johan.global_position.x += 1.0
 				await get_tree().create_timer(0.08).timeout
 				johan.global_position.x -= 1.0
 				await get_tree().create_timer(0.08).timeout
+				
+		"musik_berhenti":
+			AudioManager.fade_out_music(durasi_fade_musik)
 
 		"listrik_mati":
 			GameProgress.set_flag("listrik_mati")

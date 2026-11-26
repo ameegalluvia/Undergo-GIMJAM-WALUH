@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dq2ndrkhmdibd"]
+
+[ext_resource type="Script" uid="uid://bmgl834dahaxk" path="res://Script/credits/credits.gd" id="1_co1w1"]
+[ext_resource type="Script" uid="uid://cyeivebjvorr4" path="res://Script/credits/halaman_credit.gd" id="2_bo6qc"]
+[ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="3_sv03f"]
+
+[sub_resource type="Resource" id="Resource_rero3"]
+script = ExtResource("2_bo6qc")
+isi = "Thank You for Playing This Game"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_28w75"]
+script = ExtResource("2_bo6qc")
+isi = "Special Thanks to"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_sv03f"]
+script = ExtResource("2_bo6qc")
+judul = "Mentor"
+isi = "Kak Gin 
+Jessica Audrey Tjahjadi"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_ehvqx"]
+script = ExtResource("2_bo6qc")
+judul = "Game Production"
+isi = "Mahesa Rahasia Hati Kahfilano"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_o4fio"]
+script = ExtResource("2_bo6qc")
+judul = "Game Designer"
+isi = "Akhyar Lubis"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_dk4cp"]
+script = ExtResource("2_bo6qc")
+judul = "Visual Artist"
+isi = "Sheva Razzan Hidayat Putra
+Redya Pinasthika
+Adrina Keira"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_i6q7u"]
+script = ExtResource("2_bo6qc")
+judul = "Audio Designer"
+isi = "Rasya Baidillah"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[sub_resource type="Resource" id="Resource_4nfy1"]
+script = ExtResource("2_bo6qc")
+judul = "PROGRAMMER"
+isi = "Abdus Salam Faiz
+Sandhya Yudha"
+metadata/_custom_type_script = "uid://cyeivebjvorr4"
+
+[node name="Credits" type="Control" unique_id=1052681053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_co1w1")
+halaman = Array[ExtResource("2_bo6qc")]([SubResource("Resource_rero3"), SubResource("Resource_28w75"), SubResource("Resource_sv03f"), SubResource("Resource_ehvqx"), SubResource("Resource_o4fio"), SubResource("Resource_dk4cp"), SubResource("Resource_i6q7u"), SubResource("Resource_4nfy1")])
+ukuran_judul = 50
+ukuran_isi = 40
+
+[node name="Latar" type="ColorRect" parent="." unique_id=365561244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Tengah" type="CenterContainer" parent="." unique_id=755845171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Konten" type="VBoxContainer" parent="Tengah" unique_id=569244261]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Judul" type="Label" parent="Tengah/Konten" unique_id=559591348]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_sv03f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Isi" type="Label" parent="Tengah/Konten" unique_id=1250323577]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sv03f")
+horizontal_alignment = 1
+vertical_alignment = 1
