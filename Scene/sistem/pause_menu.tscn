@@ -2,62 +2,130 @@
 
 [ext_resource type="Script" uid="uid://b4a1wfbhethjv" path="res://Script/pause menu/pause_menu.gd" id="1_wk7bi"]
 [ext_resource type="FontFile" uid="uid://b1j6a4t3k48xu" path="res://assets/Font/Minecraft.ttf" id="2_4b0tk"]
-[ext_resource type="Texture2D" uid="uid://btjq6isbvskwf" path="res://assets/ui/AI_Pause Menu.jpg" id="2_d4016"]
-[ext_resource type="Texture2D" uid="uid://d12yiiir225rx" path="res://assets/ui/AI_Confirm.png" id="4_814o7"]
+[ext_resource type="Texture2D" uid="uid://chnih4fpfioeq" path="res://assets/ui/PauseMenu/PauseMenu.jpg" id="2_vmji4"]
+[ext_resource type="Texture2D" uid="uid://r4d7jjf6cn8f" path="res://assets/ui/PauseMenu/Tombol/Normal/ResumeNormal.png" id="4_vmji4"]
+[ext_resource type="Texture2D" uid="uid://hrnpt4lxtjql" path="res://assets/ui/PauseMenu/Tombol/Pressed/7.png" id="5_y7dwb"]
+[ext_resource type="Texture2D" uid="uid://ci3ypqicrun38" path="res://assets/ui/PauseMenu/Tombol/Normal/RestartNormal.png" id="6_fr2v6"]
+[ext_resource type="Texture2D" uid="uid://dn37knnypka5o" path="res://assets/ui/PauseMenu/Tombol/Hover/7.png" id="6_y7dwb"]
+[ext_resource type="Texture2D" uid="uid://boyf5b7ecxgfb" path="res://assets/ui/PauseMenu/Tombol/Pressed/6.png" id="8_xq4l8"]
+[ext_resource type="Texture2D" uid="uid://dcbke35jqfb3w" path="res://assets/ui/PauseMenu/Tombol/Hover/6.png" id="9_qkmlf"]
+[ext_resource type="Texture2D" uid="uid://du7mjm7m7450" path="res://assets/ui/PauseMenu/Tombol/Normal/SettingsNormal.png" id="10_13rn2"]
+[ext_resource type="Texture2D" uid="uid://5ckvb7tm3cb0" path="res://assets/ui/PauseMenu/Tombol/Pressed/8.png" id="11_lee2y"]
+[ext_resource type="Texture2D" uid="uid://g75ptbilh6le" path="res://assets/ui/PauseMenu/Tombol/Hover/8.png" id="12_dn07w"]
+[ext_resource type="Texture2D" uid="uid://bq7nrcyqokjqu" path="res://assets/ui/PauseMenu/Tombol/Normal/MainMenuNormal.png" id="13_buhrm"]
+[ext_resource type="Texture2D" uid="uid://cubcvelenjhkt" path="res://assets/ui/PauseMenu/Tombol/Pressed/5.png" id="14_r4rkd"]
+[ext_resource type="Texture2D" uid="uid://c61b62tnpugf8" path="res://assets/ui/PauseMenu/Tombol/Hover/5.png" id="15_rbi3b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfy11"]
+texture = ExtResource("4_vmji4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yevx4"]
+texture = ExtResource("5_y7dwb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7dwb"]
+texture = ExtResource("6_y7dwb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5udq2"]
+texture = ExtResource("6_fr2v6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o87p8"]
+texture = ExtResource("8_xq4l8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usb6v"]
+texture = ExtResource("9_qkmlf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23qcl"]
+texture = ExtResource("10_13rn2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ocewr"]
+texture = ExtResource("11_lee2y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtt4e"]
+texture = ExtResource("12_dn07w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pidld"]
+texture = ExtResource("13_buhrm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4wt0"]
+texture = ExtResource("14_r4rkd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmiw8"]
+texture = ExtResource("15_rbi3b")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qukq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o87p8"]
-bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usb6v"]
-bg_color = Color(0.24894533, 0.07645597, 0.05904405, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xinrc"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.557753, 0.5577531, 0.5577531, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b0tk"]
-bg_color = Color(0.77111435, 0.35467032, 0.3157717, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq4l8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.67958724, 0, 0.04118888, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raha8"]
-texture = ExtResource("4_814o7")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_814o7"]
-bg_color = Color(0.42352942, 0.15294118, 0.1254902, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmlf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ef70"]
-bg_color = Color(0.20799503, 0.2834062, 0.044125006, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13rn2"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.557753, 0.5577531, 0.5577531, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raha8"]
-bg_color = Color(0.41770267, 0.5566201, 0.11954946, 1)
-border_width_right = 13
-border_width_bottom = 13
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lee2y"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.12753877, 0.42838922, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -83,7 +151,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_d4016")
+texture = ExtResource("2_vmji4")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=802487211]
 layout_mode = 1
@@ -112,7 +180,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 125
-text = "Paused"
 
 [node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1138709524]
 layout_mode = 2
@@ -122,48 +189,44 @@ theme_override_constants/v_separation = 47
 columns = 2
 
 [node name="Resume" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1425514838]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(430, 305)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Lanjutkan"
+theme_override_styles/normal = SubResource("StyleBoxTexture_gfy11")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yevx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y7dwb")
 
 [node name="Restart" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1623648053]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(430, 305)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Ulang"
+theme_override_styles/normal = SubResource("StyleBoxTexture_5udq2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o87p8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_usb6v")
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=336616523]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(430, 305)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Pengaturan"
+theme_override_styles/normal = SubResource("StyleBoxTexture_23qcl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ocewr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dtt4e")
 
 [node name="Main Menu" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=32743621]
-custom_minimum_size = Vector2(235, 65)
+custom_minimum_size = Vector2(430, 305)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
-text = "Main Menu"
+theme_override_styles/normal = SubResource("StyleBoxTexture_pidld")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b4wt0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tmiw8")
 
 [node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=1691089454]
 layout_mode = 2
@@ -172,7 +235,6 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_4b0tk")
 
 [node name="ConfirmOverlay" type="Control" parent="." unique_id=488400402]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,6 +243,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dim" type="ColorRect" parent="ConfirmOverlay" unique_id=679430551]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,7 +263,7 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="ConfirmOverlay/CenterContainer" unique_id=20674649]
 custom_minimum_size = Vector2(891.54, 480)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_raha8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qukq")
 
 [node name="MarginContainer" type="MarginContainer" parent="ConfirmOverlay/CenterContainer/Panel" unique_id=1724696049]
 layout_mode = 1
@@ -238,8 +301,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_o87p8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_usb6v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4b0tk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xinrc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq4l8")
 text = "Yes"
 
 [node name="NoButton" type="Button" parent="ConfirmOverlay/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1822685188]
@@ -248,9 +311,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_4b0tk")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_814o7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3ef70")
-theme_override_styles/hover = SubResource("StyleBoxFlat_raha8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkmlf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_13rn2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lee2y")
 text = "No"
 
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/VBoxContainer/GridContainer/Resume" to="." method="_on_resume_pressed"]

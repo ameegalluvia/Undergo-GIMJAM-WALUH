@@ -106,6 +106,7 @@ func play_sfx(stream: AudioStream) -> void:
 	var sfx = sfx_players[sfx_index]
 	sfx.stream = stream
 	sfx.volume_db = 0.0
+	sfx.pitch_scale = 1.0 
 	sfx.play()
 	
 	# Geser index ke pemutar berikutnya, putar kembali ke 0 jika habis
@@ -117,6 +118,7 @@ func play_sfx_volume(stream: AudioStream, volume_db: float = 0.0) -> void:
 	var sfx = sfx_players[sfx_index]
 	sfx.stream = stream
 	sfx.volume_db = volume_db
+	sfx.pitch_scale = 1.0 
 	sfx.play()
 	sfx_index = (sfx_index + 1) % max_sfx_players
 

@@ -16,12 +16,26 @@ var tween: Tween
 var aktif := false
 var menunggu_aksi := false
 
+
 func _ready() -> void:
+	# ALWAYS supaya _process tetap jalan saat pause dan bisa menyembunyikan dialog.
+	# Input dan ketikan teks dijaga manual di bawah.
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	kotak.visible = false
 	aktif = false
+	add_to_group("dialog_overlay")
+
+
+func _process(_delta: float) -> void:
+	# Sembunyikan seluruh layer dialog saat pause menu atau inventory terbuka
+	visible = not _terblokir()
+
+
+func _terblokir() -> bool:
+	return get_tree().paused or Inventory.ui_terbuka
+
 
 func mulai(data: CutsceneData) -> void:
-	GameProgress.sedang_cutscene = true
 	if data == null or data.dialog.is_empty():
 		return
 	dialog = data.dialog
@@ -43,13 +57,8 @@ func tampilkan() -> void:
 	teks.text = baris.teks
 	teks.visible_ratio = 0.0
 	tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_STOP)   # ketikan berhenti saat pause
 	tween.tween_property(teks, "visible_ratio", 1.0, baris.teks.length() / kecepatan_teks)
-	tween.finished.connect(SuaraTeks.berhenti)
-	
-	var durasi: float = baris.teks.length() / kecepatan_teks
-	SuaraTeks.mulai(durasi, baris.suara_teks_khusus)
-	if baris.suara_tambahan:
-		AudioManager.play_sfx_volume(baris.suara_tambahan, baris.volume_tambahan_db)
 
 	if not baris.aksi.is_empty():
 		menunggu_aksi = baris.tunggu_aksi
@@ -66,7 +75,7 @@ func sedang_mengetik() -> bool:
 
 
 func _input(event: InputEvent) -> void:
-	if not aktif:
+	if not aktif or _terblokir():
 		return
 	var klik: bool = event is InputEventMouseButton \
 			and event.pressed \
@@ -80,7 +89,6 @@ func lanjut() -> void:
 	if sedang_mengetik():
 		tween.kill()
 		teks.visible_ratio = 1.0
-		SuaraTeks.berhenti()
 		return
 	if menunggu_aksi:
 		return
@@ -89,8 +97,6 @@ func lanjut() -> void:
 	if index >= dialog.size():
 		aktif = false
 		kotak.visible = false
-		GameProgress.sedang_cutscene = false
 		selesai_dialog.emit()
 	else:
 		tampilkan()
-		

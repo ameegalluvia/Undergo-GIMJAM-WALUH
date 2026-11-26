@@ -109,8 +109,11 @@ func _process(delta: float) -> void:
 func _boleh_dibuka() -> bool:
 	if Transisi.sedang_transisi:
 		return false
-	if get_tree().paused:   # tidak bisa dibuka saat pause menu aktif
+	if get_tree().paused:
 		return false
+	for d in get_tree().get_nodes_in_group("dialog_overlay"):
+		if d.aktif:
+			return false
 	var scene := get_tree().current_scene
 	if scene == null:
 		return false

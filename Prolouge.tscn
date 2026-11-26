@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Margin" parent="MessageBox" index="2" unique_id=300140200]
+[node name="Margin" parent="MessageBox" index="1" unique_id=300140200]
 offset_left = 4.0
 offset_top = -4.0
 offset_bottom = -4.0

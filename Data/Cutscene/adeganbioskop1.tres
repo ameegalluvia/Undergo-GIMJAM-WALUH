@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_2l18p"]
 [ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_3g3um"]
 [ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="3_5qq74"]
+[ext_resource type="Texture2D" uid="uid://cdvgmaabq5nbs" path="res://assets/sprites/Johan/NPC.png" id="3_7amnq"]
 
 [sub_resource type="Resource" id="Resource_dyjey"]
 script = ExtResource("1_0yva6")
@@ -17,48 +18,56 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_0yva6")
 nama = "NPC1"
 teks = "Kayaknya aku belum pernah dengar film ini deh. [Censored], menurut kamu gimana?"
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_3g3um"]
 script = ExtResource("1_0yva6")
 nama = "NPC2"
 teks = "Eh, kamu gila ya!? Banyak orang hilang gara-gara film ini tau. Lagian, film ini tuh gak worth it banget buat ditonton. Cuman anak edgy yang suka film ini."
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_5qq74"]
 script = ExtResource("1_0yva6")
 nama = "NPC1"
 teks = "Masa sih?"
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_7amnq"]
 script = ExtResource("1_0yva6")
 nama = "NPC2"
 teks = "Sumpah! Suer deh! Liat aja tuh ratingnya"
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_rcacb"]
 script = ExtResource("1_0yva6")
 nama = "NPC1"
 teks = "... Bener juga ya... Tapi aku nggak percaya soal banyak orang yang hilang gara-gara nonton film ini. Jangan terlalu dimistis-mistiskan lah."
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_0whby"]
 script = ExtResource("1_0yva6")
 nama = "NPC2"
 teks = "Padahal tadi banyak banget loh poster-poster orang hilang sebelum kita masuk bioskop"
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_bdied"]
 script = ExtResource("1_0yva6")
 nama = "NPC1"
 teks = "Ih, jangan buat takut napa!"
+potret = ExtResource("3_7amnq")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_4iqan"]
 script = ExtResource("1_0yva6")
 nama = "NPC2"
 teks = "Makanya, ayo kita keluar. Bioskop ini tuh cuman nayangin film-film gak bener"
+potret = ExtResource("3_7amnq")
 pakai_transisi = false
 tunggu_aksi = true
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
