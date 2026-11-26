@@ -524,8 +524,9 @@ tags = {
 
 [node name="Player" type="CharacterBody2D" unique_id=1336257654 groups=["player"]]
 script = ExtResource("1_wfpis")
+speed = 50.0
 suara_langkah = Array[AudioStream]([ExtResource("2_tclsa")])
-interval_langkah = 0.36
+interval_langkah = 0.8
 volume_langkah_db = -10.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1456221449]

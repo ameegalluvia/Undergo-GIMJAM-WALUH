@@ -9,6 +9,8 @@ const KECEPATAN_JALAN := 40.0
 var _id_aktif := ""
 var fade: ColorRect
 
+var _musik_dijeda := false
+
 func _ready() -> void:
 	_buat_fade()
 	overlay.aksi_dipicu.connect(_on_aksi)
@@ -41,6 +43,8 @@ func mainkan_sekali(id: String, data: CutsceneData) -> bool:
 		return false
 	_id_aktif = id
 	_kunci_pemain(true)
+	AudioManager.jeda_musik()
+	_musik_dijeda = true
 	overlay.mulai(data)
 	return true
 
@@ -50,7 +54,10 @@ func _on_selesai() -> void:
 		GameProgress.set_flag(_id_aktif)
 		_id_aktif = ""
 	_kunci_pemain(false)
-	selesai_cutscene()
+	_musik_dijeda = false
+	selesai_cutscene()          # bisa langsung memulai cutscene berikutnya
+	if not _musik_dijeda:       # tidak ada cutscene lanjutan, musik kembali
+		AudioManager.lanjut_musik()
 
 
 func selesai_cutscene() -> void:   # di-override scene

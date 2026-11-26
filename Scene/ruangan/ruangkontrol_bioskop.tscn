@@ -7675,6 +7675,9 @@ sources/1 = SubResource("TileSetAtlasSource_udj1v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rar2"]
 size = Vector2(29, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veo0n"]
+size = Vector2(20, 37.449707)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c508m"]
 size = Vector2(79, 27)
 
@@ -7819,6 +7822,10 @@ shape = SubResource("RectangleShape2D_8rar2")
 position = Vector2(-127, -104)
 item = ExtResource("11_4hkb5")
 
+[node name="CollisionShape2D" parent="Tilemaps/Interior/ItemPickup" index="1" unique_id=96864614]
+position = Vector2(0, 5.403427)
+shape = SubResource("RectangleShape2D_veo0n")
+
 [node name="Player" parent="." unique_id=1336257654 instance=ExtResource("6_idyod")]
 position = Vector2(0, 176)
 
@@ -7840,10 +7847,7 @@ shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("16_4hkb5")]
 
-[node name="ItemPickup2" parent="." unique_id=1415244863 instance=ExtResource("9_dgj1i")]
-visible = false
-position = Vector2(5, -65)
-item = ExtResource("11_4hkb5")
-
 [node name="Node" type="Node" parent="." unique_id=1507632173]
 script = ExtResource("16_8rar2")
+
+[editable path="Tilemaps/Interior/ItemPickup"]

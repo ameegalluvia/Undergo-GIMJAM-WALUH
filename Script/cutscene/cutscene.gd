@@ -16,6 +16,7 @@ var tween_gambar: Tween
 
 
 func _ready() -> void:
+	AudioManager.jeda_musik()
 	GameProgress.sedang_cutscene = true
 	gambar_baru.modulate.a = 0.0
 	data = CutsceneManager.data_aktif
@@ -107,6 +108,7 @@ func lanjut() -> void:
 func selesai() -> void:
 	GameProgress.sedang_cutscene = false
 	AudioManager.stop_backsound(0.8)
+	AudioManager.lanjut_musik()          # <- tambahan: musik gameplay kembali
 	if data.scene_berikutnya.is_empty():
 		print("Cutscene selesai")
 	else:

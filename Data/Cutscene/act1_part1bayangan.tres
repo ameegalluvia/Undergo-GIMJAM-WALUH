@@ -7,7 +7,9 @@
 
 [sub_resource type="Resource" id="Resource_ys0aj"]
 script = ExtResource("1_2mka6")
+nama = "Johan"
 teks = "......."
+potret = ExtResource("3_umd3w")
 aksi = "bayangan_masuk_studio"
 tunggu_aksi = true
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
@@ -15,14 +17,14 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 [sub_resource type="Resource" id="Resource_j4hre"]
 script = ExtResource("1_2mka6")
 nama = "Johan"
-teks = "Ah, Itu dia! Hey! Mas! WOEY! "
+teks = "AHH, Itu dia! Heii! WOYY! "
 potret = ExtResource("2_j4hre")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_umd3w"]
 script = ExtResource("1_2mka6")
 nama = "Johan"
-teks = "eh, dia malah masuk ke ruang teater"
+teks = "EHH? Dia malah masuk ke ruang teater"
 potret = ExtResource("3_umd3w")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 

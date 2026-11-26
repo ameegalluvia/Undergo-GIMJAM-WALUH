@@ -20,6 +20,8 @@ var backsound_player: AudioStreamPlayer
 # Menyimpan path scene sebelumnya agar tombol Back tahu harus kemana
 var previous_scene_path: String = ""
 
+var _tween_jeda: Tween
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -52,6 +54,8 @@ func _ready() -> void:
 
 # Memutar musik tunggal (misal: lagu menu atau lagu boss)
 func play_music(stream: AudioStream, fade_duration: float = 0.0) -> void:
+	music_player.stream_paused = false
+	music_player.volume_db = 0.0
 	is_playlist_active = false
 	if music_player.stream == stream and music_player.playing:
 		return
@@ -64,6 +68,8 @@ func play_music(stream: AudioStream, fade_duration: float = 0.0) -> void:
 
 # Memutar musik secara beruntun (Playlist dalam 1 scene)
 func play_playlist(playlist: Array[AudioStream]) -> void:
+	music_player.stream_paused = false
+	music_player.volume_db = 0.0
 	if playlist.is_empty():
 		return
 	game_playlist = playlist
@@ -173,3 +179,23 @@ func stop_backsound(fade: float = 0.6) -> void:
 	var tw := create_tween()
 	tw.tween_property(backsound_player, "volume_db", -40.0, fade)
 	tw.tween_callback(backsound_player.stop)
+
+
+# Musik gameplay berhenti sementara (posisi lagu disimpan). SFX tetap jalan.
+func jeda_musik(durasi: float = 0.4) -> void:
+	if not music_player.playing or music_player.stream_paused:
+		return
+	if _tween_jeda:
+		_tween_jeda.kill()
+	_tween_jeda = create_tween()
+	_tween_jeda.tween_property(music_player, "volume_db", -40.0, durasi)
+	_tween_jeda.tween_callback(func(): music_player.stream_paused = true)
+
+
+func lanjut_musik(durasi: float = 0.8) -> void:
+	if _tween_jeda:
+		_tween_jeda.kill()
+	if music_player.stream_paused:
+		music_player.stream_paused = false
+	_tween_jeda = create_tween()
+	_tween_jeda.tween_property(music_player, "volume_db", 0.0, durasi)
