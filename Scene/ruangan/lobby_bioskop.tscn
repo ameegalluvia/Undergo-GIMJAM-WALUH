@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ctuvvdtvy71j4" path="res://Scene/player/player.tscn" id="2_wtvit"]
 [ext_resource type="Script" uid="uid://b0046es4m13ll" path="res://Script/shaders/kabut_ruangan.gd" id="3_wtvit"]
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="4_abrsx"]
+[ext_resource type="AudioStream" uid="uid://d1crvapkeb8gf" path="res://assets/audio/sfx/door_open.wav" id="6_jc486"]
 [ext_resource type="Resource" uid="uid://tv02dxdcfjbc" path="res://Data/Items/tiket_bioskop.tres" id="6_u3dlb"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_0e631"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="9_0e631"]
@@ -3207,6 +3208,7 @@ position = Vector2(-128, -130)
 script = ExtResource("4_abrsx")
 scene_tujuan = "uid://we4jxnq6woy0"
 id_titik_tujuan = &"dari_lobby_bioskop"
+suara_pintu = ExtResource("6_jc486")
 terkunci = true
 pesan_terkunci = "Beli Tiket dulu"
 item_dibutuhkan = ExtResource("6_u3dlb")
