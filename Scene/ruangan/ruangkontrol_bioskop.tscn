@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cdxh3sul0dkji" path="res://Scene/sistem/item_pickup.tscn" id="9_dgj1i"]
 [ext_resource type="Resource" uid="uid://dn8l3slbgb6t0" path="res://Data/Items/kaset.tres" id="11_4hkb5"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="16_4hkb5"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="16_8rar2"]
 [ext_resource type="Script" uid="uid://cr6vr70r8570w" path="res://Scene/ruangan/komputer.gd" id="16_bv2jl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efuq2"]
@@ -7843,3 +7844,6 @@ shape = SubResource("RectangleShape2D_c508m")
 visible = false
 position = Vector2(5, -65)
 item = ExtResource("11_4hkb5")
+
+[node name="Node" type="Node" parent="." unique_id=1507632173]
+script = ExtResource("16_8rar2")

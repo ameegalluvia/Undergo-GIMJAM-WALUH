@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bug83yu1mgi08" path="res://Script/pintu/pintu.gd" id="5_a2y1v"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="7_lc064"]
 [ext_resource type="PackedScene" uid="uid://5n0lcd827cor" path="res://Scene/sistem/dialog_overlay.tscn" id="8_bn7vf"]
+[ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="9_bn7vf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogtug"]
 texture = ExtResource("1_n1uvf")
@@ -5240,3 +5241,6 @@ position = Vector2(-144, 60)
 position = Vector2(-115, 59)
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("8_bn7vf")]
+
+[node name="Node" type="Node" parent="." unique_id=2123912690]
+script = ExtResource("9_bn7vf")

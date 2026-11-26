@@ -3265,3 +3265,6 @@ position = Vector2(-87, -168)
 shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("12_k71r7")]
+
+[node name="Node" type="Node" parent="." unique_id=1077525120]
+script = ExtResource("9_0e631")

@@ -15,10 +15,13 @@ func _atur_tombol_continue() -> void:
 	if tombol_continue == null:
 		push_warning("Tombol Continue tidak ditemukan. Cek nama node di main_menu.tscn")
 		return
-	var ada_save := SaveManager.ada_save()
-	tombol_continue.disabled = not ada_save
-	tombol_continue.focus_mode = Control.FOCUS_ALL if ada_save else Control.FOCUS_NONE
-	tombol_continue.modulate.a = 1.0 if ada_save else 0.5   # tampak pudar saat nonaktif
+	
+	# Cek apakah file save benar-benar ada DAN isinya valid
+	var bisa_lanjut := SaveManager.save_valid()
+	
+	tombol_continue.disabled = not bisa_lanjut
+	tombol_continue.focus_mode = Control.FOCUS_ALL if bisa_lanjut else Control.FOCUS_NONE
+	tombol_continue.modulate.a = 1.0 if bisa_lanjut else 0.4  # Pudar saat terkunci
 
 
 func _on_start_pressed() -> void:
@@ -26,6 +29,7 @@ func _on_start_pressed() -> void:
 		return
 	_kunci_tombol()
 	await Transisi.fade_keluar_dan_jalankan(func() -> void:
+		AudioManager.stop_music() # <-- Sesuaikan nama fungsi stop di AudioManager kamu
 		SaveManager.game_baru()
 		get_tree().change_scene_to_file(SCENE_AWAL_PATH)
 	, true)
@@ -33,10 +37,11 @@ func _on_start_pressed() -> void:
 func _on_continue_pressed() -> void:
 	if Transisi.sedang_transisi:
 		return
-	if not SaveManager.ada_save():
+	if not SaveManager.save_valid():
 		return
 	_kunci_tombol()
 	await Transisi.fade_keluar_dan_jalankan(func() -> void:
+		AudioManager.stop_music() # <-- Hentikan musik main menu sebelum load scene
 		SaveManager.lanjutkan()
 	, true)
 
