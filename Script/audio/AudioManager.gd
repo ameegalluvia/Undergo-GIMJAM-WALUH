@@ -137,6 +137,7 @@ func get_volume_linear(bus_name: String) -> float:
 		return db_to_linear(AudioServer.get_bus_volume_db(bus_idx))
 	return 1.0
 	
+	
 #FADEOUT MUSIC
 func fade_out_music(duration: float = 1.0) -> void:
 	is_playlist_active = false
@@ -148,7 +149,6 @@ func fade_out_music(duration: float = 1.0) -> void:
 		music_player.stop()
 		music_player.volume_db = 0.0
 	)
-
 func play_backsound(stream: AudioStream, volume_db: float = 0.0, fade: float = 0.6) -> void:
 	if stream == null:
 		return

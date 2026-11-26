@@ -37,7 +37,7 @@ func _ready() -> void:
 			mainkan_sekali("cs_tembok_hancur", preload("res://Data/Cutscene/act1_tembol_hancur.tres")))
 
 
-# ---------- Cahaya ----------
+# ---------- Cahaya ----------	
 func _atur_cahaya() -> void:
 	var mati: bool = GameProgress.ambil_flag("listrik_mati")
 	gelap.visible = mati
@@ -168,7 +168,17 @@ func _on_area_bayangan2(body: Node) -> void:   # ACT 1
 # ---------- Setelah dialog selesai ----------
 func selesai_cutscene() -> void:
 	var T = GameProgress.Tahap
-	
+	if GameProgress.ambil_flag("cs_tembok_hancur") and not GameProgress.ambil_flag("tembok_dipindah"):
+		GameProgress.set_flag("tembok_dipindah")
+		await _fade(1.0, 0.5)
+		johan.global_position = $SpawnSetelahTembok.global_position
+		johan.last_dir = "down"
+		johan.main_diam()
+		await _fade(0.0, 0.5)
+		GameProgress.tahap = GameProgress.Tahap.ACT1_KONTROL_ROOM
+		SaveManager.simpan_scene(scene_file_path)
+		_kunci_pemain(false)
+		return
 	# ACT 1 Part 2: pengejaran
 	if GameProgress.tahap == T.ACT1_KEJAR:
 		$Kejar.lanjut_setelah_dialog()
@@ -222,8 +232,12 @@ func selesai_cutscene() -> void:
 		GameProgress.tahap = GameProgress.Tahap.ACT1_GUDANG
 		SaveManager.simpan_scene(scene_file_path)
 	if GameProgress.ambil_flag("cs_tembok_hancur"):
+		GameProgress.set_flag("titik_respawn", "SpawnSetelahTembok")
 		GameProgress.tahap = GameProgress.Tahap.ACT1_TEMBOK + 1
 		SaveManager.simpan_scene(scene_file_path)
+		
+	if GameProgress.ambil_flag("tembok_dipindah") and has_node("SpawnSetelahTembok"):
+		johan.global_position = $SpawnSetelahTembok.global_position
 
 
 

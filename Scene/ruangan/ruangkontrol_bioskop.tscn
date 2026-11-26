@@ -7846,13 +7846,7 @@ shape = SubResource("RectangleShape2D_c508m")
 
 [node name="DialogOverlay" parent="." unique_id=1344829994 instance=ExtResource("16_4hkb5")]
 
-[node name="ItemPickup2" parent="." unique_id=1239509433 instance=ExtResource("9_dgj1i")]
-position = Vector2(-42, -75)
+[node name="ItemPickup2" parent="." unique_id=1415244863 instance=ExtResource("9_dgj1i")]
+visible = false
+position = Vector2(5, -65)
 item = ExtResource("11_4hkb5")
-
-[node name="CollisionShape2D" parent="ItemPickup2" index="1" unique_id=96864614]
-position = Vector2(0, 4.903427)
-shape = SubResource("RectangleShape2D_l0m1x")
-
-[editable path="Tilemaps/Interior/ItemPickup"]
-[editable path="ItemPickup2"]

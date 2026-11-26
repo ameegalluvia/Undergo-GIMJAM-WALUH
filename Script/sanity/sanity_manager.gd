@@ -5,14 +5,18 @@ signal state_berubah(baru: int, lama: int)
 signal aktif_berubah(status: bool)
 signal sanity_habis
 
+
 enum State { HIJAU, KUNING, MERAH, MATI }
 
 const MAKS := 100.0
-const DRAIN_PER_MENIT := 10.0
+const TURUN_SANITY := 10.0   # sanity yang hilang...
+const TIAP_MENIT := 3.0      # ...setiap sekian menit
 const NILAI_PER_KOTAK := 20.0
 
 var nilai := MAKS
 var state := State.HIJAU
+var johan_glitch := false   # status sprite glitch, bertahan antar scene
+var sudah_mati := false
 var aktif := false   # false = Act 0, sistem mati total
 var dijeda := false
 
@@ -24,7 +28,7 @@ func lanjut_drain() -> void:
 
 func _process(delta: float) -> void:
 	if aktif and not dijeda and not get_tree().paused:
-		ubah(-DRAIN_PER_MENIT / 60.0 * delta)
+		ubah(-TURUN_SANITY / (TIAP_MENIT * 60.0) * delta)
 
 
 func aktifkan() -> void:
@@ -44,28 +48,34 @@ func tambah(jumlah: float) -> void:
 func reset() -> void:
 	set_nilai(MAKS)
 
+# Dipakai load/respawn: memulihkan nilai dan membuka status mati
 func set_nilai(baru: float) -> void:
-	nilai = clampf(baru, 0.0, MAKS)
-	state = _hitung_state()
-	sanity_berubah.emit(nilai)
+	sudah_mati = false
+	_terapkan(baru, true)
 
 
 func ubah(jumlah: float) -> void:
-	if not aktif or state == State.MATI:
+	if not aktif or sudah_mati:
 		return
+	_terapkan(nilai + jumlah, false)
+
+
+func _terapkan(baru: float, tanpa_mati: bool) -> void:
 	var lama := nilai
-	nilai = clampf(nilai + jumlah, 0.0, MAKS)
-	if is_equal_approx(lama, nilai):
+	nilai = clampf(baru, 0.0, MAKS)
+	if is_equal_approx(lama, nilai) and not tanpa_mati:
 		return
 	sanity_berubah.emit(nilai)
 
-	var baru := _hitung_state()
-	if baru != state:
+	var s := _hitung_state()
+	if s != state:
 		var state_lama := state
-		state = baru
-		state_berubah.emit(baru, state_lama)
-		if baru == State.MATI:
-			sanity_habis.emit()
+		state = s
+		state_berubah.emit(s, state_lama)
+
+	if nilai <= 0.0 and not sudah_mati and not tanpa_mati:
+		sudah_mati = true
+		sanity_habis.emit()
 
 
 func jumlah_kotak() -> int:

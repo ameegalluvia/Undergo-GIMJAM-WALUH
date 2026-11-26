@@ -43,6 +43,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray()
 
+[global_group]
+
+collision_act0=""
+
 [input]
 
 move_left={

@@ -21,6 +21,7 @@ func _ready() -> void:
 	aktif = false
 
 func mulai(data: CutsceneData) -> void:
+	GameProgress.sedang_cutscene = true
 	if data == null or data.dialog.is_empty():
 		return
 	dialog = data.dialog
@@ -88,6 +89,7 @@ func lanjut() -> void:
 	if index >= dialog.size():
 		aktif = false
 		kotak.visible = false
+		GameProgress.sedang_cutscene = false
 		selesai_dialog.emit()
 	else:
 		tampilkan()

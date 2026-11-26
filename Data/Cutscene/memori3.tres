@@ -1,21 +1,26 @@
 [gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://dlr5y1neol4bo"]
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_ef17e"]
+[ext_resource type="AudioStream" uid="uid://ryxp2i16wmsb" path="res://assets/audio/tambahan/memo_3_santai.wav" id="2_34wmi"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_qdy40"]
 [ext_resource type="Texture2D" uid="uid://dgyv0enys7rig" path="res://assets/Gambar/Memori3_1.png" id="2_tigts"]
 [ext_resource type="Texture2D" uid="uid://b7jvwuine8xn7" path="res://assets/Gambar/Memori3_2.png" id="3_ty4h4"]
 [ext_resource type="Texture2D" uid="uid://cfur3mjf38swf" path="res://assets/Gambar/Memori3_3.png" id="4_34wmi"]
+[ext_resource type="AudioStream" uid="uid://v0r88lxtdgpm" path="res://assets/audio/tambahan/memo_3_konflik.wav" id="4_dx8p2"]
 [ext_resource type="Texture2D" uid="uid://2yhqvqf6ob58" path="res://assets/Gambar/Memori3_4.png" id="5_dx8p2"]
 [ext_resource type="Texture2D" uid="uid://c4avftcv10h27" path="res://assets/Gambar/Memori 3_5.png" id="6_tjn7t"]
 [ext_resource type="Texture2D" uid="uid://bymkby1ox7hb4" path="res://assets/Gambar/Memori3_6.png" id="7_cx837"]
 [ext_resource type="Texture2D" uid="uid://1sxjgs6kubaw" path="res://assets/Gambar/black.png" id="8_yciek"]
 [ext_resource type="Texture2D" uid="uid://dmr1pfnln2o1t" path="res://assets/Gambar/Ending_1.png" id="9_lfjh5"]
 [ext_resource type="Texture2D" uid="uid://d25ed6343f7j0" path="res://assets/Gambar/Ending_2.png" id="10_b7gcb"]
+[ext_resource type="AudioStream" uid="uid://cphavlpyar45" path="res://assets/audio/tambahan/ringtone_getar.wav" id="12_tjn7t"]
+[ext_resource type="AudioStream" uid="uid://b72mgh3roxyl" path="res://assets/audio/tambahan/ringtone_panjang.wav" id="13_cx837"]
 
 [sub_resource type="Resource" id="Resource_sjg8q"]
 script = ExtResource("1_ef17e")
-teks = "Di taman bermain. Seorang remaja dan teman-temannya (3 orang) sedang bermain kejar-kejaran."
+teks = "Di taman bermain. Seorang remaja dan teman-temannya (3 orang) sedang bermain kejar-kejaran"
 gambar = ExtResource("2_tigts")
+backsound = ExtResource("2_34wmi")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_or8nk"]
@@ -40,6 +45,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_ef17e")
 teks = "Teman 1 jatuh dan terluka saking kerasnya dia jatuh, membuatnya kesal. Teman 2 & 3 datang ke arah TKP"
 gambar = ExtResource("3_ty4h4")
+backsound = ExtResource("4_dx8p2")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_bv2jl"]
@@ -112,6 +118,7 @@ metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 script = ExtResource("1_ef17e")
 teks = "...."
 gambar = ExtResource("8_yciek")
+stop_backsound = true
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [sub_resource type="Resource" id="Resource_jufyc"]
@@ -133,15 +140,32 @@ teks = "Siapapun… Hentikan…"
 gambar = ExtResource("9_lfjh5")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
+[sub_resource type="Resource" id="Resource_6jn5o"]
+script = ExtResource("1_ef17e")
+nama = "Johan"
+teks = "Huh?"
+gambar = ExtResource("9_lfjh5")
+backsound = ExtResource("12_tjn7t")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
 [sub_resource type="Resource" id="Resource_4o7f3"]
 script = ExtResource("1_ef17e")
 nama = "Johan"
 teks = "....."
+gambar = ExtResource("10_b7gcb")
+backsound = ExtResource("13_cx837")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_45b4l"]
+script = ExtResource("1_ef17e")
+nama = "Johan"
+teks = "Apa??"
 gambar = ExtResource("10_b7gcb")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_qdy40")
 dialog = Array[ExtResource("1_ef17e")]([SubResource("Resource_sjg8q"), SubResource("Resource_or8nk"), SubResource("Resource_0w7wc"), SubResource("Resource_saqxo"), SubResource("Resource_veynr"), SubResource("Resource_bv2jl"), SubResource("Resource_4tpmm"), SubResource("Resource_ep4c0"), SubResource("Resource_uexuo"), SubResource("Resource_13x8c"), SubResource("Resource_4d25d"), SubResource("Resource_i2ldq"), SubResource("Resource_h7bru"), SubResource("Resource_a4tht"), SubResource("Resource_5p7vt"), SubResource("Resource_bl7dr"), SubResource("Resource_c6xta"), SubResource("Resource_jufyc"), SubResource("Resource_d5au8"), SubResource("Resource_ad714"), SubResource("Resource_4o7f3")])
+dialog = Array[ExtResource("1_ef17e")]([SubResource("Resource_sjg8q"), SubResource("Resource_or8nk"), SubResource("Resource_0w7wc"), SubResource("Resource_saqxo"), SubResource("Resource_veynr"), SubResource("Resource_bv2jl"), SubResource("Resource_4tpmm"), SubResource("Resource_ep4c0"), SubResource("Resource_uexuo"), SubResource("Resource_13x8c"), SubResource("Resource_4d25d"), SubResource("Resource_i2ldq"), SubResource("Resource_h7bru"), SubResource("Resource_a4tht"), SubResource("Resource_5p7vt"), SubResource("Resource_bl7dr"), SubResource("Resource_c6xta"), SubResource("Resource_jufyc"), SubResource("Resource_d5au8"), SubResource("Resource_ad714"), SubResource("Resource_6jn5o"), SubResource("Resource_4o7f3"), SubResource("Resource_45b4l")])
 scene_berikutnya = "uid://dq2ndrkhmdibd"
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

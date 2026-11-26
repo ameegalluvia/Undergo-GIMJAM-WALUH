@@ -6,31 +6,53 @@ extends AdeganBase
 @onready var titik_tengah = $TitikTengah
 @onready var titik_maju = $TitikKonter
 @onready var titik_keluar = $TitikKeluar
-@onready var area_konter = $AreaKonter
-@onready var pintu_teater = $PintuKeLorong
+@onready var area_konter: Area2D = $AreaKonter
 
 
 func _ready() -> void:
 	AudioManager.stop_music()
 	super()
-	pintu_teater.terkunci = not GameProgress.ambil_flag("cs_lobby")
-	if GameProgress.ambil_flag("cs_lobby"):
+	area_konter.body_entered.connect(_on_area_konter)
+	area_konter.monitoring = false
+
+	# Sudah lewat cutscene masuk (kembali ke lobby / Continue)
+	if GameProgress.ambil_flag("cs_lobby_masuk"):
 		npc1.visible = false
 		npc2.visible = false
+		if not GameProgress.ambil_flag("cs_lobby_konter"):
+			area_konter.monitoring = true
 		return
 
+	# Cutscene 1: Johan masuk, jalan ke tengah, NPC bicara
 	_kunci_pemain(true)
 	johan.global_position = titik_masuk.global_position
 	await get_tree().create_timer(0.5).timeout
 	await _jalan(johan, titik_tengah.global_position)
 	johan.last_dir = "up"
 	johan.main_diam()
-	mainkan_sekali("cs_lobby", preload("res://Data/Cutscene/adeganbioskop1.tres"))
+	mainkan_sekali("cs_lobby_masuk", preload("res://Data/Cutscene/adeganbioskop1.tres"))
 
 
 func selesai_cutscene() -> void:
-	pintu_teater.terkunci = false
+	# Setelah cutscene 1: pemain menuntun Johan ke konter
+	if GameProgress.ambil_flag("cs_lobby_masuk") and not GameProgress.ambil_flag("cs_lobby_konter"):
+		area_konter.set_deferred("monitoring", true)
+		SaveManager.simpan_scene(scene_file_path)
+		return
+	# Setelah cutscene 2: gameplay bebas
+	if GameProgress.ambil_flag("cs_lobby_konter"):
+		SaveManager.simpan_scene(scene_file_path)
 
+
+func _on_area_konter(body: Node) -> void:
+	if not body.is_in_group("player"):
+		return
+	if GameProgress.ambil_flag("cs_lobby_konter"):
+		return
+	area_konter.set_deferred("monitoring", false)
+	_kunci_pemain(true)
+	mainkan_sekali("cs_lobby_konter", preload("res://Data/Cutscene/adeganbioskop2.tres"))
+	
 func _jalan(node: Node2D, titik: Vector2, kecepatan: float = KECEPATAN_JALAN) -> void:
 	var arah := titik - node.global_position
 	var durasi := arah.length() / kecepatan
@@ -83,17 +105,15 @@ func _diam_npc(node: Node2D) -> void:
 			sprite.play(nama)
 			return
 
+
 func aksi_khusus(nama: String) -> void:
 	match nama:
 		"npc_keluar":
 			_jalan_hilang(npc1, titik_keluar.global_position)
 			await _jalan_hilang(npc2, titik_keluar.global_position + Vector2(60, 0))
-		"kontrol_ke_konter":
-			await _tuntun_ke(area_konter)
 		"ambil_tiket":
 			var tiket: DataItem = preload("res://Data/Items/tiket_bioskop.tres")
-			if Inventory.tambah_item(tiket):
-				InventoryUI.umumkan_item_diambil(tiket)
+			Inventory.tambah_item(tiket)
 		"auto_maju":
 			await _jalan(johan, titik_maju.global_position)
 	overlay.aksi_selesai()
