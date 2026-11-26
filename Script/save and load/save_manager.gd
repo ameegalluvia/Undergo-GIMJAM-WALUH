@@ -2,6 +2,14 @@ extends Node
 
 const FILE_SAVE := "user://save.json"
 
+var titik_respawn: String = ""   # nama Marker2D di scene tersimpan, kosong = default
+
+
+func set_titik_respawn(nama: String) -> void:
+	titik_respawn = nama
+	# ikut tersimpan di file
+	GameProgress.set_flag("titik_respawn", nama)
+	
 
 func ada_save() -> bool:
 	return FileAccess.file_exists(FILE_SAVE)
@@ -48,23 +56,37 @@ func _baca() -> Dictionary:
 	return hasil if hasil is Dictionary else {}
 
 
-func lanjutkan() -> bool:
-	if not save_valid():
-		return false
-	var data: Dictionary = _baca()
+func lanjutkan(sanity_minimum: float = 0.0) -> void:
+	var data := _baca()
+	if data.is_empty() or String(data.get("scene", "")) == "":
+		return
 
-	GameProgress.tahap = int(data.get("tahap", 0))   # JSON menyimpan angka sebagai float
+	GameProgress.tahap = int(data.get("tahap", 0))
 	GameProgress.flag = data.get("flag", {})
 	Inventory.dari_dictionary(data.get("inventory", {}))
 
-	SanityManager.set_nilai(float(data.get("sanity", SanityManager.MAKS)))
+	SanityManager.johan_glitch = false
+	SanityManager.dijeda = false
+	SanityManager.set_nilai(maxf(float(data.get("sanity", SanityManager.MAKS)), sanity_minimum))
 	if data.get("sanity_aktif", false):
 		SanityManager.aktifkan()
 	else:
 		SanityManager.nonaktifkan()
 
-	get_tree().change_scene_to_file(String(data["scene"]))
-	return true
+	var path: String = data["scene"]
+	if not ResourceLoader.exists(path):
+		push_warning("Scene save tidak ditemukan: " + path)
+		return
+	Transisi.pindah_scene(path, &"")
+
+
+# Dipanggil saat mati karena sanity habis
+func respawn() -> void:
+	if not ada_save():
+		get_tree().reload_current_scene()
+		return
+	lanjutkan(60.0)
+	GameProgress.set_flag("dari_respawn", true)   # setelah lanjutkan(), karena lanjutkan mengisi ulang flag  # kembali dengan sanity minimal 60 supaya tidak mati berulang
 
 
 # ---------- Game baru ----------

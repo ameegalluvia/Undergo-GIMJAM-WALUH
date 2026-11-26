@@ -16,6 +16,12 @@ func _ready() -> void:
 	GameProgress.set_flag("titik_muncul", "")
 	if GameProgress.tahap < GameProgress.Tahap.ACT0_SELESAI:
 		SanityManager.nonaktifkan()
+	var nama_respawn: String = str(GameProgress.ambil_flag("titik_respawn", ""))
+	if GameProgress.ambil_flag("dari_respawn", false) and nama_respawn != "" and has_node(nama_respawn):
+		await get_tree().process_frame
+		johan.global_position = get_node(nama_respawn).global_position
+		GameProgress.set_flag("dari_respawn", false)
+	_atur_collision_act0()
 
 
 func _buat_fade() -> void:
@@ -114,3 +120,15 @@ func _on_aksi(nama: String) -> void:
 
 func aksi_khusus(_nama: String) -> void:   # di-override scene
 	overlay.aksi_selesai()
+	
+func _atur_collision_act0() -> void:
+	var act0: bool = GameProgress.tahap < GameProgress.Tahap.ACT1_MULAI
+	for n in get_tree().get_nodes_in_group("collision_act0"):
+		if n is TileMapLayer:
+			n.collision_enabled = act0
+		n.visible = act0 if n is CanvasItem and not (n is TileMapLayer) else n.visible
+		n.process_mode = Node.PROCESS_MODE_INHERIT if act0 else Node.PROCESS_MODE_DISABLED
+		for c in n.find_children("*", "CollisionShape2D", true, false):
+			c.set_deferred("disabled", not act0)
+		for c in n.find_children("*", "CollisionPolygon2D", true, false):
+			c.set_deferred("disabled", not act0)

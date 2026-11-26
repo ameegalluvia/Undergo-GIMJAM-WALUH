@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://r72s2qc5e7io"]
+
+[ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_r8xdb"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="2_amxy8"]
+[ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_kg4ab"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="3_tgs3c"]
+[ext_resource type="Texture2D" uid="uid://b2mp80hlirlix" path="res://assets/sprites/Johan/Johan_Takut.png" id="4_00iqe"]
+
+[sub_resource type="Resource" id="Resource_yql37"]
+script = ExtResource("1_r8xdb")
+nama = "Johan"
+teks = "Kak, beli... uhh... 1 tiket untuk film [Censored]"
+potret = ExtResource("2_amxy8")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_3c31g"]
+script = ExtResource("1_r8xdb")
+nama = "Pegawai"
+teks = "Baik, ini tiketnya ya kak"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_35eqe"]
+script = ExtResource("1_r8xdb")
+nama = "Johan"
+teks = "Ma-baik kak"
+potret = ExtResource("3_tgs3c")
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_30uhw"]
+script = ExtResource("1_r8xdb")
+nama = "Johan"
+teks = "Huuhh.."
+potret = ExtResource("3_tgs3c")
+aksi = "auto_maju"
+tunggu_aksi = true
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[sub_resource type="Resource" id="Resource_2v8pb"]
+script = ExtResource("1_r8xdb")
+nama = "Johan"
+teks = "Sialan, lagi lagi aku lupa mengucapkan terima kasih.. Gugup.. Gugup.. GUGUPP!!"
+potret = ExtResource("4_00iqe")
+aksi = "ambil_tiket"
+metadata/_custom_type_script = "uid://co8fvnpi56sa1"
+
+[resource]
+script = ExtResource("2_kg4ab")
+dialog = Array[ExtResource("1_r8xdb")]([SubResource("Resource_yql37"), SubResource("Resource_3c31g"), SubResource("Resource_35eqe"), SubResource("Resource_30uhw"), SubResource("Resource_2v8pb")])
+metadata/_custom_type_script = "uid://jaqjwslj07c8"

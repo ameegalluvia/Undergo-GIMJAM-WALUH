@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://caqgnk45lntxl" path="res://assets/tilesets/Tilesets BARU 2.png" id="4_pqhe1"]
 [ext_resource type="Script" uid="uid://djby7tp50wcnv" path="res://Script/puzzle/tempat_item.gd" id="5_2i0bq"]
 [ext_resource type="Script" uid="uid://cv8l1fyc7bg06" path="res://Script/pintu/titik_spawn.gd" id="5_hhfid"]
-[ext_resource type="Resource" uid="uid://dtpqqksjpsiak" path="res://Data/Items/kayu.tres" id="6_4lkef"]
 [ext_resource type="Resource" uid="uid://ck8ekyfxukstm" path="res://Data/Items/palu.tres" id="6_ys0aj"]
 [ext_resource type="Script" uid="uid://bbn3vaf28fx4a" path="res://Script/save and load/auto_checkpoint.gd" id="7_j7duh"]
 [ext_resource type="AudioStream" uid="uid://x3v5req2kd1j" path="res://assets/audio/sfx/Ambil.wav" id="7_opwbi"]
@@ -9238,7 +9237,7 @@ size = Vector2(99.5, 17)
 size = Vector2(20, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87wdc"]
-size = Vector2(40, 85)
+size = Vector2(99, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko5mp"]
 size = Vector2(41, 96)
@@ -9249,6 +9248,9 @@ size = Vector2(48, 101)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ciq3"]
 size = Vector2(68, 87.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if6pf"]
+size = Vector2(42, 99)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bf35v"]
 size = Vector2(27, 7)
 
@@ -9256,6 +9258,12 @@ size = Vector2(27, 7)
 size = Vector2(33, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5axj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aoxo"]
+size = Vector2(35.5, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxwch"]
+size = Vector2(96, 25)
 
 [node name="LorongBioskop" type="Node2D" unique_id=2116641341]
 y_sort_enabled = true
@@ -10099,6 +10107,8 @@ position = Vector2(-337, -2456)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://5lxwtn4j3n2p"
+terkunci = true
+pesan_terkunci = "Salah kamar mandi.."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi1/PintuKamarmandi1Cewe/PintuKeKamarmandi1Cewe" unique_id=1622217702]
 position = Vector2(1, 1)
@@ -10341,7 +10351,7 @@ shape = SubResource("RectangleShape2D_p6uyq")
 position = Vector2(-181, -303)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1681593039]
-position = Vector2(-25, 7)
+position = Vector2(35.5, -66)
 shape = SubResource("RectangleShape2D_87wdc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1477389460]
@@ -10355,6 +10365,10 @@ shape = SubResource("RectangleShape2D_7pdmu")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=889630757]
 position = Vector2(-167, -960)
 shape = SubResource("RectangleShape2D_2ciq3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Kejar/Pembatas" unique_id=1049915015]
+position = Vector2(257, -3.5)
+shape = SubResource("RectangleShape2D_if6pf")
 
 [node name="Titikstudio3" type="Marker2D" parent="Kejar" unique_id=1195771058]
 position = Vector2(-434, -1334)
@@ -10392,3 +10406,17 @@ flag_dilarang = "punya_kunci_palu"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PemicuPalu" unique_id=1390800714]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_l5axj")
+
+[node name="SpawnSetelahTembok" type="Marker2D" parent="." unique_id=370303983]
+position = Vector2(145, -1234)
+
+[node name="Pembatabact0" type="StaticBody2D" parent="." unique_id=1585164893 groups=["collision_act0"]]
+position = Vector2(420, -1117)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pembatabact0" unique_id=1859721960]
+position = Vector2(-492.75, 804)
+shape = SubResource("RectangleShape2D_2aoxo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pembatabact0" unique_id=473168687]
+position = Vector2(12, -25.5)
+shape = SubResource("RectangleShape2D_wxwch")
