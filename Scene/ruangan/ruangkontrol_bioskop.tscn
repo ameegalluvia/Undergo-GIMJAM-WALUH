@@ -7850,4 +7850,13 @@ shape = SubResource("RectangleShape2D_c508m")
 [node name="Node" type="Node" parent="." unique_id=1507632173]
 script = ExtResource("16_8rar2")
 
+[node name="ItemPickup2" parent="." unique_id=1054647137 instance=ExtResource("9_dgj1i")]
+position = Vector2(-127, -104)
+item = ExtResource("11_4hkb5")
+
+[node name="CollisionShape2D" parent="ItemPickup2" index="1" unique_id=96864614]
+position = Vector2(0, 5.403427)
+shape = SubResource("RectangleShape2D_veo0n")
+
 [editable path="Tilemaps/Interior/ItemPickup"]
+[editable path="ItemPickup2"]

@@ -8,6 +8,6 @@ script = ExtResource("1_2vu2e")
 id = &"minuman"
 nama_tampil = "Minuman"
 ikon = ExtResource("1_ontnh")
-deskripsi = "Memulihkan sanity sebanyak 20 persen"
+deskripsi = "Klik F untuk Memulihkan sanity sebanyak 20 persen"
 heal_sanity = 20.0
 metadata/_custom_type_script = "uid://ccg3nj837oud5"

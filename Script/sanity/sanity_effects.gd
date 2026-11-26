@@ -106,6 +106,8 @@ func _gangguan() -> void:
 	_jadwalkan_gangguan()
 	
 func _glitch() -> void:
+	if _merah():
+		_set_johan_glitch(not SanityManager.johan_glitch)
 	if glitch == null or glitch_berjalan:
 		return
 	var mat := glitch.material as ShaderMaterial

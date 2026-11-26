@@ -97,9 +97,6 @@ func _putar_footstep() -> void:
 	sfx_player.pitch_scale = randf_range(1.0 - variasi_pitch, 1.0 + variasi_pitch)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_1: SanityManager.kurangi(20)
-		if event.keycode == KEY_2: SanityManager.tambah(20)
 	if event.is_action_pressed("pakai_item") and not Inventory.ui_terbuka:
 		Inventory.pakai_item_dipegang()
 	if event.is_action_pressed("toggle_senter") and not Inventory.ui_terbuka:

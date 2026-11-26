@@ -11,8 +11,8 @@ const MAKS := 100.0
 const NILAI_AWAL := 80.0
 const NILAI_PER_KOTAK := 20.0
 
-const TURUN_SANITY := 20.0   # berkurang sekian...
-const TIAP_DETIK := 30.0     # ...setiap sekian detik
+const TURUN_SANITY := 10.0   # berkurang sekian...
+const TIAP_DETIK := 25.0     # ...setiap sekian detik
 
 var nilai := NILAI_AWAL
 var state := State.HIJAU
