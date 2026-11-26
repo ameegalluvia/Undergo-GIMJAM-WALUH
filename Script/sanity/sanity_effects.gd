@@ -17,6 +17,15 @@ extends Node
 @export var durasi_subtitle := 3.0
 @onready var sprite_normal: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var sprite_glitch: AnimatedSprite2D = $"../JohanGlitch"
+@export_group("Audio Loop")
+@export var loop_kuning: AudioStream
+@export var loop_merah: AudioStream
+@export var volume_loop_kuning_db := -14.0
+@export var volume_loop_merah_db := -8.0
+@export var fade_loop := 1.5
+
+var loop_player := AudioStreamPlayer.new()
+var tween_loop: Tween
 
 
 
@@ -40,7 +49,9 @@ func _ready() -> void:
 	SanityManager.sanity_habis.connect(_on_mati)
 	_on_state(SanityManager.state, SanityManager.state)
 	_set_johan_glitch(SanityManager.johan_glitch and SanityManager.state >= SanityManager.State.MERAH)
-
+	loop_player.bus = "SFX"
+	loop_player.volume_db = -40.0
+	add_child(loop_player)
 
 # ---------- Perubahan state ----------
 func _on_state(baru: int, lama: int) -> void:
@@ -48,6 +59,7 @@ func _on_state(baru: int, lama: int) -> void:
 	timer_lampu.stop()
 	_hentikan_glitch()
 	_pulihkan_lampu()
+	_atur_loop(baru)
 	if baru != SanityManager.State.MERAH:
 		_set_johan_glitch(false)
 	if baru < SanityManager.State.MERAH:
@@ -225,3 +237,39 @@ func _sinkron_sprite() -> void:
 
 func _process(_delta: float) -> void:
 	_sinkron_sprite()
+
+func _atur_loop(baru: int) -> void:
+	var stream: AudioStream = null
+	var volume := 0.0
+	match baru:
+		SanityManager.State.KUNING:
+			stream = loop_kuning
+			volume = volume_loop_kuning_db
+		SanityManager.State.MERAH:
+			stream = loop_merah
+			volume = volume_loop_merah_db
+
+	if tween_loop:
+		tween_loop.kill()
+		tween_loop = null
+
+	if stream == null:
+		# HIJAU atau MATI: fade out lalu stop (hanya jika sedang main)
+		if loop_player.playing:
+			tween_loop = create_tween()
+			tween_loop.tween_property(loop_player, "volume_db", -40.0, fade_loop)
+			tween_loop.tween_callback(loop_player.stop)
+		return
+
+	tween_loop = create_tween()
+	if loop_player.stream == stream and loop_player.playing:
+		tween_loop.tween_property(loop_player, "volume_db", volume, fade_loop)
+		return
+
+	if loop_player.playing:
+		tween_loop.tween_property(loop_player, "volume_db", -40.0, fade_loop * 0.5)
+	tween_loop.tween_callback(func():
+		loop_player.stream = stream
+		loop_player.volume_db = -40.0
+		loop_player.play())
+	tween_loop.tween_property(loop_player, "volume_db", volume, fade_loop)

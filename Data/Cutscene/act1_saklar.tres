@@ -2,27 +2,32 @@
 
 [ext_resource type="Script" uid="uid://co8fvnpi56sa1" path="res://Script/cutscene/dialog_line.gd" id="1_momo0"]
 [ext_resource type="Script" uid="uid://jaqjwslj07c8" path="res://Script/cutscene/cutscene_data.gd" id="2_ddtvx"]
+[ext_resource type="Texture2D" uid="uid://chgp80mdnaqf4" path="res://assets/sprites/Johan/FaceSprite_Johan.png" id="2_ktfj5"]
+[ext_resource type="Texture2D" uid="uid://cljb4u82x2auf" path="res://assets/sprites/Johan/Johan_Marah_Bingung.png" id="3_eaydi"]
 
-[sub_resource type="Resource" id="Resource_4hkb5"]
+[sub_resource type="Resource" id="Resource_hauki"]
 script = ExtResource("1_momo0")
 nama = "Johan"
 teks = "Nah Nyala"
+potret = ExtResource("2_ktfj5")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_bv2jl"]
+[sub_resource type="Resource" id="Resource_a18rq"]
 script = ExtResource("1_momo0")
 nama = "Johan"
 teks = "Aku sudah membuka akses ruang kontrol, aku seharusnya sudah bisa keluar sekarang..."
+potret = ExtResource("2_ktfj5")
 aksi = "berbalik"
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
-[sub_resource type="Resource" id="Resource_8rar2"]
+[sub_resource type="Resource" id="Resource_pye6g"]
 script = ExtResource("1_momo0")
 nama = "Johan"
 teks = "Loker itu... apakah tadi memang seperti itu, ya?"
+potret = ExtResource("3_eaydi")
 metadata/_custom_type_script = "uid://co8fvnpi56sa1"
 
 [resource]
 script = ExtResource("2_ddtvx")
-dialog = Array[ExtResource("1_momo0")]([SubResource("Resource_4hkb5"), SubResource("Resource_bv2jl"), SubResource("Resource_8rar2")])
+dialog = Array[ExtResource("1_momo0")]([SubResource("Resource_hauki"), SubResource("Resource_a18rq"), SubResource("Resource_pye6g")])
 metadata/_custom_type_script = "uid://jaqjwslj07c8"

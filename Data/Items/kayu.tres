@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="DataItem" format=3 uid="uid://dtpqqksjpsiak"]
 
-[ext_resource type="Texture2D" uid="uid://blb326mtq036c" path="res://assets/ui/InteractiveItems/Tang.png" id="1_fogfd"]
 [ext_resource type="Script" uid="uid://ccg3nj837oud5" path="res://Script/inventory/data_item.gd" id="1_oc33g"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oc33g"]
+load_path = "res://.godot/imported/Tambahan.png-192841ea3a91151a41657d785f612017.ctex"
 
 [resource]
 script = ExtResource("1_oc33g")
 id = &"kayu"
 nama_tampil = "Kayu"
-ikon = ExtResource("1_fogfd")
+ikon = SubResource("CompressedTexture2D_oc33g")
 metadata/_custom_type_script = "uid://ccg3nj837oud5"

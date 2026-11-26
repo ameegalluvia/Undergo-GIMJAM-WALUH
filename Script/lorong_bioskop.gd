@@ -207,8 +207,8 @@ func selesai_cutscene() -> void:
 	# Setelah bagian 2 Scene 4: Act 0 selesai, Act 1 dimulai
 	if GameProgress.ambil_flag("cs_bayangan") and GameProgress.tahap == T.TERKUNCI:
 		GameProgress.tahap = T.ACT1_MULAI                 # ACT 1
-		SanityManager.reset()
-		SanityManager.aktifkan()                          # bar muncul, drain mulai
+		SanityManager.set_nilai(80.0)
+		SanityManager.aktifkan()                         # bar muncul, drain mulai
 		SaveManager.simpan_scene(scene_file_path)
 		_kunci_pemain(true)
 		await _fade(1.0, 1.5)                             # "Act 0 Ends"
@@ -295,3 +295,4 @@ func _gerak_bayangan(awal: Vector2, tujuan: Vector2) -> void:
 	tw.tween_property(bayangan, "global_position", tujuan, arah.length() / 90.0)
 	await tw.finished
 	bayangan.visible = false
+	

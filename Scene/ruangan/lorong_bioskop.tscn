@@ -9271,6 +9271,7 @@ size = Vector2(96, 25)
 y_sort_enabled = true
 script = ExtResource("1_wbcv1")
 musik_gedor = ExtResource("2_nbxxs")
+durasi_fade_musik = null
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=516834237]
 
@@ -10026,6 +10027,7 @@ id_titik_tujuan = &"TitikDariLobbyBioskop"
 suara_pintu = ExtResource("17_2i0bq")
 suara_terkunci = ExtResource("21_35eqe")
 suara_kunci_dibuka = ExtResource("22_30uhw")
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio2/PintuKeStudio2" unique_id=1663510535]
 position = Vector2(1, 1)
@@ -10046,6 +10048,7 @@ scene_tujuan = "uid://cckcqjwxjuq72"
 suara_pintu = ExtResource("17_2i0bq")
 suara_terkunci = ExtResource("21_35eqe")
 suara_kunci_dibuka = ExtResource("22_30uhw")
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio3/PintuKeStudio3" unique_id=26994108]
 position = Vector2(1, 1)
@@ -10067,6 +10070,7 @@ id_titik_tujuan = &"TitikDariLobbyBioskop"
 suara_pintu = ExtResource("17_2i0bq")
 suara_terkunci = ExtResource("21_35eqe")
 suara_kunci_dibuka = ExtResource("22_30uhw")
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio4/PintuKeStudio4" unique_id=1103901844]
 position = Vector2(1, 1)
@@ -10087,6 +10091,7 @@ scene_tujuan = "uid://ce13p0s7jdmu2"
 suara_pintu = ExtResource("17_2i0bq")
 suara_terkunci = ExtResource("21_35eqe")
 suara_kunci_dibuka = ExtResource("22_30uhw")
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuStudio/PintuStudio5/PintuKeStudio5" unique_id=1113248692]
 position = Vector2(1, 1)
@@ -10146,6 +10151,7 @@ position = Vector2(-1714, -2650)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://crcmgghr7tyf3"
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi2/PintuKamarmandi1Cowo/PintuKeKamamandi2Cowo" unique_id=1974987380]
 position = Vector2(1, 1)
@@ -10163,6 +10169,7 @@ position = Vector2(-1681, -2650)
 position = Vector2(897, 1336)
 script = ExtResource("4_e4ew0")
 scene_tujuan = "uid://c0qvn0ara1nf7"
+terkunci = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu/PintuKamarMandi/Kamarmandi2/PintuKamarmandi2Cewe/PintuKeKamarmandi2Cewe" unique_id=980451022]
 position = Vector2(1, 1)
@@ -10240,10 +10247,6 @@ shape = SubResource("RectangleShape2D_4kxq4")
 position = Vector2(0, 92)
 script = ExtResource("5_hhfid")
 id_titik = &"dari_ruangkontrol_bioskop"
-
-[node name="arcsetter" type="Node" parent="." unique_id=972132576]
-script = ExtResource("8_fkfb6")
-sanity_aktif = true
 
 [node name="AutoCheckpoint2" type="Node" parent="." unique_id=2040819160]
 script = ExtResource("7_j7duh")
