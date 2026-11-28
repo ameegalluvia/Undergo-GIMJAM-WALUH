@@ -24,7 +24,7 @@
 
 ---
 
-## 📖 Tentang Game
+## 📖 About the Game
 
 **UNDERGO** adalah sebuah game *2D Psychological Horror RPG* yang berpusat pada kisah **Johan**, seorang pria yang mendapati dirinya terjebak di dalam sebuah teater misterius yang dipenuhi oleh bayang-bayang kenangan masa lalunya. 
 
@@ -32,7 +32,7 @@ Bantu Johan mencari jalan keluar sembari menelusuri fragmen ingatannya sendiri. 
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Main Feature
 
 * 🧠 **Sistem *Sanity Bar* yang Menantang:** Jaga kewarasan Johan tetap stabil di tengah teror psikologis. Semakin rendah *sanity*, semakin mencekam realitas di sekitarmu.
 * 🧩 **Puzzle Interaktif:** Pecahkan berbagai teka-teki berbasis lingkungan dan memori untuk membuka akses ke area baru dan mengungkap kebenaran.
@@ -41,7 +41,7 @@ Bantu Johan mencari jalan keluar sembari menelusuri fragmen ingatannya sendiri. 
 
 ---
 
-## 🎮 Kontrol Permainan
+## 🎮 Control
 
 | Tombol | Aksi |
 | :--- | :--- |
@@ -52,7 +52,7 @@ Bantu Johan mencari jalan keluar sembari menelusuri fragmen ingatannya sendiri. 
 
 ---
 
-## 📸 Cuplikan Layar (*Screenshots*)
+## 📸 Screenshots
 
 <table>
   <tr>
@@ -82,7 +82,7 @@ Bantu Johan mencari jalan keluar sembari menelusuri fragmen ingatannya sendiri. 
 
 ---
 
-## 🚀 Cara Memainkan / Instalasi
+## 🚀 How to Play
 
 1. Kunjungi halaman [**Releases**](../../releases) pada repositori ini.
 2. Unduh file rilis versi terbaru sesuai dengan sistem operasi perangkatmu.
@@ -91,7 +91,7 @@ Bantu Johan mencari jalan keluar sembari menelusuri fragmen ingatannya sendiri. 
 
 ---
 
-## 👥 Tim Pengembang (Kredit)
+## 👥 Developer Teams
 
 Game ini dikembangkan dengan penuh dedikasi oleh:
 
